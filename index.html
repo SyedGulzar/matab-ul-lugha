@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matab-ul-Lugha - The School of Language</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            sepia: {
+              800: '#422006', // Ink
+              900: '#2C1810', // Darker Ink
+            },
+            paper: {
+              DEFAULT: '#E6DEC8', // Map Background
+              light: '#F0EAD6',   // Card Background
+            },
+            amber: {
+              400: '#FBBF24',
+              500: '#F59E0B',
+              600: '#D97706',
+            },
+            slate: {
+              850: '#1e293b',
+              900: '#0f172a',
+              950: '#020617',
+            }
+          },
+          keyframes: {
+            'pendulum-physics': {
+              '0%': { transform: 'rotate(0deg)', animationTimingFunction: 'ease-out' },
+              '25%': { transform: 'rotate(5deg)', animationTimingFunction: 'ease-in' },
+              '50%': { transform: 'rotate(0deg)', animationTimingFunction: 'ease-out' },
+              '75%': { transform: 'rotate(-5deg)', animationTimingFunction: 'ease-in' },
+              '100%': { transform: 'rotate(0deg)' },
+            }
+          },
+          animation: {
+            'pendulum': 'pendulum-physics 3s infinite',
+          }
+        }
+      }
+    }
+  </script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Markazi+Text:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --paper-bg: #E6DEC8;
+      /* Bagdad Map Paper */
+      --ink-primary: #422006;
+      /* Sepia Ink */
+      --gold-accent: #D97706;
+    }
+
+    body {
+      font-family: 'Markazi Text', serif;
+      background-color: #E6DEC8;
+      color: #2C1810;
+      transition: background-color 0.5s ease, color 0.5s ease;
+      /* Map Texture Overlay */
+      background-image:
+        /* Stronger Noise for Paper Grain */
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.25'/%3E%3C/svg%3E"),
+        /* Sepia Geometric Pattern - Faint Map Lines */
+        url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M40 0L80 40L40 80L0 40z' stroke='%23422006' stroke-opacity='0.1' stroke-width='1'/%3E%3Cpath d='M0 0h80v80H0z' stroke='%23422006' stroke-opacity='0.05' stroke-width='0.5'/%3E%3Cpath d='M40 10 L70 40 L40 70 L10 40 Z' stroke='%23422006' stroke-opacity='0.15' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* Dark Mode Global Overrides (Night Map) */
+    .dark body {
+      background-color: #020617;
+      /* Slate 950 */
+      color: #F3F4F6;
+      background-image:
+        linear-gradient(rgba(2, 6, 23, 0.6), rgba(2, 6, 23, 0.6)),
+        url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M40 0L80 40L40 80L0 40z' stroke='%23D97706' stroke-opacity='0.2' stroke-width='2'/%3E%3Cpath d='M0 0h80v80H0z' stroke='%23D97706' stroke-opacity='0.1' stroke-width='1'/%3E%3Cpath d='M40 10 L70 40 L40 70 L10 40 Z' stroke='%23D97706' stroke-opacity='0.25' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'El Messiri', sans-serif;
+    }
+
+    /* Custom Scrollbar - Leather Style */
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #D7Cea7;
+      border-left: 1px solid #BCAAA4;
+    }
+
+    .dark ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #5D4037;
+      /* Leather Brown */
+      border: 2px solid #D7Cea7;
+      border-radius: 4px;
+    }
+
+    .dark ::-webkit-scrollbar-thumb {
+      background: #D97706;
+      /* Gold */
+      border: 2px solid #020617;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3E2723;
+    }
+
+    /* Selection */
+    ::selection {
+      background: #8D6E63;
+      /* Muted Clay */
+      color: #FDFBF7;
+      text-shadow: none;
+    }
+
+    .dark ::selection {
+      background: #451a03;
+      color: #fbbf24;
+    }
+
+    /* Utilities */
+    .font-messiri {
+      font-family: 'El Messiri', sans-serif;
+    }
+
+    .font-markazi {
+      font-family: 'Markazi Text', serif;
+    }
+
+    /* Torn Paper Effect */
+    .paper-torn {
+      border-radius: 2px 2px 2px 2px / 255px 15px 225px 15px;
+    }
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "html2canvas": "https://aistudiocdn.com/html2canvas@^1.4.1"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
