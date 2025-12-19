@@ -1,17 +1,37 @@
 <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" /> <!-- Amber 500 -->
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" /> <!-- Amber 600 -->
     </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
   </defs>
   
   <!-- Rounded Square Background -->
-  <rect x="0" y="0" width="512" height="512" rx="100" ry="100" fill="url(#bgGrad)" />
+  <rect x="32" y="32" width="448" height="448" rx="96" ry="96" fill="url(#bgGrad)" />
   
-  <!-- Open Book Icon -->
-  <g transform="translate(106, 126) scale(0.6)">
-    <path d="M460 60 L 260 100 L 60 60 L 60 360 L 260 400 L 460 360 Z" fill="none" stroke="#2C1810" stroke-width="40" stroke-linejoin="round" stroke-linecap="round"/>
-    <path d="M260 100 L 260 400" stroke="#2C1810" stroke-width="40" stroke-linecap="round"/>
+  <!-- Open Book Icon - Refined Geometry -->
+  <g transform="translate(128, 144) scale(0.5)">
+     <!-- Left Page -->
+     <path d="M256 80 L 256 432 L 64 384 L 64 64 Z" 
+           fill="none" 
+           stroke="#422006" 
+           stroke-width="48" 
+           stroke-linejoin="round" 
+           stroke-linecap="round"/>
+     <!-- Right Page -->
+     <path d="M256 80 L 448 64 L 448 384 L 256 432 Z" 
+           fill="none" 
+           stroke="#422006" 
+           stroke-width="48" 
+           stroke-linejoin="round" 
+           stroke-linecap="round"/>
+     <!-- Spine -->
+     <path d="M256 80 L 256 432" 
+           stroke="#422006" 
+           stroke-width="48" 
+           stroke-linecap="round"/>
   </g>
 </svg>
