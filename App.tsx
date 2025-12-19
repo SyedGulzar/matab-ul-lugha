@@ -618,80 +618,189 @@ const App: React.FC = () => {
 
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-        {/* VIEW: LEARNING AREA (Topics Grid) */}
+        {/* VIEW: LEARNING AREA (Path Style) */}
         {currentView === 'learning' && (
-          <div className="animate-in fade-in zoom-in-95 duration-500">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-messiri text-[#2C1810] dark:text-amber-500 mb-4 transition-colors">The Archives of Knowledge</h2>
-              <p className="text-xl font-markazi text-[#5D4037] dark:text-slate-300 italic">Select a topic to begin your journey to eloquence.</p>
-            </div>
+          <div className="animate-in fade-in zoom-in-95 duration-500 relative min-h-screen">
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {Object.entries(TOPIC_CATEGORIES).map(([category, items]) => (
-                <div key={category} className="bg-[#F0EAD6] dark:bg-slate-900 rounded-xl overflow-hidden border-2 border-[#5D4037]/10 dark:border-amber-500/20 shadow-lg dark:shadow-[0_0_15px_rgba(0,0,0,0.2)] paper-torn group transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(245,158,11,0.15)]">
-                  <div className="bg-[#E6DEC8] dark:bg-slate-800/80 p-4 border-b border-[#5D4037]/10 dark:border-amber-500/10 flex items-center justify-between">
-                    <h3 className="font-messiri font-bold text-xl text-[#4A3728] dark:text-amber-500 uppercase tracking-widest">{category}</h3>
-                    <RubElHizbIcon size={20} className="text-[#5D4037]/40 dark:text-amber-500/40" />
-                  </div>
-                  <div className="p-6">
-                    <ul className="space-y-3">
-                      {items.map(t => (
-                        <li key={t.name}>
-                          <button
-                            onClick={() => handleLibraryTopicClick(t.name)}
-                            className="w-full text-left font-markazi text-lg text-[#5D4037] dark:text-slate-300 hover:text-[#4A3728] dark:hover:text-amber-400 flex items-center gap-2 group/item transition-colors"
-                          >
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#5D4037]/40 dark:bg-amber-500/40 group-hover/item:bg-[#4A3728] dark:group-hover/item:bg-amber-500 transition-colors"></span>
-                            <span className="flex-1">{t.name}</span>
+            {/* Background Pattern - Geometric */}
+            <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234A3728' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              }}
+            />
 
-                            <div className="flex items-center gap-2">
-                              <span className="text-xs font-messiri font-bold text-[#8D6E63] dark:text-gray-500 border border-[#5D4037]/10 dark:border-amber-500/10 px-2 py-0.5 rounded-md bg-[#5D4037]/5 dark:bg-amber-500/5 group-hover/item:border-[#4A3728]/30 dark:group-hover/item:border-amber-500/30 transition-colors">
-                                {t.time}
-                              </span>
+            <div className="relative z-10 pb-32">
+              <div className="text-center mb-16 pt-8">
+                {/* Main Title Badge */}
+                <div className="inline-block relative">
+                  <div className="absolute inset-0 bg-[#D97706]/20 dark:bg-amber-500/10 blur-xl rounded-full"></div>
+                  <h2 className="relative text-5xl font-messiri text-[#2C1810] dark:text-amber-500 mb-2 drop-shadow-sm">The Path of Knowledge</h2>
+                </div>
+                <p className="text-xl font-markazi text-[#5D4037] dark:text-slate-400 italic">Traverse the valley of eloquence</p>
+              </div>
 
+              <div className="relative max-w-2xl mx-auto">
+                {/* SVG Path Line - Behind Nodes */}
+                <svg className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-visible" style={{ zIndex: -1 }}>
+                  <defs>
+                    <linearGradient id="pathGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" style={{ stopColor: '#D97706', stopOpacity: 0 }} />
+                      <stop offset="10%" style={{ stopColor: '#D97706', stopOpacity: 0.5 }} />
+                      <stop offset="90%" style={{ stopColor: '#D97706', stopOpacity: 0.5 }} />
+                      <stop offset="100%" style={{ stopColor: '#D97706', stopOpacity: 0 }} />
+                    </linearGradient>
+                    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feGaussianBlur stdDeviation="4" result="coloredBlur" />
+                      <feMerge>
+                        <feMergeNode in="coloredBlur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                  </defs>
+                  {/* Render the winding path */}
+                  {(() => {
+                    // Calculate total height based on items
+                    let yOffset = 0;
+                    const pathPoints: string[] = [];
+                    let firstPoint = true;
+
+                    Object.entries(TOPIC_CATEGORIES).forEach(([category, items], catIndex) => {
+                      // Unit Header Space
+                      yOffset += 120;
+
+                      items.forEach((_, index) => {
+                        // Node Spacing
+                        yOffset += 140;
+
+                        // Zig Zag Logic
+                        // Center is 50%
+                        // Amplitude is ~120px
+                        const isEven = (catIndex * 100 + index) % 2 === 0;
+                        const x = isEven ? 35 : 65; // Percentage
+
+                        // For SVG path, we need absolute pixels approx.
+                        // Assuming container width ~ 672px (max-w-2xl)
+                        const xPx = isEven ? 235 : 437; // Approx for 672 width
+
+                        if (firstPoint) {
+                          pathPoints.push(`M ${xPx} ${yOffset}`);
+                          firstPoint = false;
+                        } else {
+                          // Curved bezier connection
+                          const prevX = isEven ? 437 : 235;
+                          const prevY = yOffset - 140;
+                          const cp1x = prevX;
+                          const cp1y = prevY + 70;
+                          const cp2x = xPx;
+                          const cp2y = yOffset - 70;
+                          pathPoints.push(`C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${xPx} ${yOffset}`);
+                        }
+                      });
+                    });
+
+                    return (
+                      <path
+                        d={pathPoints.join(' ')}
+                        fill="none"
+                        stroke="url(#pathGradient)"
+                        strokeWidth="8"
+                        strokeLinecap="round"
+                        strokeDasharray="20 10"
+                        className="opacity-60 dark:opacity-40"
+                      />
+                    );
+                  })()}
+                </svg>
+
+                {/* Nodes Loop */}
+                {Object.entries(TOPIC_CATEGORIES).map(([category, items], catIdx) => (
+                  <div key={category} className="mb-12 relative z-10">
+
+                    {/* Unit Header - Sticky-ish visual separator */}
+                    <div className="flex justify-center mb-12">
+                      <div className="relative bg-[#F0EAD6] dark:bg-slate-900 border-2 border-[#D97706] dark:border-amber-600 px-8 py-4 rounded-xl shadow-[0_4px_20px_rgba(74,55,40,0.15)] dark:shadow-[0_0_20px_rgba(217,119,6,0.2)] transform hover:scale-105 transition-transform duration-300 max-w-md w-full text-center">
+                        {/* Decorative corners */}
+                        <div className="absolute -top-1.5 -left-1.5 w-3 h-3 bg-[#4A3728] dark:bg-amber-500 rounded-full border border-[#F0EAD6] dark:border-slate-900"></div>
+                        <div className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-[#4A3728] dark:bg-amber-500 rounded-full border border-[#F0EAD6] dark:border-slate-900"></div>
+                        <div className="absolute -bottom-1.5 -left-1.5 w-3 h-3 bg-[#4A3728] dark:bg-amber-500 rounded-full border border-[#F0EAD6] dark:border-slate-900"></div>
+                        <div className="absolute -bottom-1.5 -right-1.5 w-3 h-3 bg-[#4A3728] dark:bg-amber-500 rounded-full border border-[#F0EAD6] dark:border-slate-900"></div>
+
+                        <h3 className="font-messiri font-bold text-2xl text-[#4A3728] dark:text-amber-500 uppercase tracking-widest leading-tight">{category}</h3>
+                        <div className="w-16 h-1 bg-[#D97706]/30 mx-auto mt-2 rounded-full"></div>
+                      </div>
+                    </div>
+
+                    <div className="relative space-y-24"> {/* Space for path */}
+                      {items.map((t, index) => {
+                        const isCompleted = completedTopics.includes(t.name);
+                        // Simple zig zag alignment
+                        const isEven = (catIdx * 100 + index) % 2 === 0;
+
+                        return (
+                          <div key={t.name} className={`flex ${isEven ? 'justify-start md:pl-32' : 'justify-end md:pr-32'} relative`}>
+
+                            {/* The Node Button */}
+                            <button
+                              onClick={() => handleLibraryTopicClick(t.name)}
+                              className={`group relative flex flex-col items-center justify-center transition-all duration-300 transform hover:-translate-y-2 focus:outline-none`}
+                            >
+                              {/* Status Ring / Glow */}
+                              <div className={`absolute inset-0 rounded-full blur-xl transition-all duration-500 ${isCompleted ? 'bg-green-500/20' : 'bg-[#D97706]/20 group-hover:bg-[#D97706]/40'}`}></div>
+
+                              {/* Main Circle */}
+                              <div className={`w-24 h-24 rounded-full border-4 shadow-xl flex items-center justify-center relative z-10 transition-all duration-300
+                                            ${isCompleted
+                                  ? 'bg-[#E6DEC8] dark:bg-slate-800 border-green-600 dark:border-green-500'
+                                  : 'bg-[#F0EAD6] dark:bg-slate-900 border-[#D97706] dark:border-amber-600'
+                                }
+                                        `}>
+                                {isCompleted ? (
+                                  <div className="bg-green-600 dark:bg-green-500 text-white rounded-full p-1 shadow-sm">
+                                    <CheckCircle size={40} strokeWidth={2.5} />
+                                  </div>
+                                ) : (
+                                  <div className="text-[#4A3728] dark:text-amber-500 group-hover:scale-110 transition-transform duration-300">
+                                    <BookOpen size={36} strokeWidth={2} />
+                                  </div>
+                                )}
+
+                                {/* Circular Progress (Visual Only for now) */}
+                                {!isCompleted && (
+                                  <svg className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="46" fill="none" stroke="#D97706" strokeWidth="2" strokeOpacity="0.2" />
+                                    <circle cx="50" cy="50" r="46" fill="none" stroke="#D97706" strokeWidth="4" strokeDasharray="290" strokeDashoffset="200" strokeLinecap="round" className="opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                  </svg>
+                                )}
+                              </div>
+
+                              {/* Label Tag - Floating below */}
+                              <div className={`absolute top-full mt-4 bg-[#F0EAD6] dark:bg-slate-900 border border-[#D7Cea7] dark:border-slate-600 px-4 py-2 rounded-lg shadow-md text-center min-w-[180px] max-w-[220px] transform transition-all duration-300 group-hover:scale-105 group-hover:border-[#D97706] dark:group-hover:border-amber-500 z-20`}>
+                                <div className="font-markazi font-bold text-lg text-[#2C1810] dark:text-slate-200 leading-tight">{t.name}</div>
+                                <div className="text-xs text-[#8D6E63] dark:text-slate-500 font-messiri mt-0.5">{t.time}</div>
+                              </div>
+                            </button>
+
+                            {/* Action Buttons (Video / Toggle Complete) - Appear on hover or side */}
+                            <div className={`absolute top-1/2 -translate-y-1/2 ${isEven ? 'left-full ml-6' : 'right-full mr-6'} opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col gap-2 z-0`}>
                               <button
                                 onClick={(e) => {
                                   e.stopPropagation();
                                   toggleTopicCompletion(t.name);
                                 }}
-                                title={completedTopics.includes(t.name) ? "Mark as incomplete" : "Mark as complete"}
-                                className="mr-3 p-1 rounded-full transition-colors hover:bg-[#5D4037]/5 dark:hover:bg-white/5 text-[#8D6E63]/40 dark:text-slate-600"
+                                className="p-2 bg-[#F0EAD6] dark:bg-slate-800 rounded-full shadow-md border border-[#D7Cea7] hover:bg-white dark:hover:bg-slate-700 text-[#8D6E63]"
+                                title="Toggle Completion"
                               >
-                                {completedTopics.includes(t.name) ? (
-                                  <CheckCircle size={20} className="text-green-600 dark:text-green-500" />
-                                ) : (
-                                  <Circle size={20} strokeWidth={1.5} className="hover:stroke-[#4A3728] dark:hover:stroke-amber-500 transition-colors" />
-                                )}
+                                {isCompleted ? <X size={16} /> : <CheckCircle size={16} />}
                               </button>
-
-                              <div
-                                role="button"
-                                title={`Watch video about ${t.name}`}
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  // Extract Video ID if valid YouTube URL
-                                  const videoID = t.videoUrl ? (t.videoUrl.match(/v=([^&]+)/)?.[1] || null) : null;
-
-                                  if (videoID) {
-                                    setSelectedVideo(videoID);
-                                  } else {
-                                    // Fallback for search query or invalid URL
-                                    const url = t.videoUrl || `https://www.youtube.com/results?search_query=${encodeURIComponent('Sir Nasim Zulfiqar ' + t.name)}`;
-                                    window.open(url, '_blank');
-                                  }
-                                }}
-                                className="p-1 rounded-full text-[#8D6E63] dark:text-gray-400 hover:text-[#D97706] dark:hover:text-amber-500 hover:bg-[#5D4037]/10 dark:hover:bg-amber-500/10 transition-all transform hover:scale-110"
-                              >
-                                <PlayCircle size={18} />
-                              </div>
                             </div>
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
+
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         )}
