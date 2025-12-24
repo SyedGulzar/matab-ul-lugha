@@ -512,9 +512,6 @@ const App: React.FC = () => {
           onClick={() => setCurrentView('practice')}
         />
 
-        {/* Logout Button */}
-        <LogoutButton onLogout={handleLogout} />
-
       </div>
       {/* ---------------------------------- */}
 
@@ -561,7 +558,6 @@ const App: React.FC = () => {
       </div>
       {/* --------------------------- */}
 
-      {/* Header */}
       <header className="bg-[#E6DEC8]/95 dark:bg-slate-900/90 border-b border-[#5D4037]/10 dark:border-amber-500/20 sticky top-0 z-40 shadow-sm backdrop-blur-md bg-opacity-95 transition-colors duration-500">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center gap-4">
@@ -1477,6 +1473,12 @@ const App: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* Logout Button - Bottom Right Fixed */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <LogoutButton onLogout={handleLogout} />
+      </div>
+
     </div>
   );
 };
