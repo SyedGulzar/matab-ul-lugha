@@ -4,10 +4,21 @@ import { generateGrammarPractice, scoreWriting, WritingScore } from './services/
 import { QuizSession, UserAnswers } from './types';
 import { QuestionCard } from './components/QuestionCard';
 import { Button } from './components/Button';
+import { Login } from './components/Login';
 import { BookOpen, GraduationCap, RefreshCw, Trophy, ChevronDown, X, Flame, Search, Moon, Sun, Camera, CheckCircle, XCircle, Library, PenTool, PlayCircle, Bold, Italic, List, Underline, Eraser, Circle } from 'lucide-react';
 import html2canvas from 'html2canvas';
 
 const App: React.FC = () => {
+  // User State
+  const [username, setUsername] = useState<string | null>(() => {
+    return localStorage.getItem('grammarAppUsername');
+  });
+
+  const handleLogin = (user: string) => {
+    localStorage.setItem('grammarAppUsername', user);
+    setUsername(user);
+  };
+
   // Theme State - Default to DARK (true)
   const [isDarkMode, setIsDarkMode] = useState(() => {
     try {
@@ -468,6 +479,10 @@ const App: React.FC = () => {
       </div>
     );
   };
+
+  if (!username) {
+    return <Login onLogin={handleLogin} />;
+  }
 
   return (
     <div className="min-h-screen pb-20 selection:bg-[#8D6E63] dark:selection:bg-amber-900 selection:text-[#F0EAD6] dark:selection:text-amber-400">
