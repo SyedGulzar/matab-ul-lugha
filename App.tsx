@@ -5,7 +5,6 @@ import { QuizSession, UserAnswers } from './types';
 import { QuestionCard } from './components/QuestionCard';
 import { Button } from './components/Button';
 import { Login } from './components/Login';
-import { LogoutButton } from './components/LogoutButton';
 import { BookOpen, GraduationCap, RefreshCw, Trophy, ChevronDown, X, Flame, Search, Moon, Sun, Camera, CheckCircle, XCircle, Library, PenTool, PlayCircle, Bold, Italic, List, Underline, Eraser, Circle } from 'lucide-react';
 import html2canvas from 'html2canvas';
 
@@ -18,11 +17,6 @@ const App: React.FC = () => {
   const handleLogin = (user: string) => {
     localStorage.setItem('grammarAppUsername', user);
     setUsername(user);
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem('grammarAppUsername');
-    setUsername(null);
   };
 
   // Theme State - Default to DARK (true)
@@ -1473,11 +1467,6 @@ const App: React.FC = () => {
           </div>
         </div>
       )}
-
-      {/* Logout Button - Bottom Right Fixed */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <LogoutButton onLogout={handleLogout} />
-      </div>
 
     </div>
   );
