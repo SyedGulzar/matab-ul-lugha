@@ -512,6 +512,9 @@ const App: React.FC = () => {
           onClick={() => setCurrentView('practice')}
         />
 
+        {/* Logout Button */}
+        <LogoutButton onLogout={handleLogout} />
+
       </div>
       {/* ---------------------------------- */}
 
@@ -601,9 +604,6 @@ const App: React.FC = () => {
 
           <div className="flex items-center gap-4 mr-10 sm:mr-16">
             {/* Added Margin Right to account for the Rope */}
-
-            {/* Logout Button */}
-            <LogoutButton onLogout={handleLogout} />
 
             {/* Screenshot Button */}
             <button
