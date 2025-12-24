@@ -10,34 +10,11 @@ export const LogoutButton: React.FC<LogoutButtonProps> = ({ onLogout }) => {
         <div className="relative group flex items-center">
             <button
                 onClick={onLogout}
-                className="relative w-16 h-16 flex items-center justify-center focus:outline-none z-20"
+                className="group relative flex items-center justify-center w-16 h-16 rounded-full bg-[#E6DEC8] dark:bg-slate-800 border-4 border-[#4A3728]/40 dark:border-amber-500/40 text-[#4A3728] dark:text-amber-500 hover:bg-[#4A3728] dark:hover:bg-amber-600 hover:text-[#E6DEC8] dark:hover:text-slate-900 transition-all duration-300 shadow-sm hover:shadow-[0_0_15px_rgba(74,55,40,0.3)] dark:hover:shadow-[0_0_15px_rgba(245,158,11,0.3)] z-20"
                 title="Logout"
             >
-                {/* Geometric Background (Rub el Hizb) */}
-                <div className="absolute inset-0 transition-transform duration-300 group-hover:scale-105">
-                    <svg
-                        viewBox="0 0 100 100"
-                        className="w-full h-full drop-shadow-md filter transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(74,55,40,0.6)] dark:group-hover:drop-shadow-[0_0_10px_rgba(245,158,11,0.6)]"
-                    >
-                        {/* Using a group to center and rotate */}
-                        <g transform="translate(50 50)">
-                            {/* Square 1 */}
-                            <rect
-                                x="-32" y="-32" width="64" height="64" rx="4"
-                                className="transition-all duration-300 stroke-2 fill-[#E6DEC8] dark:fill-slate-800 stroke-[#8D6E63] dark:stroke-slate-600 group-hover:stroke-[#4A3728] dark:group-hover:stroke-amber-500"
-                            />
-                            {/* Square 2 (Rotated) */}
-                            <rect
-                                x="-32" y="-32" width="64" height="64" rx="4" transform="rotate(45)"
-                                className="transition-all duration-300 stroke-2 fill-[#E6DEC8] dark:fill-slate-800 stroke-[#8D6E63] dark:stroke-slate-600 group-hover:stroke-[#4A3728] dark:group-hover:stroke-amber-500"
-                            />
-                        </g>
-                    </svg>
-                </div>
-
-                {/* Icons */}
-                <DoorClosed className="relative z-10 transition-all duration-300 transform scale-100 group-hover:scale-0 opacity-100 group-hover:opacity-0 text-[#8D6E63] dark:text-gray-400 group-hover:text-[#4A3728] dark:group-hover:text-amber-400" size={24} />
-                <DoorOpen className="relative z-10 absolute transition-all duration-300 transform scale-0 group-hover:scale-100 opacity-0 group-hover:opacity-100 text-[#8D6E63] dark:text-gray-400 group-hover:text-[#4A3728] dark:group-hover:text-amber-400" size={24} />
+                <DoorClosed className="absolute transition-all duration-300 transform scale-100 group-hover:scale-0 opacity-100 group-hover:opacity-0" size={24} />
+                <DoorOpen className="absolute transition-all duration-300 transform scale-0 group-hover:scale-100 opacity-0 group-hover:opacity-100" size={24} />
             </button>
 
             {/* Label - Premium Plaque Style (Tooltip on LEFT) */}
