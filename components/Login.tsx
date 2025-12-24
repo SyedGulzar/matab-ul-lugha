@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BookOpen, User } from 'lucide-react';
+import { VALID_USERNAMES } from '../constants';
 
 interface LoginProps {
     onLogin: (username: string) => void;
@@ -11,11 +12,19 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if (!inputUsername.trim()) {
+        const trimmedUsername = inputUsername.trim();
+
+        if (!trimmedUsername) {
             setError('Please enter a username to continue.');
             return;
         }
-        onLogin(inputUsername.trim());
+
+        if (!VALID_USERNAMES.includes(trimmedUsername)) {
+            setError('Access Denied: Invalid Username.');
+            return;
+        }
+
+        onLogin(trimmedUsername);
     };
 
     return (

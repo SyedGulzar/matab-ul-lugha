@@ -22,6 +22,15 @@ export const DIFFICULTY_LEVELS: DifficultyLevel[] = [
   'Class 12'
 ];
 
+export const VALID_USERNAMES = [
+  'ZH_Designing',
+  'AJ_Speaking',
+  'AR_Learning',
+  'MS_Looking',
+  'AH_Coding',
+  'Admin_141225'
+];
+
 export const TOPIC_CATEGORIES: Record<string, TopicItem[]> = {
   "Parts of Speech (Nouns/Pronouns)": [
     { name: "Basic Concepts", time: "45 mins", videoUrl: "https://www.youtube.com/watch?v=YiAC2UckEx0&list=PLl0gj7VYsUWeeIEofDADaAYpAmbN3MIqT&index=1" },
