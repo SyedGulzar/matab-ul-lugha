@@ -5,6 +5,7 @@ import { QuizSession, UserAnswers } from './types';
 import { QuestionCard } from './components/QuestionCard';
 import { Button } from './components/Button';
 import { Login } from './components/Login';
+import { LogoutButton } from './components/LogoutButton';
 import { BookOpen, GraduationCap, RefreshCw, Trophy, ChevronDown, X, Flame, Search, Moon, Sun, Camera, CheckCircle, XCircle, Library, PenTool, PlayCircle, Bold, Italic, List, Underline, Eraser, Circle } from 'lucide-react';
 import html2canvas from 'html2canvas';
 
@@ -17,6 +18,11 @@ const App: React.FC = () => {
   const handleLogin = (user: string) => {
     localStorage.setItem('grammarAppUsername', user);
     setUsername(user);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('grammarAppUsername');
+    setUsername(null);
   };
 
   // Theme State - Default to DARK (true)
@@ -552,6 +558,7 @@ const App: React.FC = () => {
       </div>
       {/* --------------------------- */}
 
+      {/* Header */}
       <header className="bg-[#E6DEC8]/95 dark:bg-slate-900/90 border-b border-[#5D4037]/10 dark:border-amber-500/20 sticky top-0 z-40 shadow-sm backdrop-blur-md bg-opacity-95 transition-colors duration-500">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center gap-4">
@@ -1467,6 +1474,9 @@ const App: React.FC = () => {
           </div>
         </div>
       )}
+      <div className="fixed bottom-6 right-6 z-50">
+        <LogoutButton onLogout={handleLogout} />
+      </div>
 
     </div>
   );
