@@ -1,0 +1,72 @@
+/**
+ * Articles - 60 Questions
+ */
+import { QuestionType } from '../../../types';
+import type { OfflineQuestion } from '../../offlineQuestionBank';
+
+export const ARTICLES: OfflineQuestion[] = [
+    // Indefinite Articles (A/An)
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: 'I saw ___ elephant.', options: ['a', 'an', 'the', 'no article'], correctAnswer: 'an', explanation: 'An before vowel sounds.' },
+    { type: QuestionType.FILL_IN_BLANK, questionText: 'She is ___ honest girl.', correctAnswer: 'an', explanation: 'Honest starts with vowel sound (silent H).' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: 'He is ___ European.', options: ['a', 'an', 'the', 'no article'], correctAnswer: 'a', explanation: 'European starts with /j/ (consonant sound).' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: 'I bought ___ umbrella.', options: ['a', 'an', 'the', 'no article'], correctAnswer: 'an', explanation: 'Umbrella starts with vowel sound.' },
+    { type: QuestionType.FILL_IN_BLANK, questionText: 'He is ___ university student.', correctAnswer: 'a', explanation: 'University starts with /j/ sound.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: 'It took ___ hour to finish.', options: ['a', 'an', 'the', 'no article'], correctAnswer: 'an', explanation: 'Hour has silent H.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: 'There is ___ one-eyed man.', options: ['a', 'an', 'the', 'no article'], correctAnswer: 'a', explanation: 'One starts with /w/ sound.' },
+    { type: QuestionType.FILL_IN_BLANK, questionText: 'She gave ___ useful suggestion.', correctAnswer: 'a', explanation: 'Useful starts with /j/ sound.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: 'He is ___ MLA.', options: ['a', 'an', 'the', 'no article'], correctAnswer: 'an', explanation: 'M is pronounced /em/.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: 'I need ___ X-ray.', options: ['a', 'an', 'the', 'no article'], correctAnswer: 'an', explanation: 'X is pronounced /eks/.' },
+    { type: QuestionType.FILL_IN_BLANK, questionText: 'Rome was not built in ___ day.', correctAnswer: 'a', explanation: 'Day starts with consonant.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: 'What ___ beautiful flower!', options: ['a', 'an', 'the', 'no article'], correctAnswer: 'a', explanation: 'Exclamatory: What a + noun.' },
+    // Definite Article (The)
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: '___ sun rises in the east.', options: ['A', 'An', 'The', 'No article'], correctAnswer: 'The', explanation: 'The for unique things.' },
+    { type: QuestionType.FILL_IN_BLANK, questionText: '___ Himalayas are in Asia.', correctAnswer: 'The', explanation: 'The with mountain ranges.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: '___ Indus is a river.', options: ['A', 'An', 'The', 'No article'], correctAnswer: 'The', explanation: 'The with river names.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: '___ Pacific Ocean is vast.', options: ['A', 'An', 'The', 'No article'], correctAnswer: 'The', explanation: 'The with oceans.' },
+    { type: QuestionType.FILL_IN_BLANK, questionText: 'He is ___ tallest boy in class.', correctAnswer: 'the', explanation: 'The with superlatives.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: 'I met ___ girl who helped me.', options: ['a', 'an', 'the', 'no article'], correctAnswer: 'the', explanation: 'The for specific mention.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: '___ earth moves around the sun.', options: ['A', 'An', 'The', 'No article'], correctAnswer: 'The', explanation: 'The for unique celestial bodies.' },
+    { type: QuestionType.FILL_IN_BLANK, questionText: 'He plays ___ piano.', correctAnswer: 'the', explanation: 'The with musical instruments.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: '___ poor need our help.', options: ['A', 'An', 'The', 'No article'], correctAnswer: 'The', explanation: 'The + adjective = whole class.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: '___ Quran is the holy book.', options: ['A', 'An', 'The', 'No article'], correctAnswer: 'The', explanation: 'The with religious books.' },
+    // Zero Article (No Article)
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: '___ gold is precious.', options: ['A', 'An', 'The', 'No article'], correctAnswer: 'No article', explanation: 'No article with uncountable in general.' },
+    { type: QuestionType.FILL_IN_BLANK, questionText: '___ honesty is the best policy.', correctAnswer: 'No article', explanation: 'Abstract nouns in general.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: 'I go to ___ school every day.', options: ['a', 'an', 'the', 'no article'], correctAnswer: 'no article', explanation: 'School as institution.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: '___ breakfast is ready.', options: ['A', 'An', 'The', 'No article'], correctAnswer: 'No article', explanation: 'Meals without article.' },
+    { type: QuestionType.FILL_IN_BLANK, questionText: 'She speaks ___ English well.', correctAnswer: 'no article', explanation: 'Languages without article.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: '___ Pakistan is a beautiful country.', options: ['A', 'An', 'The', 'No article'], correctAnswer: 'No article', explanation: 'Most countries without the.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: 'I like ___ music.', options: ['a', 'an', 'the', 'no article'], correctAnswer: 'no article', explanation: 'General concept.' },
+    { type: QuestionType.FILL_IN_BLANK, questionText: '___ life is short.', correctAnswer: 'No article', explanation: 'Abstract in general.' },
+    // Pakistani Context
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: '___ Principal called a meeting.', options: ['A', 'An', 'The', 'No article'], correctAnswer: 'The', explanation: 'The with titles.' },
+    { type: QuestionType.FILL_IN_BLANK, questionText: 'I visited ___ Badshahi Mosque.', correctAnswer: 'the', explanation: 'The with specific monuments.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: '___ Jinnah Tower is in Karachi.', options: ['A', 'An', 'The', 'No article'], correctAnswer: 'No article', explanation: 'No article if name contains place.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: '___ Arabian Sea is near Karachi.', options: ['A', 'An', 'The', 'No article'], correctAnswer: 'The', explanation: 'The with seas.' },
+    { type: QuestionType.FILL_IN_BLANK, questionText: 'He is ___ best cricketer in Pakistan.', correctAnswer: 'the', explanation: 'The with superlatives.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: 'I eat ___ biryani on Fridays.', options: ['a', 'an', 'the', 'no article'], correctAnswer: 'no article', explanation: 'Food items in general.' },
+    // Mixed Practice
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: 'She is ___ engineer.', options: ['a', 'an', 'the', 'no article'], correctAnswer: 'an', explanation: 'Engineer starts with vowel.' },
+    { type: QuestionType.FILL_IN_BLANK, questionText: 'I have ___ headache.', correctAnswer: 'a', explanation: 'A with illnesses.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: 'He goes to ___ church on Sundays.', options: ['a', 'an', 'the', 'no article'], correctAnswer: 'no article', explanation: 'As institution for purpose.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: '___ Mount Everest is highest.', options: ['A', 'An', 'The', 'No article'], correctAnswer: 'No article', explanation: 'Most single peaks without the.' },
+    { type: QuestionType.FILL_IN_BLANK, questionText: 'She is ___ only child.', correctAnswer: 'the', explanation: 'The with only.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: '___ English is spoken here.', options: ['A', 'An', 'The', 'No article'], correctAnswer: 'No article', explanation: 'Languages without article.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: 'I saw ___ accident yesterday.', options: ['a', 'an', 'the', 'no article'], correctAnswer: 'an', explanation: 'First mention = a/an.' },
+    { type: QuestionType.FILL_IN_BLANK, questionText: '___ accident was terrible.', correctAnswer: 'The', explanation: 'Second mention = the.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: 'He is ___ M.A. in English.', options: ['a', 'an', 'the', 'no article'], correctAnswer: 'an', explanation: 'M pronounced /em/.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: '___ Lahore is a historic city.', options: ['A', 'An', 'The', 'No article'], correctAnswer: 'No article', explanation: 'City names without article.' },
+    { type: QuestionType.FILL_IN_BLANK, questionText: 'I bought ___ new phone last week.', correctAnswer: 'a', explanation: 'First mention = a.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: '___ phone is very good.', options: ['A', 'An', 'The', 'No article'], correctAnswer: 'The', explanation: 'Second mention = the.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: 'She works as ___ teacher.', options: ['a', 'an', 'the', 'no article'], correctAnswer: 'a', explanation: 'Profession = a/an.' },
+    { type: QuestionType.FILL_IN_BLANK, questionText: 'I had ___ egg for breakfast.', correctAnswer: 'an', explanation: 'Egg starts with vowel.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: '___ United States is large.', options: ['A', 'An', 'The', 'No article'], correctAnswer: 'The', explanation: 'The with plural countries.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: '___ Alps are in Europe.', options: ['A', 'An', 'The', 'No article'], correctAnswer: 'The', explanation: 'The with mountain ranges.' },
+    { type: QuestionType.FILL_IN_BLANK, questionText: 'He went to ___ hospital.', correctAnswer: 'the', explanation: 'The to visit someone there.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: 'She is in ___ hospital.', options: ['a', 'an', 'the', 'no article'], correctAnswer: 'no article', explanation: 'As patient (institution use).' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: '___ Japanese are hardworking.', options: ['A', 'An', 'The', 'No article'], correctAnswer: 'The', explanation: 'The + nationality = people.' },
+    { type: QuestionType.FILL_IN_BLANK, questionText: 'This is ___ same book I wanted.', correctAnswer: 'the', explanation: 'The with same.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: 'She got ___ first prize.', options: ['a', 'an', 'the', 'no article'], correctAnswer: 'the', explanation: 'The with ordinals.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: 'We had ___ lunch together.', options: ['a', 'an', 'the', 'no article'], correctAnswer: 'no article', explanation: 'Meals without article.' },
+    { type: QuestionType.FILL_IN_BLANK, questionText: '___ lunch you made was delicious.', correctAnswer: 'The', explanation: 'Specific meal.' },
+];

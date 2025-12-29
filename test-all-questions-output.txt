@@ -1,0 +1,1148 @@
+
+[1m[46m RUN [49m[22m [36mv4.0.16 [39m[90mG:/Mr.R/Work/Software/maktab-al-kalam[39m
+
+ [31mΓ¥»[39m tests/questions/allQuestions.test.ts [2m([22m[2m1071 tests[22m[2m | [22m[31m4 failed[39m[2m)[22m[33m 653[2mms[22m[39m
+         [32mΓ£ô[39m should have at least one question[32m 2[2mms[22m[39m
+         [32mΓ£ô[39m Question 1: "She ___ to school every day...." should have valid structure[32m 2[2mms[22m[39m
+         [32mΓ£ô[39m Question 2: "They ___ football on weekends...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 3: "The sun ___ (rise) in the east...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 4: "He ___ not like coffee...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 5: "___ you speak English?..." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 6: "My mother ___ (cook) dinner every evening...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 7: "The train ___ at 9 AM daily...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 8: "Water ___ at 100 degrees Celsius...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 9: "Ahmed ___ to Karachi Grammar School every day...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 10: "Clifton Beach ___ (attract) many visitors...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 11: "Fatima ___ biryani very well...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 12: "The shopkeeper ___ fresh fruits...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 13: "My father ___ (work) in a bank in Saddar...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 14: "Students ___ Urdu and English at school...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 15: "___ Ali pray five times a day?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 16: "The rickshaw ___ (cost) less than a taxi...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 17: "She ___ her homework after school...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 18: "The cat ___ milk...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 19: "My brother ___ (watch) TV every night...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 20: "She ___ to the gym daily...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 21: "We ___ not eat meat...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 22: "He ___ (not like) spicy food...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 23: "They ___ not work on Fridays...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 24: "She ___ not speak French...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 25: "___ your father work in Lahore?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 26: "Where ___ you live?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 27: "What time ___ the shop open?..." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 28: "How often ___ she visit her grandparents?..." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 29: "He ___ arrives late...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 30: "She ___ (usually/eat) breakfast at 7 AM...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 31: "We ___ go to the masjid on Fridays...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 32: "The Earth ___ around the Sun...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 33: "Doctors ___ (help) sick people...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 34: "My sister ___ in Islamabad...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 35: "The children ___ to school by bus...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m all questions should have non-empty explanations[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 1: "She ___ a book right now...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 2: "They ___ (watch) TV at the moment...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 3: "I ___ to music currently...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 4: "Look! The baby ___...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 5: "He ___ (work) on a project this week...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 6: "We ___ for the bus...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 7: "___ she sleeping?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 8: "The children ___ (play) in the garden...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 9: "Ali ___ namaz in the masjid...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 10: "Ammi ___ (make) biryani for Eid dinner...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 11: "The students ___ Quran recitation...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 12: "Baba ___ the newspaper right now...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 13: "The rickshaw ___ (wait) outside...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 14: "We ___ for the Azan...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 15: "She ___ not sleeping...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 16: "They ___ (not play) cricket today...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 17: "I ___ not working today...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 18: "He ___ not listening to me...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 19: "What ___ you doing?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 20: "___ he studying for exams?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 21: "Where ___ they going?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 22: "Why ___ she crying?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 23: "He ___ TV at the moment...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 24: "Currently, I ___ (learn) Python...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 25: "Listen! Someone ___...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 26: "This week, we ___ history...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 27: "She is ___ (run) in the park...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 28: "He is ___ (swim) in the pool...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 29: "They are ___ (write) a letter...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 30: "I am ___ (make) tea...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 31: "The phone ___. Answer it!..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 32: "My parents ___ dinner...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 33: "The teacher ___ (explain) the lesson...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 34: "It ___ outside. Take an umbrella!..." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 35: "The boys ___ in the street...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m all questions should have non-empty explanations[32m 2[2mms[22m[39m
+         [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 1: "I ___ this movie before...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 2: "She ___ (finish) her homework...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 3: "They ___ to Paris three times...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 4: "He ___ lived here since 2010...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 5: "We ___ (not eat) lunch yet...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 6: "___ you ever visited London?..." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 7: "She has ___ the dishes...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 8: "I ___ (know) him for ten years...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 9: "I ___ visited Minar-e-Pakistan...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 10: "She ___ (learn) the Quran by heart...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 11: "We ___ always loved cricket...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 12: "He ___ performed Umrah twice...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 13: "They ___ (live) in Lahore since childhood...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 14: "Pakistan ___ won the Cricket World Cup...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 15: "I have ___ finished my work...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 16: "Have you finished your homework ___?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 17: "She has ___ left the office...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 18: "I haven't seen that movie ___...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 19: "Have you ___ been to Dubai?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 20: "I have ___ eaten sushi...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 21: "She has ___ failed an exam...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 22: "This is the best biryani I have ___ tasted...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 23: "I have lived here ___ 2015...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 24: "She has worked there ___ five years...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 25: "We have known each other ___ childhood...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 26: "They have been married ___ 20 years...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 27: "___ she completed her assignment?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 28: "How long ___ you lived here?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 29: "Where ___ he gone?..." should have valid structure[32m 9[2mms[22m[39m
+         [32mΓ£ô[39m Question 30: "Why ___ they left so early?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 31: "The bus ___ already left...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 32: "I ___ (not see) Zara today...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 33: "Someone ___ eaten my lunch!..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 34: "We ___ decided to go to Murree...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 35: "He ___ (break) his leg...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m all questions should have non-empty explanations[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 1: "She ___ for two hours...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 2: "I ___ (wait) since morning...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 3: "They ___ here for five years...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 4: "He ___ all day...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 5: "She ___ (read) this book for a week...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 6: "We ___ for the bus since 8 AM...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 7: "It ___ since morning...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 8: "I ___ (learn) English for three years...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 9: "How long ___ you been waiting?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 10: "He ___ since childhood...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 11: "They ___ (build) this masjid for six months...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 12: "Why ___ she been crying?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 13: "I ___ about this problem all day...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 14: "She ___ (cook) since 4 PM...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 15: "We ___ our exams for a month...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m all questions should have non-empty explanations[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 1: "I ___ to Paris last year...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 2: "She ___ (watch) a movie yesterday...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 3: "They ___ not come to the party...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 4: "He ___ the book in one day...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 5: "We ___ (play) football last Sunday...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 6: "___ you see the accident?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 7: "She ___ her keys at home...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 8: "The meeting ___ (start) at 9 AM...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 9: "We ___ the Pakistan Day parade last year...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 10: "Allama Iqbal ___ (write) famous poetry...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 11: "She ___ to Lahore by train yesterday...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 12: "The team ___ the cricket match...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 13: "My grandmother ___ (make) delicious halwa...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 14: "Imran ___ not go to the masjid...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 15: "They ___ their Eid clothes yesterday...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 16: "The children ___ (play) cricket in the gali...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 17: "She ___ breakfast at 7 AM...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 18: "He ___ (write) a letter to his friend...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 19: "I ___ a beautiful dream...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 20: "They ___ the bus this morning...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 21: "She ___ (give) me a gift...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 22: "The dog ___ loudly...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 23: "She ___ not like the food...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 24: "We ___ (not go) to school yesterday...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 25: "He ___ not study for the exam...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 26: "They ___ not finish on time...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 27: "___ she call you yesterday?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 28: "Where ___ you go last weekend?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 29: "What ___ he say?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 30: "When ___ they arrive?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 31: "The phone ___ while I was cooking...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 32: "I ___ (meet) her at the bazaar...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 33: "She ___ her bag in the taxi...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 34: "We ___ to Islamabad last month...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 35: "The teacher ___ (give) us homework...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m all questions should have non-empty explanations[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 1: "I ___ when you called...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 2: "They ___ (watch) TV at 8 PM yesterday...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 3: "She ___ while I was cooking...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 4: "The children ___ in the park...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 5: "He ___ (read) when the lights went out...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 6: "What ___ you doing at 6 PM?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 7: "It ___ raining when I left...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 8: "We ___ (wait) for the bus when it started snowing...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 9: "Ali ___ namaz when the phone rang...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 10: "Ammi ___ (cook) biryani when I came home...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 11: "The students ___ Quran when the teacher arrived...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 12: "The rickshaw driver ___ for customers...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 13: "We ___ (shop) in Saddar when we met Zara...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 14: "The children ___ cricket in the gali all evening...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 15: "___ she was sleeping, someone knocked...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 16: "While I ___ (study), the power went out...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 17: "When the accident happened, I ___ home...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 18: "While we ___ dinner, the doorbell rang...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 19: "She ___ not sleeping when I called...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 20: "They ___ (not listen) to the teacher...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 21: "I ___ not working at that time...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 22: "We ___ not watching TV then...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 23: "___ you studying at 10 PM?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 24: "What ___ she doing when you arrived?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 25: "Where ___ they going at midnight?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 26: "Why ___ he crying?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 27: "While I ___ cooking, he was reading...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 28: "She ___ (talk) while I ___ (eat)...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 29: "The kids ___ playing while their parents ___...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 30: "I ___ TV while she ___ homework...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 31: "The sun ___ when we woke up...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 32: "Everyone ___ (dance) at the mehndi...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 33: "The traffic ___ very slowly...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 34: "She ___ loudly during the movie...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 35: "We ___ (have) iftar when the call came...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m all questions should have non-empty explanations[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 1: "She ___ finished before I arrived...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 2: "I ___ (eat) when he came...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 3: "They ___ already left when we reached...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 4: "He ___ never seen snow before...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 5: "The train ___ (leave) before we arrived...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 6: "I realized I ___ forgotten my wallet...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 7: "By the time she called, I ___ completed my work...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 8: "We ___ (study) Quran before going to madrasa...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 9: "After he ___ finished eating, he left...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 10: "She wished she ___ studied harder...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 11: "If I ___ (know), I would have helped...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 12: "I ___ never been to Lahore before 2020...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 13: "By sunset, we ___ finished the work...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 14: "They ___ (not eat) when I called them...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 15: "___ you finished before the bell rang?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 16: "I felt tired because I ___ worked all day...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 17: "She told me she ___ (see) that movie...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 18: "When I reached, everyone ___ left...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 19: "After Eid prayers, we ___ already eaten sehri...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 20: "I ___ (never travel) by plane before yesterday...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m all questions should have non-empty explanations[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 1: "She ___ for two hours before I arrived...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 2: "I ___ (wait) for an hour when he came...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 3: "They ___ for five years before they moved...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 4: "He ___ all day before he got sick...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 5: "She ___ (read) for hours when I interrupted...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 6: "We ___ since morning when it stopped...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 7: "It ___ for hours before the flood...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 8: "I ___ (learn) French before I went to Paris...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 9: "How long ___ you been waiting when the bus came?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 10: "He ___ for years before he won...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 11: "They ___ (work) on the project before it was cance..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 12: "She was tired because she ___...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 13: "I ___ about the problem before I found the answer...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 14: "She ___ (cook) for hours before guests arrived...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 15: "We ___ for a month before we passed...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m all questions should have non-empty explanations[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 1: "She ___ you tomorrow...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 2: "I ___ (help) you with your homework...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 3: "They ___ not come to the party...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 4: "___ you be at the meeting?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 5: "He ___ (arrive) at 5 PM...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 6: "I think it ___ rain tomorrow...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 7: "We ___ visit you next week...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 8: "She ___ (not forget) your birthday...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 9: "We ___ celebrate Eid next month...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 10: "The flight to Islamabad ___ (depart) at 8 PM...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 11: "Amina ___ become a doctor InshaAllah...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 12: "I ___ visit my grandparents in Hyderabad...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 13: "Pakistan ___ (win) the match, InshaAllah...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 14: "___ you attend the mehndi ceremony?..." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 15: "The new metro line ___ open next year...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 16: "They ___ (not forget) to bring samosas...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 17: "___ I open the window?..." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 18: "___ we go to the park?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 19: "I ___ help you carry that...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 20: "___ I turn on the fan?..." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 21: "I ___ not be late...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 22: "She ___ (not come) to the party...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 23: "They ___ not finish on time...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 24: "He ___ not accept this offer...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 25: "___ she come to the wedding?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 26: "When ___ they arrive?..." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 27: "Where ___ you go for vacation?..." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 28: "What ___ happen next?..." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 29: "The sun ___ rise at 6 AM tomorrow...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 30: "I ___ (call) you after iftar...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 31: "She ___ be happy to see you...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 32: "We ___ remember this day forever...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 33: "The exam ___ (start) at 9 AM...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 34: "InshaAllah, he ___ recover soon...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 35: "I promise I ___ be there on time...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m all questions should have non-empty explanations[32m 2[2mms[22m[39m
+         [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 1: "This time tomorrow, I ___ studying...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 2: "She ___ (wait) for you at 5 PM...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 3: "At 8 PM, they ___ having iftar...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 4: "Next week, I ___ traveling to Karachi...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 5: "He ___ (work) on the project all day...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 6: "Don't call at 2 PM. I ___ sleeping...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 7: "This time next year, she ___ studying abroad...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 8: "At 9 AM, students ___ (take) exams...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 9: "___ you be working late tonight?..." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 10: "Tomorrow at this hour, we ___ flying to Dubai...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m all questions should have non-empty explanations[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 1: "By next year, I ___ graduated...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 2: "She ___ (finish) by 5 PM...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 3: "By Eid, I ___ completed my Quran recitation...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 4: "They ___ left by the time you arrive...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 5: "By 2030, Pakistan ___ (build) many new roads...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 6: "He ___ learned English by next month...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 7: "By midnight, she ___ worked for 12 hours...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 8: "I ___ (read) 50 books by December...." should have valid structure[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 9: "___ you have finished by then?..." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 10: "By the time he retires, he ___ served for 40 years..." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m all questions should have non-empty explanations[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m Question 1: "By next month, I ___ here for a year...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 2: "By 5 PM, she ___ (wait) for three hours...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 3: "They ___ for ten years by December...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 4: "By evening, he ___ all day...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 5: "By next week, I ___ (read) this book for a month...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 6: "By noon, we ___ for six hours...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 7: "By tomorrow, it ___ for a week...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 8: "By next year, I ___ (learn) English for five years..." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 9: "How long ___ you have been waiting by then?..." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 10: "By 2030, he ___ cricket for 20 years...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 11: "By the time you arrive, I ___ (cook) for two hours..." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 12: "By graduation, she ___ for four years...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 13: "By the end of the day, I ___ about this...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 14: "By 10 PM, she ___ (work) for 12 hours...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m Question 15: "By next Friday, we ___ this show for a month...." should have valid structure[32m 1[2mms[22m[39m
+         [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+         [32mΓ£ô[39m all questions should have non-empty explanations[32m 1[2mms[22m[39m
+     [32mΓ£ô[39m should have comprehensive tense coverage with at least 100 total tense questions[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 1: ""Karachi" is a ___ noun...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 2: ""Happiness" is a ___ noun...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 3: ""Gold" is a ___ noun...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 4: ""Army" is a ___ noun...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 5: ""Boy" is a ___ noun...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 6: ""Allama Iqbal" is a ___ noun...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 7: ""Honesty" is a ___ noun...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 8: ""Team" is a ___ noun...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 9: "Which is uncountable?..." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 10: "Which is countable?..." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 11: "I need ___ water. (a/some)..." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 12: "How ___ rice do you want?..." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 13: "How ___ books do you have?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 14: "There is ___ milk in the glass. (a little/a few)..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 15: "I have ___ homework today...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 16: "She has ___ friends...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 17: "The plural of "child" is ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 18: "The plural of "man" is ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 19: "The plural of "tooth" is ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 20: "The plural of "mouse" is ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 21: "The plural of "foot" is ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 22: "The plural of "sheep" is ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 23: "The plural of "fish" is usually ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 24: "The plural of "knife" is ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 25: "The plural of "leaf" is ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 26: "The plural of "baby" is ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 27: "A ___ of bees flew away...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 28: "A ___ of lions is called?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 29: "A ___ of cows is grazing...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 30: "A ___ of birds flew overhead...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 31: "A ___ of wolves hunted together...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 32: "A ___ of ships sailed away...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 33: "A ___ of grapes was on the table...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 34: "A ___ of actors performed the play...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 35: ""Pakistan" is a ___ noun...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 36: ""Biryani" is a ___ noun...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 37: ""The Pakistan cricket team" has the collective nou..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 38: ""Lahore Fort" is a ___ noun...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 39: ""Faith" (Iman) is a ___ noun...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 40: ""Indus River" is a ___ noun...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 41: "The boy's book = The book of the ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 42: "The ___ toys were scattered...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 43: "My ___ car is new. (father)..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 44: "The ___ wings are beautiful...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 45: "The ___ meeting was long. (teachers)..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 46: "Which word is a noun?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 47: "Which is NOT a noun?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 48: "Identify the noun: "The teacher gave homework." - ..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 49: "The jury ___ unanimous...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 50: "The committee ___ decided...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m all questions should have non-empty explanations[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 1: "___ is my friend...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 2: "I saw ___ at the market. (she)..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 3: "Give the book to ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 4: "___ are going to the masjid...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 5: "This is ___ book. (I)..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 6: "This pen is ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 7: "The book is ___. (they)..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 8: "Is this book ___?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 9: "The house is ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 10: "I did it ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 11: "She hurt ___. (she)..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 12: "They enjoyed ___ at the party...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 13: "The cat cleaned ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 14: "___ is your name?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 15: "___ is coming to the party?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 16: "___ did you give the book?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 17: "___ pen is this?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 18: "___ of these books do you want?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 19: "The boy ___ won is Ali...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 20: "The book ___ I read was good...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 21: "The girl ___ bag was stolen cried...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 22: "The man ___ I met was kind...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 23: "___ is knocking at the door...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 24: "Is there ___ in the room?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 25: "___ is ready for the exam...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 26: "I have ___ to tell you...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 27: "There is ___ in the fridge...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 28: "Ahmed and ___ went to masjid...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 29: "Fatima made biryani ___. (she)..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 30: "___ of you has done the homework?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m all questions should have non-empty explanations[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 1: "The ___ cat sat on the mat...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 2: "She is a ___ singer...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 3: "The ___ book was on the table...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 4: "The food tastes ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 5: "He felt ___ after the exam...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 6: "This is the ___ (tall) building in Karachi...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 7: "My car is ___ than yours...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 8: "This book is more ___ than that one...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 9: "She is the ___ (intelligent) student in class...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 10: "Ali is ___ than Ahmed...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 11: "Mount Everest is the ___ (high) mountain...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 12: "This is the ___ movie I have ever seen...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 13: "She is ___ than her sister...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 14: "This is the ___ (bad) day of my life...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 15: "Iron is ___ than wood...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 16: "Good ΓåÆ better ΓåÆ ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 17: "Bad ΓåÆ worse ΓåÆ ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 18: "Little ΓåÆ less ΓåÆ ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 19: "Much ΓåÆ more ΓåÆ ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 20: "Far ΓåÆ farther ΓåÆ ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 21: ""This" in "This book" is a ___ adjective...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 22: ""My" in "My pen" is a ___ adjective...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 23: "Five, ten, first are ___ adjectives...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 24: ""Which" in "Which book?" is a ___ adjective...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 25: ""Each" in "Each student" is a ___ adjective...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 26: "Choose the correct order:..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 27: "Choose the correct order:..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 28: "A ___ wooden table. (round/brown)..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 29: "The biryani was very ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 30: "Karachi is a ___ city...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 31: "Pakistan has ___ mountains...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 32: "The ___ tea was refreshing...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 33: "She seems ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 34: "The flowers are ___ (beauty)...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 35: "The movie was very ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 36: "I feel ___ today...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 37: "She wore a ___ (beauty) dress...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 38: "The soup smells ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 39: "He looks ___ in that suit...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 40: "The answer is ___ (correct)...." should have valid structure[32m 0[2mms[22m[39m
+[31m       [31m├ù[31m should have no duplicate question texts[39m[32m 22[2mms[22m[39m
+       [32mΓ£ô[39m all questions should have non-empty explanations[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 1: "She sings ___...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 2: "He ran ___. (quick)..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 3: "They worked ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 4: "She speaks English ___...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 5: "He drives ___. (careful)..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 6: "I will do it ___...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 7: "She arrived ___. (yesterday/today/now)..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 8: "We met ___...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 9: "He ___ comes late...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 10: "Come ___...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 11: "She looked ___. (everywhere/always)..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 12: "The children played ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 13: "Go ___ and turn left...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 14: "I ___ eat breakfast at 7 AM...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 15: "He ___ forgets his keys. (never/quickly)..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 16: "She is ___ late...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 17: "We ___ go to the cinema...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 18: "She is ___ beautiful...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 19: "The food is ___ hot. (too/quick)..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 20: "I ___ finished my work...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 21: "He is ___ tired...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 22: "She runs ___ than me...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 23: "He speaks English ___ (well) than Ahmed...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 24: "She sings ___ of all...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 25: "He arrived ___ than expected...." should have valid structure[32m 2[2mms[22m[39m
+       [32mΓ£ô[39m Question 26: "We ___ pray five times a day...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 27: "The shopkeeper spoke ___. (polite)..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 28: "Ammi cooks biryani ___...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 29: "The rickshaw moved ___...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 30: "He recites Quran ___. (beautiful)..." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m all questions should have non-empty explanations[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 1: "The book is ___ the table...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 2: "She lives ___ Karachi...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 3: "The cat is ___ the box...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 4: "He is standing ___ the door...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 5: "The picture is ___ the wall...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 6: "The bird flew ___ the window...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 7: "The mouse ran ___ the table...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 8: "We met ___ the station...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 9: "The meeting is ___ Monday...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 10: "He arrived ___ 5 PM...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 11: "I was born ___ 1990...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 12: "School starts ___ 8 AM...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 13: "We will meet ___ the morning...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 14: "I'll finish ___ Friday...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 15: "They arrived ___ night...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 16: "The cat jumped ___ the box...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 17: "She walked ___ the bridge...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 18: "He drove ___ the tunnel...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 19: "The plane flew ___ the clouds...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 20: "The masjid is ___ the corner...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 21: "He traveled ___ Lahore ___ Karachi...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 22: "The shop is ___ MR Road...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 23: "We pray ___ Fajr...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 24: "The food is ___ the container...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 25: "I agree ___ you...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 26: "She is good ___ math...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 27: "I am afraid ___ spiders...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 28: "This book belongs ___ me...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 29: "I am interested ___ history...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 30: "She is married ___ a doctor...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 31: "I am proud ___ my country...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 32: "He is famous ___ his cooking...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 33: "She is similar ___ her mother...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 34: "I am different ___ my brother...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 35: "She apologized ___ being late...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m all questions should have non-empty explanations[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 1: "I like tea ___ coffee...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 2: "She is smart ___ lazy...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 3: "Study hard, ___ you will fail...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 4: "He was tired, ___ he continued...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 5: "It was raining, ___ I took an umbrella...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 6: "I was hungry, ___ I ate...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 7: "She doesn't eat meat ___ fish...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 8: "I will go ___ you come with me...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 9: "She stayed home ___ she was sick...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 10: "___ it rained, we went out...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 11: "I will wait ___ you come...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 12: "Call me ___ you arrive...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 13: "___ he is rich, he is not happy...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 14: "I'll help you ___ I have time...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 15: "Neither tea ___ coffee is available...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 16: "Both Ali ___ Ahmed are coming...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 17: "Either you ___ I will go...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 18: "Not only is she smart ___ also hardworking...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 19: "Whether you like it ___ not, you must go...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 20: "I fasted ___ I was tired...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 21: "We will celebrate ___ Pakistan wins...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 22: "I pray ___ I am thankful...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 23: "We eat biryani ___ korma on Eid...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 24: "I'll take tea ___ coffee, whichever is ready...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 25: "He speaks ___ he knows everything...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 26: "I came late ___ there was traffic...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 27: "___ you study, you will fail...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 28: "I will go ___ he goes...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 29: "He left ___ he finished eating...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 30: "I'll wait ___ he comes...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 31: "She sings ___ she dances...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 32: "I'll help ___ I can...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 33: "He is older ___ wiser...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 34: "I came ___ I could help...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 35: "Take notes ___ you don't forget...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m all questions should have non-empty explanations[32m 1[2mms[22m[39m
+     [32mΓ£ô[39m should cover all major parts of speech with at least 100 total questions[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 1: ""She writes a letter." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 2: "The door is ___ (open) by the guard...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 3: ""He teaches English." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 4: "Rice ___ grown in Pakistan...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 5: "English ___ (speak) in many countries...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 6: ""People speak Urdu in Pakistan." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 7: ""She is cooking biryani." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 8: "The house is being ___ (paint)...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 9: ""They are watching TV." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 10: "The road ___ being repaired now...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 11: ""She has finished the work." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 12: "The letter has been ___ (write)...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 13: ""Someone has stolen my wallet." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 14: ""He wrote a letter." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 15: "The window was ___ (break) by the children...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 16: ""They built this house in 1990." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 17: "The match ___ won by Pakistan...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 18: "The book was ___ (publish) last year...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 19: ""They were building a bridge." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 20: "The car was being ___ (repair) when I arrived...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 21: ""They will complete the work." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 22: "A new school will be ___ (build) next year...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 23: ""She will send the email." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 24: ""You must finish the work." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 25: "The rules should be ___ (follow)...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 26: ""We can solve this problem." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 27: ""Someone may help you." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 28: ""Ammi cooked biryani." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 29: "The Quran is ___ (recite) daily...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 30: ""They celebrate Eid every year." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 31: "Cricket ___ played in Pakistan...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 32: "The national anthem was ___ (sing)...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 33: ""Pakistan won the match." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 34: ""Did he write this?" - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 35: "Was the letter ___ (send)?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 36: ""Will they select him?" - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 37: ""She didn't write the letter." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 38: "The work has not been ___ (complete)...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 39: ""They won't invite us." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 40: ""Open the door." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 41: "Let the work be ___ (do)...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 42: ""Close the windows." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 43: "The cake ___ by my mother...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 44: "The building is being ___ (construct)...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 45: "English ___ taught at this school...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 46: "The homework ___ done by Ali...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 47: "The exam results will be ___ (announce) tomorrow...." should have valid structure[32m 2[2mms[22m[39m
+       [32mΓ£ô[39m Question 48: "This novel ___ written by a Pakistani author...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 49: "Help is ___ (need) urgently...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 50: "Mistakes should ___ avoided...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 51: "The guests have been ___ (invite)...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 52: "The rules must ___ followed...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 53: ""Who wrote this book?" - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 54: "The tea is being ___ (make)...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 55: "The problem ___ be solved easily...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 56: "Newspapers ___ printed daily...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 57: "The door had been ___ (lock) before we arrived...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 58: ""They are going to build a mall." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 59: "The story had been ___ (tell) before...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 60: "Medicine should ___ taken on time...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 61: "The movie ___ being shown at the cinema...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 62: "All students were ___ (give) prizes...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 63: ""People respect teachers." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 64: "A new policy will be ___ (implement)...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 65: "The thief ___ caught by police...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 66: "This song ___ sung by many artists...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 67: "The project is being ___ (review)...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 68: "Orders must ___ obeyed...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 69: "The meeting ___ postponed...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 70: "The decision will be ___ (make) tomorrow...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 71: ""Don't touch it." - Passive?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 72: "Many languages are ___ (speak) in Pakistan...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 73: "The bridge ___ constructed by the army...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 74: "New roads ___ being built...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 75: "She was ___ (award) a prize...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 76: "Homework ___ be done on time...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 77: "The truth will be ___ (reveal) soon...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m all questions should have non-empty explanations[32m 1[2mms[22m[39m
+     [32mΓ£ô[39m should have at least 20 voice transformation questions[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 1: "He said, "I am happy." - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 2: "She said, "I will go." - She said that she ___ go...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 3: "They said, "We are tired." - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 4: "He said, "I have done it." - He said that he ___ d..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 5: "She said, "I was reading." - Indirect?..." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 6: "Ali said, "I live in Karachi." - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 7: "She said, "I can swim." - She said that she ___ sw..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 8: ""Today" becomes ___ in indirect speech...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 9: ""Tomorrow" becomes ___ in indirect speech...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 10: ""Yesterday" becomes ___ in indirect speech...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 11: ""Here" becomes ___ in indirect speech...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 12: ""This" becomes ___ in indirect speech...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 13: ""These" becomes ___ in indirect speech...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 14: ""Now" becomes ___ in indirect speech...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 15: ""Ago" becomes ___ in indirect speech...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 16: "He asked, "Where do you live?" - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 17: "She asked, "What is your name?" - She asked what m..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 18: "He asked, "Are you tired?" - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 19: "She asked, "Did you eat?" - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 20: "Mother asked, "Have you done your homework?" - Mot..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 21: "He asked, "When will you come?" - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 22: "Ali asked Bilal, "Where does he live?" - Ali asked..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 23: "She asked, "Can you help me?" - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 24: "She said, "Help me." - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 25: "The teacher said, "Open your books." - The teacher..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 26: "He said, "Please sit down." - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 27: "She said, "Don't go there." - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 28: "Mother said, "Come home early." - Mother advised m..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 29: "The doctor said, "Take this medicine." - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 30: "He said, "Let us play." - He suggested that ___ sh..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 31: "She said, "What a beautiful day!" - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 32: "He said, "Hurrah! We won." - He exclaimed with ___..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 33: "She said, "Alas! I am ruined." - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 34: "He said, "How clever you are!" - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 35: "Ahmed said, "I am going to Karachi." - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 36: "Ammi said, "I will cook biryani." - Ammi said that..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 37: "Baba asked, "Have you prayed?" - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 38: "The ustaz said, "Read the Quran daily." - Indirect..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 39: "She said, "Pakistan is my country." - She said tha..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 40: "Ali said, "I love cricket." - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 41: ""May" becomes ___ in indirect speech...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 42: ""Must" often becomes ___ in indirect speech...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 43: ""Shall" becomes ___ in indirect speech...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 44: ""Next week" becomes ___ in indirect speech...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 45: ""Last night" becomes ___ in indirect speech...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 46: "He said to me, "You are late." - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 47: "She said, "I am working." - She said that she ___ ..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 48: "He asked, "Who broke this?" - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 49: "She said, "I am not feeling well." - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 50: "He said, "I am the best." - He said that he ___ th..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 51: ""Come" in "She said, 'Come here'" becomes ___ in i..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 52: ""Bring" in indirect speech (movement away) becomes..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 53: "She said, "I have been waiting." - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 54: "He said, ___"I shall try my best." - He said that ..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 55: ""Said to" usually changes to ___ in indirect speec..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 56: "He said, "I may come." - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 57: "She asked, "Why did you go?" - She asked why I ___..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 58: "He said, "Would you like tea?" - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 59: "The teacher said, "Silence!" - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 60: "Ali said, "SubhanAllah! The view is beautiful." - ..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 61: "She said, "InshAllah, I will pass." - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 62: "Ammi said, "Please eat your food." - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 63: "He said, "Alhamdulillah! I got the job." - He excl..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 64: "The universal truths ___ change tense in indirect ..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 65: "He said, "The sun rises in the east." - He said th..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 66: "She said, "I am 10 years old." - Indirect?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 67: ""Could" in direct speech usually ___ in indirect s..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 68: "He said, "I could not come." - He said that he ___..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 69: ""Would" in direct speech usually ___ in indirect s..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 70: ""Should" in direct speech usually ___ in indirect ..." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 71: "She said, "I should study harder." - She said that..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 72: ""Ought to" in direct speech ___ in indirect speech..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m all questions should have non-empty explanations[32m 2[2mms[22m[39m
+     [32mΓ£ô[39m should have at least 20 narration questions[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 1: "I saw ___ elephant...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 2: "She is ___ honest girl...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 3: "He is ___ European...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 4: "I bought ___ umbrella...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 5: "He is ___ university student...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 6: "It took ___ hour to finish...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 7: "There is ___ one-eyed man...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 8: "She gave ___ useful suggestion...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 9: "He is ___ MLA...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 10: "I need ___ X-ray...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 11: "Rome was not built in ___ day...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 12: "What ___ beautiful flower!..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 13: "___ sun rises in the east...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 14: "___ Himalayas are in Asia...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 15: "___ Indus is a river...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 16: "___ Pacific Ocean is vast...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 17: "He is ___ tallest boy in class...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 18: "I met ___ girl who helped me...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 19: "___ earth moves around the sun...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 20: "He plays ___ piano...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 21: "___ poor need our help...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 22: "___ Quran is the holy book...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 23: "___ gold is precious...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 24: "___ honesty is the best policy...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 25: "I go to ___ school every day...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 26: "___ breakfast is ready...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 27: "She speaks ___ English well...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 28: "___ Pakistan is a beautiful country...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 29: "I like ___ music...." should have valid structure[32m 2[2mms[22m[39m
+       [32mΓ£ô[39m Question 30: "___ life is short...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 31: "___ Principal called a meeting...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 32: "I visited ___ Badshahi Mosque...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 33: "___ Jinnah Tower is in Karachi...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 34: "___ Arabian Sea is near Karachi...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 35: "He is ___ best cricketer in Pakistan...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 36: "I eat ___ biryani on Fridays...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 37: "She is ___ engineer...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 38: "I have ___ headache...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 39: "He goes to ___ church on Sundays...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 40: "___ Mount Everest is highest...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 41: "She is ___ only child...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 42: "___ English is spoken here...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 43: "I saw ___ accident yesterday...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 44: "___ accident was terrible...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 45: "He is ___ M.A. in English...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 46: "___ Lahore is a historic city...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 47: "I bought ___ new phone last week...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 48: "___ phone is very good...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 49: "She works as ___ teacher...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 50: "I had ___ egg for breakfast...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 51: "___ United States is large...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 52: "___ Alps are in Europe...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 53: "He went to ___ hospital...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 54: "She is in ___ hospital...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 55: "___ Japanese are hardworking...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 56: "This is ___ same book I wanted...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 57: "She got ___ first prize...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 58: "We had ___ lunch together...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 59: "___ lunch you made was delicious...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m all questions should have non-empty explanations[32m 1[2mms[22m[39m
+     [32mΓ£ô[39m should have at least 15 articles questions[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 1: "If you heat water, it ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 2: "If you mix red and blue, you ___ (get) purple...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 3: "Ice ___ if you heat it...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 4: "If the sun sets, it ___ dark...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 5: "Plants ___ (die) if they don't get water...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 6: "If you touch fire, you ___ burned...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 7: "If it rains, I ___ (stay) home...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 8: "If you study hard, you ___ pass...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 9: "If she calls, I ___ answer...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 10: "If the bus is late, we ___ (miss) the meeting...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 11: "Unless you study, you ___ fail...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 12: "If he ___ early, we can go together...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 13: "If you don't hurry, you ___ (be) late...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 14: "If I ___ time, I will come...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 15: "If I ___ rich, I would travel...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 16: "If I ___ (know) the answer, I would tell you...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 17: "If I were you, I ___ accept the offer...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 18: "If she ___ harder, she would pass...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 19: "If I ___ (be) a bird, I would fly...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 20: "If he ___ more money, he would buy a car...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 21: "If we ___ (have) more time, we would stay longer...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 22: "If I won the lottery, I ___ donate to charity...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 23: "If she had studied, she ___ passed...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 24: "If I ___ (know) earlier, I would have helped...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 25: "If he had arrived on time, he ___ caught the bus...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 26: "If I ___ seen him, I would have said hello...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 27: "If we ___ (not miss) the train, we would have arri..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 28: "She would have passed if she ___ harder...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 29: "If I ___ (be) there, I would have helped...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 30: "If they had listened, they ___ understood...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 31: "If I were smarter, I ___ have passed...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 32: "If he had practiced, he ___ (be) better now...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 33: "If she hadn't moved, she ___ still here...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 34: "If Pakistan wins, we ___ celebrate...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 35: "If it doesn't rain, the crops ___ (suffer)...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 36: "If I were the Prime Minister, I ___ build schools...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 37: "If Eid falls on Friday, people ___ extra happy...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 38: "If I had money, I ___ (visit) Makkah...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 39: "If he had prayed, Allah ___ helped...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 40: "Unless you hurry, you ___ miss the bus...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 41: "I'll help you provided you ___ (tell) the truth...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 42: "As long as you study, you ___ succeed...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 43: "Unless otherwise stated, answers ___ be in English..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 44: "I wish I ___ (be) taller...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 45: "If only I ___ more time...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 46: "I wish I ___ attended the party...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 47: "If only he ___ (not leave) so early...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 48: "If I find it, I ___ let you know...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 49: "If you ___ (see) her, give her my regards...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 50: "What would you do if you ___ a ghost?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 51: "If I had known, I ___ not have come...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 52: "If he ___ (ask) politely, I would have helped...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 53: "If water freezes, it ___ ice...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 54: "Should you need help, ___ me...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 55: "Were I you, I ___ (accept) the offer...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 56: "Had I known, I ___ have come...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 57: "If she ___ the truth, she wouldn't be angry...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 58: "If I ___ (have) wings, I would fly...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m all questions should have non-empty explanations[32m 1[2mms[22m[39m
+     [32mΓ£ô[39m should have at least 15 conditional questions[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 1: "I ___ swim when I was five...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 2: "She ___ speak three languages...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 3: "___ you help me, please?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 4: "He ___ run faster when he was young...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 5: "You ___ not park here...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 6: "___ I borrow your pen?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 7: "She ___ be at home now...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 8: "___ I come in?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 9: "It ___ rain tomorrow...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 10: "She ___ be at the office now...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 11: "The teacher said we ___ leave early...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 12: "He ___ have missed the bus...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 13: "I ___ go if I have time...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 14: "You ___ finish your homework...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 15: "Students ___ wear uniform...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 16: "You ___ not smoke here...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 17: "She ___ be tired after working all day...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 18: "I ___ go to the doctor yesterday...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 19: "This ___ be a mistake...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 20: "You ___ see a doctor...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 21: "You ___ respect your elders...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 22: "She ___ have arrived by now...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 23: "You ___ to apologize...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 24: "He ___ have told me earlier!..." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 25: "You ___ not talk during the exam...." should have valid structure[32m 2[2mms[22m[39m
+       [32mΓ£ô[39m Question 26: "She ___ help you tomorrow...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 27: "___ you like some tea?..." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 28: "When I was young, I ___ play all day...." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 29: "___ you please close the door?..." should have valid structure[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m Question 30: "I ___ rather stay home...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 31: "___ I open the window?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 32: "___ we go to the park?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 33: "What ___ I do?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 34: "You ___ not worry...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 35: "She ___ to study harder...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 36: "He need not ___ today...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 37: "Muslims ___ pray five times a day...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 38: "We ___ always speak the truth...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 39: "You ___ drink Zamzam water if you visit Makkah...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 40: "We ___ respect our parents...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 41: "InshaAllah, it ___ rain soon...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 42: "She ___ have left already...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 43: "He ___ have studied harder...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 44: "They ___ have arrived by now...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 45: "You ___ not have said that...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 46: "He ___ have been sleeping...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 47: "She ___ have known about it...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 48: "You ___ be quiet in the library...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 49: "I ___ like to help you...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 50: "She ___ dance when she was young...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 51: "It ___ be true...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 52: "You ___ wash your hands before eating...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 53: "He ___ be the new teacher...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 54: "___ you pass me the salt?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 55: "I ___ rather not go...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 56: "You ___ to be more careful...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 57: "We ___ finish this by tomorrow...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 58: "She ___ play the piano beautifully...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 59: "The lights are on. Someone ___ be home...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m all questions should have non-empty explanations[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 1: "Let me ___ this...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 2: "My father let me ___ (go) out...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 3: "She won't let him ___ alone...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 4: "Let the children ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 5: "The teacher made us ___ the homework...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 6: "My mother makes me ___ (eat) vegetables...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 7: "The joke made everyone ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 8: "I was made ___ again...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 9: "He was made to ___ (apologize)...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 10: "I had my car ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 11: "She had her hair ___ (cut)...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 12: "I'll have the mechanic ___ my car...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 13: "We had our house ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 14: "I had him ___ (send) the email...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 15: "I got my car ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 16: "She got her brother ___ (help) her...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 17: "He got his friend ___ him...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 18: "I need to get this work ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 19: "She got the children ___ (sit) quietly...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 20: "He got his passport ___ quickly...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m all questions should have non-empty explanations[32m 0[2mms[22m[39m
+     [32mΓ£ô[39m should have at least 20 modal verb questions[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 1: "Which sentence is correctly punctuated?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 2: "Use a ___ at the end of a statement...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 3: "Which sentence is correctly punctuated?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 4: "Use a ___ at the end of a question...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 5: "Which sentence is correctly punctuated?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 6: ""Help___" cried the man...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 7: "Which sentence uses comma correctly?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 8: "Ali___ who is my friend___ came today...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 9: "Which is correct?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 10: "Which is correct?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 11: "Which shows possession correctly?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 12: "The children___ toys are here...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 13: "Which contraction is correct?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 14: "It's means ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 15: "Which is correct?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 16: "She said, ___I am happy.___..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 17: "Which use of colon is correct?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 18: "Which use of semicolon is correct?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 19: "He was tired___ he worked hard...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 20: "Which is capitalized correctly?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 21: "___ first word of a sentence is capitalized...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 22: "Which is correct?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 23: "Which is hyphenated correctly?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 24: "My sister is twenty___one years old...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 25: ""Pakistan___ said the teacher, ___is a beautiful c..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 26: "Which is correct?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 27: "SubhanAllah___ What a beautiful view___..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 28: "Which is correct?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 29: "Which is correct?..." should have valid structure[32m 0[2mms[22m[39m
+[31m       [31m├ù[31m should have no duplicate question texts[39m[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m all questions should have non-empty explanations[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 1: "Complete: "A stitch in time ___ nine."..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 2: "Complete: "Actions speak louder than ___."..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 3: "Complete: "All that ___ is not gold."..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 4: "Complete: "An apple a day keeps the ___ away."..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 5: "Complete: "Honesty is the best ___."..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 6: "Complete: "Practice makes ___."..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 7: "Complete: "Where there is a ___, there is a way."..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 8: "Complete: "Better late than ___."..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 9: "Complete: "A friend in need is a friend ___."..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 10: "Complete: "Birds of a feather flock ___."..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 11: "Complete: "Look before you ___."..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 12: "Complete: "Rome was not ___ in a day."..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 13: "Complete: "The early bird catches the ___."..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 14: "Complete: "Time and tide wait for ___."..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 15: "Complete: "Don't put all your eggs in one ___."..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 16: "Complete: "When in Rome, do as the ___ do."..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 17: "Complete: "The pen is mightier than the ___."..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 18: "Complete: "Too many ___ spoil the broth."..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 19: "Complete: "Every ___ has a silver lining."..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 20: "Complete: "Knowledge is ___."..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m all questions should have non-empty explanations[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 1: "Accept vs Except: She will ___ the gift...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 2: "Affect vs Effect: The medicine will ___ your healt..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 3: "Advice vs Advise: She gave me good ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 4: "Principal vs Principle: The ___ of the school is s..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 5: "Stationary vs Stationery: I need some ___ for scho..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 6: "Their vs There: ___ house is beautiful...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 7: "Your vs You're: ___ going to school...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 8: "Its vs It's: ___ raining outside. (Its/It's)..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 9: "Lose vs Loose: Don't ___ hope...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 10: "Quite vs Quiet: The library is ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 11: "Weather vs Whether: I don't know ___ to go or not...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 12: "Write vs Right: You are ___ about this...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 13: "Piece vs Peace: I want ___ in the world...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 14: "Dessert vs Desert: The Sahara is a ___. (desert/de..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 15: "Brake vs Break: Press the ___ to stop...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 16: "Bare vs Bear: I can't ___ the pain...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 17: "Complement vs Compliment: He gave her a nice ___...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 18: "Emigrate vs Immigrate: He ___ to Canada...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 19: "Farther vs Further: I need ___ information...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 20: "Whose vs Who's: ___ book is this?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m all questions should have non-empty explanations[32m 0[2mms[22m[39m
+     [32mΓ£ô[39m should have misc questions for variety[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have at least one question[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 1: "What do trees give us to breathe?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 2: "Trees prevent _____ erosion...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 3: "What is causing global warming according to the pa..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 4: "What project was launched in Pakistan?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 5: "Many animals and _____ make their homes in trees...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 6: "When was Allama Iqbal born?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 7: "Allama Iqbal is known as the "Poet of the _____."..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 8: "In which languages did Iqbal write?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 9: "Where did Iqbal present his famous address?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 10: "Iqbal received his early education in _____...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 11: "What is the Internet?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 12: "Through the Internet, we can send _____, browse we..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 13: "How has the Internet helped education?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 14: "What is one disadvantage of the Internet mentioned..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 15: "We must use the Internet _____...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 16: "According to the passage, what is the greatest ble..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 17: "A balanced diet should include fruits, vegetables,..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 18: "How many hours of sleep do children need?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 19: "What should be avoided according to the passage?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 20: ""Health is _____" is a famous saying...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 21: "Which museum did the students visit?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 22: "The students traveled to the museum by _____...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 23: "What real submarine could students enter?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 24: "What was the most fascinating part?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 25: "The trip taught students about Pakistan's _____ he..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 26: "What is one of the most precious things according ..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 27: ""Time and tide wait for _____" is a famous saying...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 28: "What helps us organize daily activities?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 29: "Which personality is mentioned as an example?..." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m Question 30: "Wasting time leads to _____...." should have valid structure[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have no duplicate question texts[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m all questions should have non-empty explanations[32m 1[2mms[22m[39m
+     [32mΓ£ô[39m should have at least 5 comprehension questions[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should return all questions from all categories[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m should validate structure of all questions[32m 101[2mms[22m[39m
+       [32mΓ£ô[39m should return correct total count[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have at least 500 questions in the bank[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should return questions for exact topic match[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should return questions for alternative topic names[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should handle case insensitivity[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should return questions for keyword-based matching[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should return null for non-existent topics[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should handle trimming and whitespace[32m 0[2mms[22m[39m
+     [32mΓ£ô[39m should have no duplicate questions across all categories[32m 1[2mms[22m[39m
+     [32mΓ£ô[39m all questions should have valid types[32m 48[2mms[22m[39m
+     [32mΓ£ô[39m all multiple choice questions should have correct answer in options[32m 31[2mms[22m[39m
+     [32mΓ£ô[39m all fill-in-blank questions should have placeholder or blank indicator[32m 14[2mms[22m[39m
+     [32mΓ£ô[39m should have a good mix of question types[32m 2[2mms[22m[39m
+[31m     [31m├ù[31m all questions should have meaningful explanations (at least 10 chars)[39m[32m 4[2mms[22m[39m
+[31m     [31m├ù[31m all questions should have proper question text (at least 10 chars)[39m[32m 7[2mms[22m[39m
+     [32mΓ£ô[39m all correct answers should be non-empty[32m 27[2mms[22m[39m
+     [32mΓ£ô[39m multiple choice questions should have 3-5 options typically[32m 21[2mms[22m[39m
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ» Failed Tests 4 ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»
+
+ FAIL  tests/questions/allQuestions.test.ts > Parts of Speech Questions > Adjectives - Content Validation > should have no duplicate question texts
+AssertionError: expected 39 to be 40 // Object.is equality
+
+- Expected
++ Received
+
+- 40
++ 39
+
+ Γ¥» tests/questions/allQuestions.test.ts:130:38
+
+    128|             const questionTexts = questions.map(q => q.questionText.toΓÇª
+    129|             const uniqueTexts = new Set(questionTexts);
+    130|             expect(uniqueTexts.size).toBe(questionTexts.length);
+       |                                      ^
+    131|         });
+    132| 
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m4 failed[39m[22m[2m | [22m[1m[32m1067 passed[39m[22m[90m (1071)[39m
+[2m   Start at [22m 00:45:01
+[2m   Duration [22m 2.78s[2m (transform 478ms, setup 376ms, import 543ms, tests 653ms, environment 792ms)[22m
+
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[1/4]ΓÄ»
+
+ FAIL  tests/questions/allQuestions.test.ts > Miscellaneous Questions > Punctuation - Content Validation > should have no duplicate question texts
+AssertionError: expected 21 to be 29 // Object.is equality
+
+- Expected
++ Received
+
+- 29
++ 21
+
+ Γ¥» tests/questions/allQuestions.test.ts:130:38
+    128|             const questionTexts = questions.map(q => q.questionText.toΓÇª
+    129|             const uniqueTexts = new Set(questionTexts);
+    130|             expect(uniqueTexts.size).toBe(questionTexts.length);
+       |                                      ^
+    131|         });
+    132| 
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[2/4]ΓÄ»
+
+ FAIL  tests/questions/allQuestions.test.ts > Question Quality Tests > all questions should have meaningful explanations (at least 10 chars)
+AssertionError: Question 26: "Where ___ you live?..." has too short explanation: expected 9 to be greater than or equal to 10
+ Γ¥» tests/questions/allQuestions.test.ts:460:15
+    458|                 q.explanation.trim().length,
+    459|                 `Question ${i + 1}: "${q.questionText.substring(0, 30)ΓÇª
+    460|             ).toBeGreaterThanOrEqual(10);
+       |               ^
+    461|         });
+    462|     });
+ Γ¥» tests/questions/allQuestions.test.ts:456:22
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[3/4]ΓÄ»
+
+ FAIL  tests/questions/allQuestions.test.ts > Question Quality Tests > all questions should have proper question text (at least 10 chars)
+AssertionError: Question 425 has too short question text: expected 9 to be greater than or equal to 10
+ Γ¥» tests/questions/allQuestions.test.ts:470:15
+    468|                 q.questionText.trim().length,
+    469|                 `Question ${i + 1} has too short question text`
+    470|             ).toBeGreaterThanOrEqual(10);
+       |               ^
+    471|         });
+    472|     });
+ Γ¥» tests/questions/allQuestions.test.ts:466:22
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[4/4]ΓÄ»
+

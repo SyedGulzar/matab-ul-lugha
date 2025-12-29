@@ -31,6 +31,30 @@ export const VALID_USERNAMES = [
   'Admin_141225'
 ];
 
+// User information with display names and roles
+export interface UserInfo {
+  username: string;
+  displayName: string;
+  role: 'user' | 'admin';
+}
+
+export const USERS: UserInfo[] = [
+  { username: 'ZH_Designing', displayName: 'Zahir Shah', role: 'user' },
+  { username: 'AJ_Speaking', displayName: 'Abdul Jalil', role: 'user' },
+  { username: 'AR_Learning', displayName: 'Adil Rashid', role: 'user' },
+  { username: 'MS_Looking', displayName: 'Muhammad Shah', role: 'user' },
+  { username: 'AH_Coding', displayName: 'Abdul Ahad', role: 'user' },
+  { username: 'Admin_141225', displayName: 'Administrator', role: 'admin' },
+];
+
+// Helper functions for user management
+export const getUserInfo = (username: string): UserInfo | undefined =>
+  USERS.find(u => u.username === username);
+
+export const isAdmin = (username: string): boolean =>
+  getUserInfo(username)?.role === 'admin';
+
+
 export const TOPIC_CATEGORIES: Record<string, TopicItem[]> = {
   "Parts of Speech (Nouns/Pronouns)": [
     { name: "Basic Concepts", time: "45 mins", videoUrl: "https://www.youtube.com/watch?v=YiAC2UckEx0&list=PLl0gj7VYsUWeeIEofDADaAYpAmbN3MIqT&index=1" },

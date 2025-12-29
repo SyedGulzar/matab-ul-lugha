@@ -1,12 +1,17 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { DIFFICULTY_LEVELS, TOPIC_CATEGORIES, TopicItem } from './constants';
+import { DIFFICULTY_LEVELS, TOPIC_CATEGORIES, TopicItem, getUserInfo, isAdmin, USERS } from './constants';
 import { generateGrammarPractice, scoreWriting, WritingScore } from './services/geminiService';
+import { ESSAY_TOPICS, APPLICATION_TEMPLATES, COMPREHENSION_PASSAGES } from './data/offlineQuestionBank';
+import type { EssayTopic } from './data/questions/writing/essays';
+import type { ApplicationTemplate } from './data/questions/writing/applications';
+import type { ComprehensionPassage } from './data/questions/writing/comprehension';
 import { QuizSession, UserAnswers } from './types';
 import { QuestionCard } from './components/QuestionCard';
 import { Button } from './components/Button';
 import { Login } from './components/Login';
 import { LogoutButton } from './components/LogoutButton';
-import { BookOpen, GraduationCap, RefreshCw, Trophy, ChevronDown, X, Flame, Search, Moon, Sun, Camera, CheckCircle, XCircle, Library, PenTool, PlayCircle, Bold, Italic, List, Underline, Eraser, Circle } from 'lucide-react';
+import { QuestionBankManager } from './components/QuestionBankManager';
+import { BookOpen, GraduationCap, RefreshCw, Trophy, ChevronDown, X, Flame, Search, Moon, Sun, Camera, CheckCircle, XCircle, Library, PenTool, PlayCircle, Bold, Italic, List, Underline, Eraser, Circle, Settings, Save, RotateCcw, CheckSquare, Square, Database, Users, Shield } from 'lucide-react';
 import html2canvas from 'html2canvas';
 
 const App: React.FC = () => {
@@ -43,6 +48,12 @@ const App: React.FC = () => {
 
   // Navigation State
   const [currentView, setCurrentView] = useState<'practice' | 'learning'>('practice');
+
+  // Question Bank Manager State
+  const [showQuestionBankManager, setShowQuestionBankManager] = useState(false);
+
+  // User Directory State (Admin Only)
+  const [showUserDirectory, setShowUserDirectory] = useState(false);
 
   // Config State
   const [selectedLevel, setSelectedLevel] = useState<string>(DIFFICULTY_LEVELS[2]);
@@ -181,12 +192,55 @@ const App: React.FC = () => {
       return newSet;
     });
   };
+
+  // Topic Selection (Personalization) State
+  const [myTopics, setMyTopics] = useState<string[]>(() => {
+    const saved = localStorage.getItem('myTopics');
+    return saved ? JSON.parse(saved) : [];
+  });
+  const [isSelectionMode, setIsSelectionMode] = useState(false);
+  const [tempSelectedTopics, setTempSelectedTopics] = useState<string[]>([]);
+
+  const toggleTopicSelection = (topicName: string) => {
+    setTempSelectedTopics(prev =>
+      prev.includes(topicName)
+        ? prev.filter(t => t !== topicName)
+        : [...prev, topicName]
+    );
+  };
+
+  const enterSelectionMode = () => {
+    setTempSelectedTopics(myTopics);
+    setIsSelectionMode(true);
+  };
+
+  const saveSelectedTopics = () => {
+    setMyTopics(tempSelectedTopics);
+    localStorage.setItem('myTopics', JSON.stringify(tempSelectedTopics));
+    setIsSelectionMode(false);
+  };
+
+  const cancelSelectionMode = () => {
+    setIsSelectionMode(false);
+  };
+
+  const resetTopicSelection = () => {
+    setMyTopics([]);
+    localStorage.setItem('myTopics', JSON.stringify([]));
+  };
   const [writingContent, setWritingContent] = useState('');
   const [writingSubmitted, setWritingSubmitted] = useState(false);
   const [writingScore, setWritingScore] = useState<WritingScore | null>(null);
   const [showScoreModal, setShowScoreModal] = useState(false);
   const [isScoring, setIsScoring] = useState(false);
   const [numberOfQuestions, setNumberOfQuestions] = useState<number>(5);
+
+  // Random writing topic/passage state
+  const [currentEssayTopic, setCurrentEssayTopic] = useState<EssayTopic | null>(null);
+  const [currentApplication, setCurrentApplication] = useState<ApplicationTemplate | null>(null);
+  const [currentComprehension, setCurrentComprehension] = useState<ComprehensionPassage | null>(null);
+  const [comprehensionAnswers, setComprehensionAnswers] = useState<Record<number, string>>({});
+  const [showSampleApplication, setShowSampleApplication] = useState(false);
 
   const handleGenerate = async () => {
     if (!topic.trim()) return;
@@ -204,8 +258,38 @@ const App: React.FC = () => {
 
     // Check if this is a writing topic
     const topicInfo = getTopicInfo(topic);
+
+    // Reset all writing-related state
+    setCurrentEssayTopic(null);
+    setCurrentApplication(null);
+    setCurrentComprehension(null);
+    setComprehensionAnswers({});
+    setShowSampleApplication(false);
+
     if (topicInfo?.type === 'writing') {
       setIsWritingMode(true);
+
+      // Select random topic based on writing type
+      if (topic.toLowerCase().includes('essay')) {
+        const randomIndex = Math.floor(Math.random() * ESSAY_TOPICS.length);
+        setCurrentEssayTopic(ESSAY_TOPICS[randomIndex]);
+      } else if (topic.toLowerCase().includes('application')) {
+        const randomIndex = Math.floor(Math.random() * APPLICATION_TEMPLATES.length);
+        setCurrentApplication(APPLICATION_TEMPLATES[randomIndex]);
+      }
+
+      setIsLoading(false);
+      setTimeout(() => {
+        resultsRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+      return;
+    }
+
+    // Check if this is comprehension topic
+    if (topic.toLowerCase().includes('comprehension')) {
+      const randomIndex = Math.floor(Math.random() * COMPREHENSION_PASSAGES.length);
+      setCurrentComprehension(COMPREHENSION_PASSAGES[randomIndex]);
+      setIsWritingMode(false);
       setIsLoading(false);
       setTimeout(() => {
         resultsRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -371,22 +455,58 @@ const App: React.FC = () => {
   );
 
   const getFilteredCategories = () => {
-    if (!topic.trim()) return TOPIC_CATEGORIES;
+    const activeCategories = { ...TOPIC_CATEGORIES };
+
+    // 1. Filter by Search Query
+    if (topic.trim()) {
+      Object.keys(activeCategories).forEach(category => {
+        activeCategories[category] = activeCategories[category].filter(item =>
+          item.name.toLowerCase().includes(topic.toLowerCase())
+        );
+        if (activeCategories[category].length === 0) {
+          delete activeCategories[category];
+        }
+      });
+      return activeCategories;
+    }
+
+    // 2. Filter by "My Topics" (if enabled and not in selection mode)
+    // We want to show EVERYTHING in selection mode so the user can choose
+    // But in normal mode, we only show what they selected
+    if (myTopics.length > 0 && !isSelectionMode && currentView !== 'learning') {
+      // Logic for Practice Studio dropdown - strict filtering
+      Object.keys(activeCategories).forEach(category => {
+        activeCategories[category] = activeCategories[category].filter(item =>
+          myTopics.includes(item.name)
+        );
+        if (activeCategories[category].length === 0) {
+          delete activeCategories[category];
+        }
+      });
+    }
+
+    return activeCategories;
+  };
+
+  // Helper to get visible categories for Learning Arena specifically
+  // This needs slightly different logic to handle the "Selection Mode" visual state
+  const getLearningArenaCategories = () => {
+    if (isSelectionMode) {
+      return TOPIC_CATEGORIES; // Show everything so user can toggle
+    }
+
+    if (myTopics.length === 0) {
+      return TOPIC_CATEGORIES; // Show everything if no preference set
+    }
 
     const filtered: Record<string, TopicItem[]> = {};
-    let hasResults = false;
-
     Object.entries(TOPIC_CATEGORIES).forEach(([category, items]) => {
-      const matchingItems = items.filter(item =>
-        item.name.toLowerCase().includes(topic.toLowerCase())
-      );
+      const matchingItems = items.filter(item => myTopics.includes(item.name));
       if (matchingItems.length > 0) {
         filtered[category] = matchingItems;
-        hasResults = true;
       }
     });
-
-    return hasResults ? filtered : TOPIC_CATEGORIES;
+    return filtered;
   };
 
   // Helper for Rub el Hizb SVG Icon (Small)
@@ -418,6 +538,14 @@ const App: React.FC = () => {
       case 'idle': return 'animate-pendulum';
       default: return 'rotate-0'; // Keep straight while moving vertically
     }
+  };
+
+  // Helper for topic selection style
+  const componentSelectionStyle = (isSelected: boolean) => {
+    if (isSelected) {
+      return 'bg-[#4A3728]/10 dark:bg-amber-500/20 border-2 border-[#4A3728] dark:border-amber-500 text-[#4A3728] dark:text-amber-500 font-bold shadow-md transform scale-[1.02]';
+    }
+    return 'bg-[#F0EAD6] dark:bg-slate-800 border-2 border-dashed border-[#8D6E63]/30 dark:border-slate-600 text-[#8D6E63] dark:text-gray-400 hover:border-[#4A3728]/50 dark:hover:border-amber-500/50 hover:bg-[#4A3728]/5 dark:hover:bg-amber-500/5';
   };
 
   // Sidebar Geometric Button Component
@@ -512,6 +640,26 @@ const App: React.FC = () => {
           onClick={() => setCurrentView('practice')}
         />
 
+        {/* Question Bank Manager Button - Admin Only */}
+        {username && isAdmin(username) && (
+          <SidebarButton
+            icon={Database}
+            label="Question Bank"
+            isActive={showQuestionBankManager}
+            onClick={() => setShowQuestionBankManager(true)}
+          />
+        )}
+
+        {/* User Directory Button - Admin Only */}
+        {username && isAdmin(username) && (
+          <SidebarButton
+            icon={Users}
+            label="All Users"
+            isActive={showUserDirectory}
+            onClick={() => setShowUserDirectory(true)}
+          />
+        )}
+
       </div>
       {/* ---------------------------------- */}
 
@@ -602,6 +750,21 @@ const App: React.FC = () => {
           <div className="flex items-center gap-4 mr-10 sm:mr-16">
             {/* Added Margin Right to account for the Rope */}
 
+            {/* User Display Name */}
+            {username && (
+              <div className="hidden sm:flex flex-col items-end">
+                <span className="text-[10px] uppercase tracking-widest text-[#8D6E63] dark:text-slate-500 font-bold">Welcome</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-messiri font-bold text-[#4A3728] dark:text-amber-500">
+                    {getUserInfo(username)?.displayName || username}
+                  </span>
+                  {isAdmin(username) && (
+                    <span className="text-[9px] px-1.5 py-0.5 bg-[#4A3728] dark:bg-amber-500 text-[#F0EAD6] dark:text-slate-900 rounded font-bold uppercase tracking-wider">Admin</span>
+                  )}
+                </div>
+              </div>
+            )}
+
             {/* Screenshot Button */}
             <button
               onClick={handleScreenshot}
@@ -642,73 +805,144 @@ const App: React.FC = () => {
         {/* VIEW: LEARNING AREA (Topics Grid) */}
         {currentView === 'learning' && (
           <div className="animate-in fade-in zoom-in-95 duration-500">
-            <div className="text-center mb-12">
+            <div className="text-center mb-12 relative">
               <h2 className="text-4xl font-messiri text-[#2C1810] dark:text-amber-500 mb-4 transition-colors">The Archives of Knowledge</h2>
-              <p className="text-xl font-markazi text-[#5D4037] dark:text-slate-300 italic">Select a topic to begin your journey to eloquence.</p>
+              <p className="text-xl font-markazi text-[#5D4037] dark:text-slate-300 italic">
+                {isSelectionMode
+                  ? "Select the topics you want to see in your curriculum."
+                  : "Select a topic to begin your journey to eloquence."}
+              </p>
+
+              {/* Topic Selection Controls */}
+              <div className="flex justify-center gap-4 mt-6">
+                {!isSelectionMode ? (
+                  <div className="flex gap-2">
+                    <button
+                      onClick={enterSelectionMode}
+                      className="flex items-center gap-2 px-4 py-2 bg-[#F0EAD6] dark:bg-slate-800 border border-[#5D4037] dark:border-amber-500 rounded-lg text-[#4A3728] dark:text-amber-500 hover:bg-[#E6DEC8] dark:hover:bg-slate-700 transition-colors shadow-sm"
+                    >
+                      <Settings size={18} />
+                      <span className="font-messiri font-bold">Customize Topics</span>
+                    </button>
+
+                    {myTopics.length > 0 && (
+                      <button
+                        onClick={resetTopicSelection}
+                        className="flex items-center gap-2 px-4 py-2 bg-red-100 dark:bg-red-900/20 border border-red-300 dark:border-red-700 rounded-lg text-red-700 dark:text-red-400 hover:bg-red-200 dark:hover:bg-red-900/40 transition-colors shadow-sm"
+                      >
+                        <RotateCcw size={18} />
+                        <span className="font-messiri font-bold">Show All</span>
+                      </button>
+                    )}
+                  </div>
+                ) : (
+                  <div className="flex gap-2 animate-in zoom-in duration-300">
+                    <button
+                      onClick={saveSelectedTopics}
+                      className="flex items-center gap-2 px-6 py-2 bg-[#4A3728] dark:bg-amber-600 border border-[#2C1810] dark:border-amber-400 rounded-lg text-[#F0EAD6] dark:text-white hover:bg-[#2C1810] dark:hover:bg-amber-700 transition-colors shadow-lg scale-105"
+                    >
+                      <Save size={18} />
+                      <span className="font-messiri font-bold">Save Selection ({tempSelectedTopics.length})</span>
+                    </button>
+                    <button
+                      onClick={cancelSelectionMode}
+                      className="flex items-center gap-2 px-4 py-2 bg-gray-200 dark:bg-slate-700 border border-gray-300 dark:border-slate-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-slate-600 transition-colors"
+                    >
+                      <X size={18} />
+                      <span className="font-messiri font-bold">Cancel</span>
+                    </button>
+                  </div>
+                )}
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {Object.entries(TOPIC_CATEGORIES).map(([category, items]) => (
-                <div key={category} className="bg-[#F0EAD6] dark:bg-slate-900 rounded-xl overflow-hidden border-2 border-[#5D4037]/10 dark:border-amber-500/20 shadow-lg dark:shadow-[0_0_15px_rgba(0,0,0,0.2)] paper-torn group transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(245,158,11,0.15)]">
+            <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${isSelectionMode ? 'border-4 border-dashed border-[#4A3728]/20 dark:border-amber-500/30 p-4 rounded-2xl' : ''}`}>
+              {Object.entries(getLearningArenaCategories()).map(([category, items]) => (
+                <div key={category} className={`bg-[#F0EAD6] dark:bg-slate-900 rounded-xl overflow-hidden border-2 border-[#5D4037]/10 dark:border-amber-500/20 shadow-lg dark:shadow-[0_0_15px_rgba(0,0,0,0.2)] paper-torn group transition-all duration-300 ${!isSelectionMode ? 'hover:-translate-y-1 hover:shadow-xl dark:hover:shadow-[0_0_20px_rgba(245,158,11,0.15)]' : ''}`}>
                   <div className="bg-[#E6DEC8] dark:bg-slate-800/80 p-4 border-b border-[#5D4037]/10 dark:border-amber-500/10 flex items-center justify-between">
                     <h3 className="font-messiri font-bold text-xl text-[#4A3728] dark:text-amber-500 uppercase tracking-widest">{category}</h3>
                     <RubElHizbIcon size={20} className="text-[#5D4037]/40 dark:text-amber-500/40" />
                   </div>
                   <div className="p-6">
                     <ul className="space-y-3">
-                      {items.map(t => (
-                        <li key={t.name}>
-                          <button
-                            onClick={() => handleLibraryTopicClick(t.name)}
-                            className="w-full text-left font-markazi text-lg text-[#5D4037] dark:text-slate-300 hover:text-[#4A3728] dark:hover:text-amber-400 flex items-center gap-2 group/item transition-colors"
-                          >
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#5D4037]/40 dark:bg-amber-500/40 group-hover/item:bg-[#4A3728] dark:group-hover/item:bg-amber-500 transition-colors"></span>
-                            <span className="flex-1">{t.name}</span>
-
-                            <div className="flex items-center gap-2">
-                              <span className="text-xs font-messiri font-bold text-[#8D6E63] dark:text-gray-500 border border-[#5D4037]/10 dark:border-amber-500/10 px-2 py-0.5 rounded-md bg-[#5D4037]/5 dark:bg-amber-500/5 group-hover/item:border-[#4A3728]/30 dark:group-hover/item:border-amber-500/30 transition-colors">
-                                {t.time}
-                              </span>
-
-                              <button
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  toggleTopicCompletion(t.name);
-                                }}
-                                title={completedTopics.includes(t.name) ? "Mark as incomplete" : "Mark as complete"}
-                                className="mr-3 p-1 rounded-full transition-colors hover:bg-[#5D4037]/5 dark:hover:bg-white/5 text-[#8D6E63]/40 dark:text-slate-600"
-                              >
-                                {completedTopics.includes(t.name) ? (
-                                  <CheckCircle size={20} className="text-green-600 dark:text-green-500" />
-                                ) : (
-                                  <Circle size={20} strokeWidth={1.5} className="hover:stroke-[#4A3728] dark:hover:stroke-amber-500 transition-colors" />
-                                )}
-                              </button>
-
-                              <div
-                                role="button"
-                                title={`Watch video about ${t.name}`}
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  // Extract Video ID if valid YouTube URL
-                                  const videoID = t.videoUrl ? (t.videoUrl.match(/v=([^&]+)/)?.[1] || null) : null;
-
-                                  if (videoID) {
-                                    setSelectedVideo(videoID);
-                                  } else {
-                                    // Fallback for search query or invalid URL
-                                    const url = t.videoUrl || `https://www.youtube.com/results?search_query=${encodeURIComponent('Sir Nasim Zulfiqar ' + t.name)}`;
-                                    window.open(url, '_blank');
+                      {items.map(t => {
+                        const isSelectedInMode = tempSelectedTopics.includes(t.name);
+                        return (
+                          <li key={t.name}>
+                            <button
+                              onClick={() => {
+                                if (isSelectionMode) {
+                                  toggleTopicSelection(t.name);
+                                } else {
+                                  handleLibraryTopicClick(t.name);
+                                }
+                              }}
+                              className={`w-full text-left font-markazi text-lg flex items-center gap-2 group/item transition-all p-2 rounded-lg
+                              ${isSelectionMode
+                                  ? componentSelectionStyle(isSelectedInMode)
+                                  : 'text-[#5D4037] dark:text-slate-300 hover:text-[#4A3728] dark:hover:text-amber-400 hover:bg-[#5D4037]/5 dark:hover:bg-white/5'
+                                }`}
+                            >
+                              {isSelectionMode ? (
+                                <div className={`transition-transform duration-300 ${isSelectedInMode ? 'scale-110' : 'scale-100 opacity-50'}`}>
+                                  {isSelectedInMode
+                                    ? <CheckSquare size={24} className="text-[#4A3728] dark:text-amber-500 fill-[#F0EAD6] dark:fill-slate-900" />
+                                    : <Square size={24} className="text-[#8D6E63] dark:text-slate-500" />
                                   }
-                                }}
-                                className="p-1 rounded-full text-[#8D6E63] dark:text-gray-400 hover:text-[#D97706] dark:hover:text-amber-500 hover:bg-[#5D4037]/10 dark:hover:bg-amber-500/10 transition-all transform hover:scale-110"
-                              >
-                                <PlayCircle size={18} />
-                              </div>
-                            </div>
-                          </button>
-                        </li>
-                      ))}
+                                </div>
+                              ) : (
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#5D4037]/40 dark:bg-amber-500/40 group-hover/item:bg-[#4A3728] dark:group-hover/item:bg-amber-500 transition-colors"></span>
+                              )}
+
+                              <span className="flex-1 font-bold">{t.name}</span>
+
+                              {!isSelectionMode && (
+                                <div className="flex items-center gap-2">
+                                  <span className="text-xs font-messiri font-bold text-[#8D6E63] dark:text-gray-500 border border-[#5D4037]/10 dark:border-amber-500/10 px-2 py-0.5 rounded-md bg-[#5D4037]/5 dark:bg-amber-500/5 group-hover/item:border-[#4A3728]/30 dark:group-hover/item:border-amber-500/30 transition-colors">
+                                    {t.time}
+                                  </span>
+
+                                  <button
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      toggleTopicCompletion(t.name);
+                                    }}
+                                    title={completedTopics.includes(t.name) ? "Mark as incomplete" : "Mark as complete"}
+                                    className="mr-3 p-1 rounded-full transition-colors hover:bg-[#5D4037]/5 dark:hover:bg-white/5 text-[#8D6E63]/40 dark:text-slate-600"
+                                  >
+                                    {completedTopics.includes(t.name) ? (
+                                      <CheckCircle size={20} className="text-green-600 dark:text-green-500" />
+                                    ) : (
+                                      <Circle size={20} strokeWidth={1.5} className="hover:stroke-[#4A3728] dark:hover:stroke-amber-500 transition-colors" />
+                                    )}
+                                  </button>
+
+                                  <div
+                                    role="button"
+                                    title={`Watch video about ${t.name}`}
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      // Extract Video ID if valid YouTube URL
+                                      const videoID = t.videoUrl ? (t.videoUrl.match(/v=([^&]+)/)?.[1] || null) : null;
+
+                                      if (videoID) {
+                                        setSelectedVideo(videoID);
+                                      } else {
+                                        // Fallback for search query or invalid URL
+                                        const url = t.videoUrl || `https://www.youtube.com/results?search_query=${encodeURIComponent('Sir Nasim Zulfiqar ' + t.name)}`;
+                                        window.open(url, '_blank');
+                                      }
+                                    }}
+                                    className="p-1 rounded-full text-[#8D6E63] dark:text-gray-400 hover:text-[#D97706] dark:hover:text-amber-500 hover:bg-[#5D4037]/10 dark:hover:bg-amber-500/10 transition-all transform hover:scale-110"
+                                  >
+                                    <PlayCircle size={18} />
+                                  </div>
+                                </div>
+                              )}
+                            </button>
+                          </li>
+                        )
+                      })}
                     </ul>
                   </div>
                 </div>
@@ -940,36 +1174,154 @@ const App: React.FC = () => {
                     </Button>
                   </div>
 
-                  {/* Writing Guidelines */}
-                  <div className="bg-[#E6DEC8] dark:bg-slate-800 rounded-lg p-6 mb-6 border border-[#5D4037]/10 dark:border-amber-500/20">
-                    <h3 className="font-messiri font-bold text-lg text-[#4A3728] dark:text-amber-500 mb-3">
-                      📝 Writing Guidelines
-                    </h3>
-                    <ul className="space-y-2 text-[#5D4037] dark:text-slate-300 font-markazi text-lg">
-                      {topic.toLowerCase().includes('essay') && (
-                        <>
-                          <li>• Write a well-structured essay (150-200 words)</li>
-                          <li>• Include an introduction, body paragraphs, and conclusion</li>
-                          <li>• Use proper grammar and punctuation</li>
-                        </>
+                  {/* Essay Topic Display */}
+                  {currentEssayTopic && (
+                    <div className="bg-[#E6DEC8] dark:bg-slate-800 rounded-lg p-6 mb-6 border border-[#5D4037]/10 dark:border-amber-500/20">
+                      <div className="flex items-start justify-between mb-4">
+                        <div>
+                          <span className="text-xs font-bold text-[#8D6E63] dark:text-slate-400 uppercase tracking-wider font-messiri">Your Essay Topic</span>
+                          <h3 className="font-messiri font-bold text-2xl text-[#4A3728] dark:text-amber-500 mt-1">
+                            {currentEssayTopic.title}
+                          </h3>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className={`px-3 py-1 rounded-full text-xs font-bold ${currentEssayTopic.difficulty === 'easy' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400' :
+                            currentEssayTopic.difficulty === 'medium' ? 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400' :
+                              'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
+                            }`}>
+                            {currentEssayTopic.difficulty}
+                          </span>
+                          <span className="px-3 py-1 bg-[#F0EAD6] dark:bg-slate-700 rounded-full text-xs font-bold text-[#5D4037] dark:text-slate-300">
+                            {currentEssayTopic.wordLimit} words
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div className="bg-[#F0EAD6] dark:bg-slate-900 rounded-lg p-4 border border-[#D7Cea7] dark:border-slate-700">
+                          <h4 className="font-messiri font-bold text-sm text-[#4A3728] dark:text-amber-500 mb-2 flex items-center gap-2">
+                            📋 Suggested Outline
+                          </h4>
+                          <ol className="space-y-1 text-[#5D4037] dark:text-slate-300 font-markazi text-base">
+                            {currentEssayTopic.outline.map((item, i) => (
+                              <li key={i} className="flex items-start gap-2">
+                                <span className="text-[#8D6E63] dark:text-amber-500/70 font-bold">{i + 1}.</span>
+                                {item}
+                              </li>
+                            ))}
+                          </ol>
+                        </div>
+
+                        <div className="bg-[#F0EAD6] dark:bg-slate-900 rounded-lg p-4 border border-[#D7Cea7] dark:border-slate-700">
+                          <h4 className="font-messiri font-bold text-sm text-[#4A3728] dark:text-amber-500 mb-2 flex items-center gap-2">
+                            💡 Key Points to Include
+                          </h4>
+                          <ul className="space-y-1 text-[#5D4037] dark:text-slate-300 font-markazi text-base">
+                            {currentEssayTopic.keyPoints.map((point, i) => (
+                              <li key={i} className="flex items-start gap-2">
+                                <span className="text-[#8D6E63] dark:text-amber-500/70">•</span>
+                                {point}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+
+                      <button
+                        onClick={() => {
+                          const randomIndex = Math.floor(Math.random() * ESSAY_TOPICS.length);
+                          setCurrentEssayTopic(ESSAY_TOPICS[randomIndex]);
+                          setWritingContent('');
+                        }}
+                        className="mt-4 flex items-center gap-2 px-4 py-2 text-sm font-messiri text-[#5D4037] dark:text-slate-400 hover:text-[#4A3728] dark:hover:text-amber-500 transition-colors"
+                      >
+                        <RefreshCw size={14} /> Get Different Topic
+                      </button>
+                    </div>
+                  )}
+
+                  {/* Application Scenario Display */}
+                  {currentApplication && (
+                    <div className="bg-[#E6DEC8] dark:bg-slate-800 rounded-lg p-6 mb-6 border border-[#5D4037]/10 dark:border-amber-500/20">
+                      <div className="flex items-start justify-between mb-4">
+                        <div>
+                          <span className="text-xs font-bold text-[#8D6E63] dark:text-slate-400 uppercase tracking-wider font-messiri">Your Application Task</span>
+                          <h3 className="font-messiri font-bold text-2xl text-[#4A3728] dark:text-amber-500 mt-1">
+                            {currentApplication.title}
+                          </h3>
+                        </div>
+                        <span className="px-3 py-1 bg-[#F0EAD6] dark:bg-slate-700 rounded-full text-xs font-bold text-[#5D4037] dark:text-slate-300 capitalize">
+                          {currentApplication.type}
+                        </span>
+                      </div>
+
+                      {/* Scenario */}
+                      <div className="bg-[#F0EAD6] dark:bg-slate-900 rounded-lg p-4 border-l-4 border-[#4A3728] dark:border-amber-500 mb-4">
+                        <h4 className="font-messiri font-bold text-sm text-[#4A3728] dark:text-amber-500 mb-2">📌 Scenario</h4>
+                        <p className="text-[#2C1810] dark:text-slate-200 font-markazi text-lg">{currentApplication.scenario}</p>
+                        <p className="text-[#8D6E63] dark:text-slate-400 font-markazi text-sm mt-2">
+                          <strong>To:</strong> {currentApplication.recipient}
+                        </p>
+                      </div>
+
+                      {/* Format Guidelines */}
+                      <div className="bg-[#F0EAD6] dark:bg-slate-900 rounded-lg p-4 border border-[#D7Cea7] dark:border-slate-700 mb-4">
+                        <h4 className="font-messiri font-bold text-sm text-[#4A3728] dark:text-amber-500 mb-2">📋 Format Structure</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {currentApplication.format.map((item, i) => (
+                            <span key={i} className="px-3 py-1 bg-[#E6DEC8] dark:bg-slate-800 rounded-full text-xs font-messiri text-[#5D4037] dark:text-slate-300 border border-[#D7Cea7] dark:border-slate-600">
+                              {i + 1}. {item}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Sample Toggle */}
+                      <button
+                        onClick={() => setShowSampleApplication(!showSampleApplication)}
+                        className="flex items-center gap-2 px-4 py-2 bg-[#4A3728] dark:bg-amber-600 text-[#F0EAD6] dark:text-white rounded-lg font-messiri text-sm hover:bg-[#2C1810] dark:hover:bg-amber-700 transition-colors mb-3"
+                      >
+                        {showSampleApplication ? <XCircle size={16} /> : <CheckCircle size={16} />}
+                        {showSampleApplication ? 'Hide Sample' : 'View Sample (for reference)'}
+                      </button>
+
+                      {showSampleApplication && (
+                        <div className="bg-white dark:bg-slate-950 rounded-lg p-4 border border-[#D7Cea7] dark:border-slate-700 font-markazi text-[#2C1810] dark:text-slate-200 whitespace-pre-line text-base">
+                          {currentApplication.sampleContent}
+                        </div>
                       )}
-                      {topic.toLowerCase().includes('application') && (
-                        <>
-                          <li>• Follow proper application/letter format</li>
-                          <li>• Include sender's address, date, recipient's address</li>
-                          <li>• Write subject line clearly</li>
-                          <li>• Be formal and polite</li>
-                        </>
-                      )}
-                      {topic.toLowerCase().includes('précis') && (
-                        <>
-                          <li>• Summarize the given passage in 1/3rd of its length</li>
-                          <li>• Use your own words</li>
-                          <li>• Maintain the essence of the original</li>
-                        </>
-                      )}
-                    </ul>
-                  </div>
+
+                      <button
+                        onClick={() => {
+                          const randomIndex = Math.floor(Math.random() * APPLICATION_TEMPLATES.length);
+                          setCurrentApplication(APPLICATION_TEMPLATES[randomIndex]);
+                          setWritingContent('');
+                          setShowSampleApplication(false);
+                        }}
+                        className="mt-4 flex items-center gap-2 px-4 py-2 text-sm font-messiri text-[#5D4037] dark:text-slate-400 hover:text-[#4A3728] dark:hover:text-amber-500 transition-colors"
+                      >
+                        <RefreshCw size={14} /> Get Different Scenario
+                      </button>
+                    </div>
+                  )}
+
+                  {/* Generic Writing Guidelines (for Précis or other) */}
+                  {!currentEssayTopic && !currentApplication && (
+                    <div className="bg-[#E6DEC8] dark:bg-slate-800 rounded-lg p-6 mb-6 border border-[#5D4037]/10 dark:border-amber-500/20">
+                      <h3 className="font-messiri font-bold text-lg text-[#4A3728] dark:text-amber-500 mb-3">
+                        📝 Writing Guidelines
+                      </h3>
+                      <ul className="space-y-2 text-[#5D4037] dark:text-slate-300 font-markazi text-lg">
+                        {topic.toLowerCase().includes('précis') && (
+                          <>
+                            <li>• Summarize the given passage in 1/3rd of its length</li>
+                            <li>• Use your own words</li>
+                            <li>• Maintain the essence of the original</li>
+                          </>
+                        )}
+                      </ul>
+                    </div>
+                  )}
 
                   {/* Writing Area */}
                   <div className="bg-[#F0EAD6] dark:bg-slate-900 rounded-xl p-6 border-2 border-[#5D4037]/10 dark:border-amber-500/20 shadow-lg">
@@ -1259,6 +1611,196 @@ const App: React.FC = () => {
                 </div>
               )}
 
+              {/* Comprehension Mode UI */}
+              {currentComprehension && !isLoading && (
+                <div className="animate-in slide-in-from-bottom-4 duration-700">
+                  <div className="flex items-end justify-between mb-10 pb-4 border-b border-[#5D4037]/20 dark:border-amber-500/20 transition-colors duration-500">
+                    <div>
+                      <h2 className="text-3xl font-messiri text-[#2C1810] dark:text-slate-100 transition-colors duration-500">Comprehension Practice</h2>
+                      <div className="flex items-center gap-3 mt-2">
+                        <span className="font-messiri font-bold text-[#4A3728] dark:text-slate-900 bg-[#E6DEC8] dark:bg-amber-500 px-3 py-1 rounded-full text-xs tracking-wider border border-[#5D4037]/20 dark:border-amber-500/20 transition-colors duration-500 dark:shadow-[0_0_10px_rgba(245,158,11,0.3)]">
+                          Reading & Questions
+                        </span>
+                      </div>
+                    </div>
+                    <Button
+                      variant="outline"
+                      onClick={() => {
+                        setCurrentComprehension(null);
+                        setComprehensionAnswers({});
+                      }}
+                      icon={<X size={16} />}
+                      className="hidden sm:flex"
+                    >
+                      Close
+                    </Button>
+                  </div>
+
+                  {/* Passage Display */}
+                  <div className="bg-[#E6DEC8] dark:bg-slate-800 rounded-lg p-6 mb-8 border border-[#5D4037]/10 dark:border-amber-500/20">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="font-messiri font-bold text-xl text-[#4A3728] dark:text-amber-500">
+                        📖 {currentComprehension.title}
+                      </h3>
+                      <button
+                        onClick={() => {
+                          const randomIndex = Math.floor(Math.random() * COMPREHENSION_PASSAGES.length);
+                          setCurrentComprehension(COMPREHENSION_PASSAGES[randomIndex]);
+                          setComprehensionAnswers({});
+                        }}
+                        className="flex items-center gap-2 px-3 py-1 text-sm font-messiri text-[#5D4037] dark:text-slate-400 hover:text-[#4A3728] dark:hover:text-amber-500 transition-colors"
+                      >
+                        <RefreshCw size={14} /> New Passage
+                      </button>
+                    </div>
+
+                    <div className="bg-[#F0EAD6] dark:bg-slate-900 rounded-lg p-6 border border-[#D7Cea7] dark:border-slate-700">
+                      <p className="text-[#2C1810] dark:text-slate-200 font-markazi text-lg leading-relaxed whitespace-pre-line">
+                        {currentComprehension.passage}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Questions */}
+                  <div className="space-y-6">
+                    <h3 className="font-messiri font-bold text-lg text-[#4A3728] dark:text-amber-500 border-b border-[#5D4037]/20 dark:border-amber-500/20 pb-2">
+                      ❓ Answer the following questions:
+                    </h3>
+
+                    {currentComprehension.questions.map((q, index) => {
+                      const answered = comprehensionAnswers[index] !== undefined;
+                      const isCorrect = answered && comprehensionAnswers[index].toLowerCase().trim() === q.correctAnswer.toLowerCase().trim();
+
+                      return (
+                        <div
+                          key={index}
+                          className={`bg-[#F0EAD6] dark:bg-slate-900 rounded-xl p-6 border-2 transition-all duration-300 ${answered
+                            ? isCorrect
+                              ? 'border-green-500/50 bg-green-50/50 dark:bg-green-900/20'
+                              : 'border-red-500/50 bg-red-50/50 dark:bg-red-900/20'
+                            : 'border-[#5D4037]/10 dark:border-amber-500/20'
+                            }`}
+                        >
+                          <div className="flex items-start gap-3 mb-4">
+                            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#4A3728] dark:bg-amber-500 text-[#F0EAD6] dark:text-slate-900 font-bold font-messiri text-sm">
+                              {index + 1}
+                            </span>
+                            <p className="text-[#2C1810] dark:text-slate-100 font-markazi text-lg flex-1">
+                              {q.questionText}
+                            </p>
+                          </div>
+
+                          {q.type === 'multiple_choice' && q.options && (
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 ml-11">
+                              {q.options.map((option, optIndex) => (
+                                <button
+                                  key={optIndex}
+                                  onClick={() => {
+                                    if (!answered) {
+                                      setComprehensionAnswers(prev => ({ ...prev, [index]: option }));
+                                    }
+                                  }}
+                                  disabled={answered}
+                                  className={`text-left px-4 py-3 rounded-lg border-2 transition-all font-markazi ${answered && option === q.correctAnswer
+                                    ? 'bg-green-100 dark:bg-green-900/40 border-green-500 text-green-800 dark:text-green-300'
+                                    : answered && comprehensionAnswers[index] === option && option !== q.correctAnswer
+                                      ? 'bg-red-100 dark:bg-red-900/40 border-red-500 text-red-800 dark:text-red-300'
+                                      : 'bg-[#E6DEC8] dark:bg-slate-800 border-[#D7Cea7] dark:border-slate-700 text-[#2C1810] dark:text-slate-200 hover:border-[#4A3728] dark:hover:border-amber-500'
+                                    } ${answered ? 'cursor-default' : 'cursor-pointer'}`}
+                                >
+                                  {option}
+                                </button>
+                              ))}
+                            </div>
+                          )}
+
+                          {q.type === 'fill_in_blank' && (
+                            <div className="ml-11">
+                              <div className="flex items-center gap-3">
+                                <input
+                                  type="text"
+                                  placeholder="Type your answer..."
+                                  disabled={answered}
+                                  value={comprehensionAnswers[index] || ''}
+                                  onChange={(e) => setComprehensionAnswers(prev => ({ ...prev, [index]: e.target.value }))}
+                                  onKeyDown={(e) => {
+                                    if (e.key === 'Enter' && comprehensionAnswers[index]?.trim()) {
+                                      // Mark as submitted (the answer check happens automatically)
+                                    }
+                                  }}
+                                  className={`flex-1 px-4 py-3 rounded-lg border-2 font-markazi text-lg transition-all outline-none ${answered
+                                    ? isCorrect
+                                      ? 'bg-green-100 dark:bg-green-900/40 border-green-500 text-green-800 dark:text-green-300'
+                                      : 'bg-red-100 dark:bg-red-900/40 border-red-500 text-red-800 dark:text-red-300'
+                                    : 'bg-[#E6DEC8] dark:bg-slate-800 border-[#D7Cea7] dark:border-slate-700 text-[#2C1810] dark:text-slate-200 focus:border-[#4A3728] dark:focus:border-amber-500'
+                                    }`}
+                                />
+                                {!answered && comprehensionAnswers[index]?.trim() && (
+                                  <Button
+                                    onClick={() => {
+                                      // The answer is already stored, we just need to "submit" it
+                                      // Force a re-render by setting the same value
+                                      const answer = comprehensionAnswers[index];
+                                      setComprehensionAnswers(prev => ({ ...prev, [index]: answer }));
+                                    }}
+                                    className="px-4"
+                                  >
+                                    Check
+                                  </Button>
+                                )}
+                              </div>
+                              {answered && !isCorrect && (
+                                <p className="mt-2 text-sm text-[#5D4037] dark:text-slate-400 font-markazi">
+                                  Correct answer: <span className="font-bold text-green-600 dark:text-green-400">{q.correctAnswer}</span>
+                                </p>
+                              )}
+                            </div>
+                          )}
+
+                          {/* Explanation */}
+                          {answered && (
+                            <div className="mt-4 ml-11 p-3 bg-[#E6DEC8]/50 dark:bg-slate-800 rounded-lg border-l-4 border-[#8D6E63] dark:border-amber-500">
+                              <p className="text-sm text-[#5D4037] dark:text-slate-300 font-markazi">
+                                <span className="font-bold">💡 Explanation:</span> {q.explanation}
+                              </p>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Comprehension Score Summary */}
+                  {Object.keys(comprehensionAnswers).length === currentComprehension.questions.length && (
+                    <div className="mt-10 bg-[#F0EAD6] dark:bg-slate-900 rounded-xl p-8 border-2 border-[#D97706]/30 dark:border-amber-500/60 text-center animate-in slide-in-from-bottom-4 duration-500">
+                      <h3 className="text-2xl font-messiri font-bold text-[#4A3728] dark:text-amber-500 mb-4">
+                        🎉 Comprehension Complete!
+                      </h3>
+                      <div className="text-5xl font-bold font-markazi text-[#2C1810] dark:text-slate-100 mb-4">
+                        {Math.round((currentComprehension.questions.filter((q, i) =>
+                          comprehensionAnswers[i]?.toLowerCase().trim() === q.correctAnswer.toLowerCase().trim()
+                        ).length / currentComprehension.questions.length) * 100)}%
+                      </div>
+                      <p className="text-[#5D4037] dark:text-slate-400 font-markazi mb-6">
+                        You got {currentComprehension.questions.filter((q, i) =>
+                          comprehensionAnswers[i]?.toLowerCase().trim() === q.correctAnswer.toLowerCase().trim()
+                        ).length} out of {currentComprehension.questions.length} correct
+                      </p>
+                      <Button
+                        onClick={() => {
+                          const randomIndex = Math.floor(Math.random() * COMPREHENSION_PASSAGES.length);
+                          setCurrentComprehension(COMPREHENSION_PASSAGES[randomIndex]);
+                          setComprehensionAnswers({});
+                        }}
+                        icon={<RefreshCw size={16} />}
+                      >
+                        Try Another Passage
+                      </Button>
+                    </div>
+                  )}
+                </div>
+              )}
+
               {quizSession && (
                 <div className="animate-in slide-in-from-bottom-4 duration-700">
                   <div className="flex items-end justify-between mb-10 pb-4 border-b border-[#5D4037]/20 dark:border-amber-500/20 transition-colors duration-500">
@@ -1477,6 +2019,93 @@ const App: React.FC = () => {
       <div className="fixed bottom-6 right-6 z-50">
         <LogoutButton onLogout={handleLogout} />
       </div>
+
+      {/* Question Bank Manager Modal */}
+      {showQuestionBankManager && (
+        <QuestionBankManager onClose={() => setShowQuestionBankManager(false)} />
+      )}
+
+      {/* User Directory Modal - Admin Only */}
+      {showUserDirectory && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4 animate-in fade-in duration-300">
+          <div className="bg-[#F0EAD6] dark:bg-slate-900 rounded-2xl shadow-2xl border-2 border-[#5D4037]/20 dark:border-amber-500/30 w-full max-w-2xl max-h-[80vh] overflow-hidden animate-in zoom-in-95 duration-300">
+            {/* Header */}
+            <div className="bg-[#E6DEC8] dark:bg-slate-800 p-6 border-b border-[#5D4037]/10 dark:border-amber-500/20 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-[#4A3728] dark:bg-amber-500 rounded-lg flex items-center justify-center">
+                  <Users size={20} className="text-[#F0EAD6] dark:text-slate-900" />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-messiri font-bold text-[#2C1810] dark:text-amber-500">User Directory</h2>
+                  <p className="text-sm font-markazi text-[#8D6E63] dark:text-slate-400">All registered users in the system</p>
+                </div>
+              </div>
+              <button
+                onClick={() => setShowUserDirectory(false)}
+                className="p-2 hover:bg-[#5D4037]/10 dark:hover:bg-white/10 rounded-lg transition-colors"
+              >
+                <X size={24} className="text-[#5D4037] dark:text-slate-400" />
+              </button>
+            </div>
+
+            {/* User List */}
+            <div className="p-6 overflow-y-auto max-h-[60vh]">
+              <div className="space-y-3">
+                {USERS.map((user, index) => (
+                  <div
+                    key={user.username}
+                    className={`p-4 rounded-xl border-2 transition-all duration-300 hover:shadow-md ${user.role === 'admin'
+                        ? 'bg-amber-50 dark:bg-amber-900/20 border-amber-300 dark:border-amber-500/50'
+                        : 'bg-white dark:bg-slate-800 border-[#D7Cea7] dark:border-slate-700'
+                      }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-4">
+                        <div className={`w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold ${user.role === 'admin'
+                            ? 'bg-[#4A3728] dark:bg-amber-500 text-[#F0EAD6] dark:text-slate-900'
+                            : 'bg-[#E6DEC8] dark:bg-slate-700 text-[#4A3728] dark:text-amber-500'
+                          }`}>
+                          {user.displayName.charAt(0)}
+                        </div>
+                        <div>
+                          <h3 className="font-messiri font-bold text-lg text-[#2C1810] dark:text-slate-100">
+                            {user.displayName}
+                          </h3>
+                          <p className="font-markazi text-sm text-[#8D6E63] dark:text-slate-400">
+                            @{user.username}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        {user.role === 'admin' ? (
+                          <span className="flex items-center gap-1 px-3 py-1 bg-[#4A3728] dark:bg-amber-500 text-[#F0EAD6] dark:text-slate-900 rounded-full text-xs font-bold uppercase tracking-wider">
+                            <Shield size={12} />
+                            Admin
+                          </span>
+                        ) : (
+                          <span className="px-3 py-1 bg-[#E6DEC8] dark:bg-slate-700 text-[#5D4037] dark:text-slate-300 rounded-full text-xs font-bold uppercase tracking-wider">
+                            User
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Summary */}
+              <div className="mt-6 pt-4 border-t border-[#D7Cea7] dark:border-slate-700 flex justify-between items-center">
+                <span className="font-markazi text-[#8D6E63] dark:text-slate-400">
+                  Total: {USERS.length} users
+                </span>
+                <span className="font-markazi text-[#8D6E63] dark:text-slate-400">
+                  {USERS.filter(u => u.role === 'admin').length} Admin • {USERS.filter(u => u.role === 'user').length} Users
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );

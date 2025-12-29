@@ -1,0 +1,115 @@
+
+> matab-ul-lugha@0.0.0 test
+> vitest
+
+
+[1m[44m DEV [49m[22m [34mv4.0.16 [39m[90mG:/Mr.R/Work/Software/maktab-al-kalam[39m
+
+ [31mΓ¥»[39m tests/grammar/curatedGrammar.test.ts [2m([22m[2m30 tests[22m[2m | [22m[31m3 failed[39m[2m)[22m[32m 47[2mms[22m[39m
+       [32mΓ£ô[39m [Present Simple] "She ___ to school every day." should have correct answer: "goes"[32m 3[2mms[22m[39m
+       [32mΓ£ô[39m [Present Simple] "They ___ football on weekends." should have correct answer: "play"[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m [Present Continuous] "He ___ a book right now." should have correct answer: "is reading"[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m [Past Simple] "I ___ to Paris last year." should have correct answer: "went"[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m [Past Simple] "She ___ the movie yesterday." should have correct answer: "watched"[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m [Present Perfect] "I ___ three books this month." should have correct answer: "have read"[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m [Future Simple] "She ___ you tomorrow." should have correct answer: "will call"[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should have questions covering multiple tenses[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m [Active to Passive] Passive voice transformation should be correct[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m [Active to Passive] Passive voice transformation should be correct[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m [Passive Voice] Passive voice transformation should be correct[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m [Nouns] Should correctly identify nouns[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m [Pronouns] Should correctly identify pronouns[32m 0[2mms[22m[39m
+[31m       [31m├ù[31m [Adjectives] Should correctly identify adjectives[39m[32m 12[2mms[22m[39m
+[31m       [31m├ù[31m [Adverbs] Should correctly identify adverbs[39m[32m 3[2mms[22m[39m
+[31m       [31m├ù[31m [Prepositions] Should correctly identify prepositions[39m[32m 3[2mms[22m[39m
+       [32mΓ£ô[39m should cover all major parts of speech[32m 2[2mms[22m[39m
+       [32mΓ£ô[39m [Agreement] "Neither the teacher nor the students ___ present." -> "were"[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m [Agreement] "The news ___ shocking." -> "is"[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m [Agreement] "Each of the students ___ completed the assignment." -> "has"[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m [Zero Conditional] Should follow conditional rules correctly[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m [First Conditional] Should follow conditional rules correctly[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m [Second Conditional] Should follow conditional rules correctly[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m [Third Conditional] Should follow conditional rules correctly[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m should cover all four conditional types[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m should have a comprehensive question bank[32m 0[2mms[22m[39m
+       [32mΓ£ô[39m every question should have a correct answer[32m 3[2mms[22m[39m
+       [32mΓ£ô[39m every question should have an explanation[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m every question should have a grammar rule[32m 1[2mms[22m[39m
+       [32mΓ£ô[39m incorrect answers should be clearly wrong[32m 3[2mms[22m[39m
+ [32mΓ£ô[39m tests/constants.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 26[2mms[22m[39m
+ [32mΓ£ô[39m tests/components/Button.test.tsx [2m([22m[2m13 tests[22m[2m)[22m[32m 113[2mms[22m[39m
+ [32mΓ£ô[39m tests/components/LogoutButton.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 92[2mms[22m[39m
+ [32mΓ£ô[39m tests/components/QuestionCard.test.tsx [2m([22m[2m14 tests[22m[2m)[22m[32m 245[2mms[22m[39m
+ [32mΓ£ô[39m tests/components/Login.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 301[2mms[22m[39m
+ [32mΓ£ô[39m tests/services/geminiService.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32mΓ£ô[39m tests/utils/quizUtils.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 20[2mms[22m[39m
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ» Failed Tests 3 ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»
+
+ FAIL  tests/grammar/curatedGrammar.test.ts > Curated Grammar Validation Tests > Parts of Speech Questions - Answer Verification > [Adjectives] Should correctly identify adjectives
+AssertionError: expected 'Adjectives modify nouns. "Lazy" descrΓÇª' to contain 'adjective'
+
+Expected: "adjective"
+Received: "Adjectives modify nouns. "Lazy" describes the cat."
+
+ Γ¥» tests/grammar/curatedGrammar.test.ts:281:39
+    279|             it(`[${q.topic}] Should correctly identify ${q.topic.toLowΓÇª
+    280|                 expect(q.correctAnswer).toBeDefined();
+    281|                 expect(q.explanation).toContain(q.topic.toLowerCase().ΓÇª
+       |                                       ^
+    282|             });
+    283|         });
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[1/3]ΓÄ»
+
+ FAIL  tests/grammar/curatedGrammar.test.ts > Curated Grammar Validation Tests > Parts of Speech Questions - Answer Verification > [Adverbs] Should correctly identify adverbs
+AssertionError: expected 'Adverbs modify verbs and often end inΓÇª' to contain 'adverb'
+
+Expected: "adverb"
+Received: "Adverbs modify verbs and often end in -ly."
+
+ Γ¥» tests/grammar/curatedGrammar.test.ts:281:39
+    279|             it(`[${q.topic}] Should correctly identify ${q.topic.toLowΓÇª
+    280|                 expect(q.correctAnswer).toBeDefined();
+    281|                 expect(q.explanation).toContain(q.topic.toLowerCase().ΓÇª
+       |                                       ^
+    282|             });
+    283|         });
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[2/3]ΓÄ»
+
+ FAIL  tests/grammar/curatedGrammar.test.ts > Curated Grammar Validation Tests > Parts of Speech Questions - Answer Verification > [Prepositions] Should correctly identify prepositions
+AssertionError: expected '"On" is used when something is touchiΓÇª' to contain 'preposition'
+
+Expected: "preposition"
+Received: ""On" is used when something is touching and supported by a surface."
+
+ Γ¥» tests/grammar/curatedGrammar.test.ts:281:39
+    279|             it(`[${q.topic}] Should correctly identify ${q.topic.toLowΓÇª
+    280|                 expect(q.correctAnswer).toBeDefined();
+    281|                 expect(q.explanation).toContain(q.topic.toLowerCase().ΓÇª
+       |                                       ^
+    282|             });
+    283|         });
+
+ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[3/3]ΓÄ»
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m7 passed[39m[22m[90m (8)[39m
+[2m      Tests [22m [1m[31m3 failed[39m[22m[2m | [22m[1m[32m116 passed[39m[22m[90m (119)[39m
+[2m   Start at [22m 03:49:52
+[2m   Duration [22m 3.45s[2m (transform 901ms, setup 2.98s, import 1.37s, tests 860ms, environment 6.95s)[22m
+
+[1m[41m FAIL [49m[22m [31mTests failed. Watching for file changes...[39m
+       [2mpress [22m[1mh[22m[2m to show help[22m[2m, [22m[2mpress [22m[1mq[22m[2m to quit[22m
+c[3J[1m[44m RERUN [49m[22m [34m[2mtests/grammar/curatedGrammar.test.ts [22m[34mx1 [34m[39m
+
+ [32mΓ£ô[39m tests/grammar/curatedGrammar.test.ts [2m([22m[2m30 tests[22m[2m)[22m[32m 27[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m30 passed[39m[22m[90m (30)[39m
+[2m   Start at [22m 03:56:43
+[2m   Duration [22m 379ms
+
+[1m[42m PASS [49m[22m [32mWaiting for file changes...[39m
+       [2mpress [22m[1mh[22m[2m to show help[22m[2m, [22m[2mpress [22m[1mq[22m[2m to quit[22m
