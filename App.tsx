@@ -668,7 +668,7 @@ const App: React.FC = () => {
       {/* Outer container handles vertical translation (The Pull) */}
       <div
         onClick={toggleTheme}
-        className={`fixed top-0 right-4 sm:right-8 lg:right-12 z-30 cursor-pointer group select-none transition-transform ${getRopeOuterClass()}`}
+        className={`fixed top-0 right-4 sm:right-8 lg:right-12 z-[39] cursor-pointer group select-none transition-transform ${getRopeOuterClass()}`}
         title="Pull to switch theme"
       >
         {/* Inner container handles rotation (The Sway) */}
