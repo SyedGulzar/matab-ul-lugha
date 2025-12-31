@@ -158,7 +158,7 @@ const App: React.FC = () => {
       const image = canvas.toDataURL("image/png");
       const link = document.createElement('a');
       link.href = image;
-      link.download = `Matab-ul-Lugha-Snapshot-${Date.now()}.png`;
+      link.download = `Maktab-ul-Lugha-Snapshot-${Date.now()}.png`;
       link.click();
     } catch (error) {
       console.error("Screenshot failed:", error);
@@ -725,7 +725,7 @@ const App: React.FC = () => {
               <div>
                 <h1 className="text-3xl font-messiri leading-none flex gap-1.5 items-baseline">
                   <span className="flex">
-                    {"Matab".split('').map((char, i) =>
+                    {"Maktab".split('').map((char, i) =>
                       renderInteractiveChar(char, i, "text-[#2C1810] dark:text-slate-100 transition-colors duration-500")
                     )}
                   </span>
@@ -2055,15 +2055,15 @@ const App: React.FC = () => {
                   <div
                     key={user.username}
                     className={`p-4 rounded-xl border-2 transition-all duration-300 hover:shadow-md ${user.role === 'admin'
-                        ? 'bg-amber-50 dark:bg-amber-900/20 border-amber-300 dark:border-amber-500/50'
-                        : 'bg-white dark:bg-slate-800 border-[#D7Cea7] dark:border-slate-700'
+                      ? 'bg-amber-50 dark:bg-amber-900/20 border-amber-300 dark:border-amber-500/50'
+                      : 'bg-white dark:bg-slate-800 border-[#D7Cea7] dark:border-slate-700'
                       }`}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-4">
                         <div className={`w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold ${user.role === 'admin'
-                            ? 'bg-[#4A3728] dark:bg-amber-500 text-[#F0EAD6] dark:text-slate-900'
-                            : 'bg-[#E6DEC8] dark:bg-slate-700 text-[#4A3728] dark:text-amber-500'
+                          ? 'bg-[#4A3728] dark:bg-amber-500 text-[#F0EAD6] dark:text-slate-900'
+                          : 'bg-[#E6DEC8] dark:bg-slate-700 text-[#4A3728] dark:text-amber-500'
                           }`}>
                           {user.displayName.charAt(0)}
                         </div>

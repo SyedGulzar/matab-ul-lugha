@@ -41,7 +41,7 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
                             <BookOpen size={32} />
                         </div>
                         <h1 className="text-4xl font-messiri font-bold text-[#2C1810] dark:text-slate-100 mb-2">
-                            Matab<span className="text-[#5D4037] dark:text-slate-400">-ul-</span><span className="text-[#4A3728] dark:text-amber-500">Lugha</span>
+                            Maktab<span className="text-[#5D4037] dark:text-slate-400">-ul-</span><span className="text-[#4A3728] dark:text-amber-500">Lugha</span>
                         </h1>
                         <p className="text-[#8D6E63] dark:text-slate-400 font-markazi text-xl tracking-wide uppercase">The School of Language</p>
                     </div>

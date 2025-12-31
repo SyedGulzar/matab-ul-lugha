@@ -21,7 +21,7 @@ describe('Login Component', () => {
 
     it('should render the application title', () => {
         render(<Login onLogin={mockOnLogin} />);
-        expect(screen.getByText(/Matab/)).toBeInTheDocument();
+        expect(screen.getByText(/Maktab/)).toBeInTheDocument();
         expect(screen.getByText(/Lugha/)).toBeInTheDocument();
     });
 
