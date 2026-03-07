@@ -14,6 +14,7 @@ import { QuestionBankManager } from './components/QuestionBankManager';
 import { BookOpen, GraduationCap, RefreshCw, Trophy, ChevronDown, X, Flame, Search, Moon, Sun, Camera, CheckCircle, XCircle, Library, PenTool, PlayCircle, Bold, Italic, List, Underline, Eraser, Circle, Settings, Save, RotateCcw, CheckSquare, Square, Database, Users, Shield, DoorOpen, Loader } from 'lucide-react';
 import html2canvas from 'html2canvas';
 import { saveAs } from 'file-saver';
+import { Analytics } from '@vercel/analytics/react';
 
 const App: React.FC = () => {
   // User State
@@ -2341,6 +2342,7 @@ const App: React.FC = () => {
         </div>
       )}
 
+      <Analytics />
     </div>
   );
 };
