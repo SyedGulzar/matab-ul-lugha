@@ -33,6 +33,7 @@ const App: React.FC = () => {
   const handleLogin = (user: string) => {
     localStorage.setItem('grammarAppUsername', user);
     setUsername(user);
+    setCurrentView('learning');
 
     // Show splash screen for regular users (not admins)
     if (!isAdmin(user)) {
@@ -52,6 +53,7 @@ const App: React.FC = () => {
   const handleLogout = () => {
     localStorage.removeItem('grammarAppUsername');
     setUsername(null);
+    setCurrentView('learning');
   };
 
   // Theme State - Default to DARK (true)
@@ -70,8 +72,8 @@ const App: React.FC = () => {
   // 'releasing': Moving up slow, straight
   const [ropeState, setRopeState] = useState<'idle' | 'pulling' | 'releasing'>('idle');
 
-  // Navigation State
-  const [currentView, setCurrentView] = useState<'practice' | 'learning'>('practice');
+  // Navigation State - Default to Learning Area
+  const [currentView, setCurrentView] = useState<'practice' | 'learning'>('learning');
 
   // Question Bank Manager State
   const [showQuestionBankManager, setShowQuestionBankManager] = useState(false);
