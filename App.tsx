@@ -648,7 +648,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#F0EAD6] dark:bg-slate-900 transition-colors duration-500 font-sans relative text-[#2C1810] dark:text-slate-100">
+    <div className="min-h-screen bg-transparent transition-colors duration-500 font-sans relative text-[#2C1810] dark:text-slate-100">
       {/* Swinging Lamp Dark/Light Pull Cord */}
       <LampPullCord
         isDarkMode={isDarkMode}

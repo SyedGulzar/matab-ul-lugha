@@ -28,7 +28,7 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
     };
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center bg-[#F0EAD6] dark:bg-slate-900 p-4 transition-colors duration-500">
+        <div className="min-h-screen flex flex-col items-center justify-center bg-transparent p-4 transition-colors duration-500">
             <div className="w-full max-w-md bg-[#E6DEC8] dark:bg-slate-800 rounded-2xl shadow-xl border border-[#5D4037]/10 dark:border-amber-500/20 overflow-hidden relative group">
 
                 {/* Decorative Background Elements */}
