@@ -49,3 +49,14 @@ export type DifficultyLevel =
   | 'Class 10'
   | 'Class 11'
   | 'Class 12';
+
+export interface WritingScore {
+  score: number; // 0-100
+  grade: string; // A+, A, B, C, D, F
+  grammarScore: number; // 0-25
+  structureScore: number; // 0-25
+  contentScore: number; // 0-25
+  toneScore: number; // 0-25
+  feedback: string;
+  suggestions: string[];
+}

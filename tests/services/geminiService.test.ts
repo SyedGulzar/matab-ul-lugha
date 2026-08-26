@@ -1,11 +1,8 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { QuestionType } from '../../types';
+import { scoreWriting } from '../../services/geminiService';
 
-// We need to test the mock functions since the real API calls require credentials
-// Extracting and testing the pure logic functions
-
-describe('generateMockQuiz', () => {
-    // Import the module to test
+describe('generateMockQuiz logic', () => {
     const generateMockQuiz = (topic: string, difficulty: string, numberOfQuestions: number = 5) => {
         const baseQuestions = [
             {
@@ -58,7 +55,7 @@ describe('generateMockQuiz', () => {
             },
         ];
 
-        const shuffledBase = [...baseQuestions]; // Don't shuffle for predictable tests
+        const shuffledBase = [...baseQuestions];
 
         const questions = [];
         for (let i = 0; i < numberOfQuestions; i++) {
@@ -82,7 +79,6 @@ describe('generateMockQuiz', () => {
 
     it('should return a valid QuizSession object', () => {
         const quiz = generateMockQuiz('Present Tense', 'Beginner (A1)');
-
         expect(quiz).toHaveProperty('title');
         expect(quiz).toHaveProperty('difficulty');
         expect(quiz).toHaveProperty('questions');
@@ -102,7 +98,6 @@ describe('generateMockQuiz', () => {
 
     it('each question should have required fields', () => {
         const quiz = generateMockQuiz('Adjectives', 'Elementary (A2)');
-
         quiz.questions.forEach((q) => {
             expect(q).toHaveProperty('id');
             expect(q).toHaveProperty('type');
@@ -114,7 +109,6 @@ describe('generateMockQuiz', () => {
 
     it('question types should be valid QuestionType enum values', () => {
         const quiz = generateMockQuiz('Grammar', 'Beginner (A1)');
-
         quiz.questions.forEach((q) => {
             expect([QuestionType.MULTIPLE_CHOICE, QuestionType.FILL_IN_BLANK]).toContain(q.type);
         });
@@ -122,7 +116,6 @@ describe('generateMockQuiz', () => {
 
     it('multiple choice questions should have exactly 4 options', () => {
         const quiz = generateMockQuiz('Pronouns', 'Beginner (A1)');
-
         quiz.questions.forEach((q) => {
             if (q.type === QuestionType.MULTIPLE_CHOICE && q.options) {
                 expect(q.options).toHaveLength(4);
@@ -133,114 +126,90 @@ describe('generateMockQuiz', () => {
     it('questions should have unique sequential IDs', () => {
         const quiz = generateMockQuiz('Tenses', 'Intermediate (B1)', 7);
         const ids = quiz.questions.map((q) => q.id);
-
         expect(ids).toEqual([1, 2, 3, 4, 5, 6, 7]);
     });
 });
 
-describe('generateMockScore', () => {
-    const getGrade = (score: number): string => {
-        if (score >= 90) return 'A';
-        if (score >= 80) return 'B';
-        if (score >= 70) return 'C';
-        if (score >= 60) return 'D';
-        return 'F';
-    };
+describe('scoreWriting - Heuristic Linguistic Assessment', () => {
+    it('should return score of 0 and Grade F for gibberish keyboard mashing', async () => {
+        const gibberish = 'Your a cricket match asdasda a asd asda a asdasd as a asd as a a a asda a as ad a';
+        const result = await scoreWriting(gibberish, 'A Cricket Match');
 
-    const generateMockScore = (content: string, topicType: string) => {
-        const wordCount = content.trim().split(/\s+/).filter((w) => w).length;
-        const baseScore = Math.min(100, Math.max(40, 50 + wordCount * 0.5));
-
-        return {
-            score: Math.round(baseScore),
-            grade: getGrade(baseScore),
-            feedback: {
-                grammar: { score: Math.round(baseScore + 5), comment: 'Good use of basic grammar structures.' },
-                structure: { score: Math.round(baseScore - 5), comment: `Your ${topicType.toLowerCase()} follows a reasonable structure.` },
-                vocabulary: { score: Math.round(baseScore), comment: 'Vocabulary is appropriate for the level.' },
-                clarity: { score: Math.round(baseScore + 2), comment: 'Ideas are expressed clearly.' },
-            },
-            overallComment: `Your ${topicType.toLowerCase()} shows good effort. Keep practicing to improve further!`,
-            suggestions: [
-                'Try using more varied sentence structures.',
-                'Add more descriptive vocabulary.',
-                'Review punctuation rules for better clarity.',
-            ],
-        };
-    };
-
-    it('should return valid WritingScore structure', () => {
-        const result = generateMockScore('This is a test sentence for scoring.', 'Essay');
-
-        expect(result).toHaveProperty('score');
-        expect(result).toHaveProperty('grade');
-        expect(result).toHaveProperty('feedback');
-        expect(result).toHaveProperty('overallComment');
-        expect(result).toHaveProperty('suggestions');
+        expect(result.score).toBe(0);
+        expect(result.grade).toBe('F');
+        expect(result.grammarScore).toBe(0);
+        expect(result.structureScore).toBe(0);
+        expect(result.contentScore).toBe(0);
+        expect(result.toneScore).toBe(0);
+        expect(result.feedback).toContain('Incoherent / Invalid Input');
     });
 
-    it('should calculate score based on word count', () => {
-        const shortContent = 'Hello world'; // 2 words -> 50 + 1 = 51
-        const longContent = 'This is a much longer piece of content with many more words to count here today';
-        // 15 words -> 50 + 7.5 = 57.5
-
-        const shortResult = generateMockScore(shortContent, 'Essay');
-        const longResult = generateMockScore(longContent, 'Essay');
-
-        expect(shortResult.score).toBeLessThan(longResult.score);
+    it('should return 0 for empty submission', async () => {
+        const result = await scoreWriting('', 'Essay');
+        expect(result.score).toBe(0);
+        expect(result.grade).toBe('F');
     });
 
-    it('should cap score between 40 and 100', () => {
-        const emptyContent = '';
-        const veryLongContent = Array(200).fill('word').join(' ');
+    it('should penalize very short inputs under 15 words', async () => {
+        const short = 'I love playing cricket with friends.';
+        const result = await scoreWriting(short, 'A Cricket Match');
 
-        const emptyResult = generateMockScore(emptyContent, 'Essay');
-        const longResult = generateMockScore(veryLongContent, 'Essay');
-
-        expect(emptyResult.score).toBeGreaterThanOrEqual(40);
-        expect(longResult.score).toBeLessThanOrEqual(100);
+        expect(result.score).toBeLessThanOrEqual(25);
+        expect(result.grade).toBe('F');
+        expect(result.feedback).toContain('Insufficient');
     });
 
-    it('should assign correct grades based on score ranges', () => {
-        expect(getGrade(95)).toBe('A');
-        expect(getGrade(90)).toBe('A');
-        expect(getGrade(85)).toBe('B');
-        expect(getGrade(80)).toBe('B');
-        expect(getGrade(75)).toBe('C');
-        expect(getGrade(70)).toBe('C');
-        expect(getGrade(65)).toBe('D');
-        expect(getGrade(60)).toBe('D');
-        expect(getGrade(55)).toBe('F');
-        expect(getGrade(0)).toBe('F');
+    it('should return score of 0 and Grade F for repeated copy-pasted paragraphs', async () => {
+        const repeatedText = `Incoherent / Invalid Input: Your submission contains random keyboard mashing, repeated characters, or non-English text. No academic credit can be awarded for gibberish.
+
+Please write meaningful, coherent English sentences relevant to the assigned prompt.
+
+Incoherent / Invalid Input: Your submission contains random keyboard mashing, repeated characters, or non-English text. No academic credit can be awarded for gibberish.
+
+Please write meaningful, coherent English sentences relevant to the assigned prompt.
+
+Incoherent / Invalid Input: Your submission contains random keyboard mashing, repeated characters, or non-English text. No academic credit can be awarded for gibberish.
+
+Please write meaningful, coherent English sentences relevant to the assigned prompt.`;
+
+        const result = await scoreWriting(repeatedText, 'A Cricket Match');
+
+        expect(result.score).toBe(0);
+        expect(result.grade).toBe('F');
+        expect(result.grammarScore).toBe(0);
+        expect(result.structureScore).toBe(0);
+        expect(result.contentScore).toBe(0);
+        expect(result.toneScore).toBe(0);
+        expect(result.feedback).toContain('Excessive Repetition');
     });
 
-    it('feedback should contain all 4 categories', () => {
-        const result = generateMockScore('Test content here.', 'Application');
+    it('should fail and penalize off-topic compositions with Grade F', async () => {
+        const offTopicText = `Cooking is a wonderful culinary art that requires fresh ingredients, spices, and patience. Making a delicious biryani requires rice, chicken, yogurt, and aromatic spices cooked on low flame. The flavor is rich and authentic.`;
+        const result = await scoreWriting(offTopicText, 'A Cricket Match');
 
-        expect(result.feedback).toHaveProperty('grammar');
-        expect(result.feedback).toHaveProperty('structure');
-        expect(result.feedback).toHaveProperty('vocabulary');
-        expect(result.feedback).toHaveProperty('clarity');
+        expect(result.score).toBeLessThanOrEqual(15);
+        expect(result.grade).toBe('F');
+        expect(result.contentScore).toBe(0);
+        expect(result.feedback).toContain('Off-Topic');
     });
 
-    it('each feedback category should have score and comment', () => {
-        const result = generateMockScore('Test content here.', 'Letter');
+    it('should award high scores and Grade A for rich, relevant English composition', async () => {
+        const highQuality = `Cricket is the most popular game in Pakistan. People of all ages love to play and watch cricket matches. Last Sunday, I had the wonderful opportunity to watch an exciting cricket match between our school team and the City Model School.
 
-        Object.values(result.feedback).forEach((category) => {
-            expect(category).toHaveProperty('score');
-            expect(category).toHaveProperty('comment');
-            expect(typeof category.score).toBe('number');
-            expect(typeof category.comment).toBe('string');
-        });
-    });
+The toss was won by our team captain who decided to bat first. Our opening batsmen started aggressively and scored quick boundaries in the initial powerplay overs. Although two quick wickets fell in the middle overs, our middle-order batsman played a splendid innings and scored a brilliant fifty. By the end of twenty overs, our school team posted a competitive total of 165 runs.
 
-    it('suggestions should have 3 items', () => {
-        const result = generateMockScore('Some text.', 'Essay');
-        expect(result.suggestions).toHaveLength(3);
-    });
+In response, the opposing team started steadily. Their opening pair built a strong partnership of sixty runs. However, our spin bowlers turned the match around by taking three crucial wickets in quick succession. The fielding was sharp and every player showed great dedication. In the final over, they needed twelve runs to win, but our fast bowler delivered exceptional yorkers and restricted them, securing victory by seven runs.
 
-    it('overall comment should mention the topic type', () => {
-        const result = generateMockScore('Text here.', 'Letter');
-        expect(result.overallComment.toLowerCase()).toContain('letter');
+It was a thrilling match filled with excitement and sportsmanship. Both teams played with great zeal, and our victory was celebrated with joy throughout the school.`;
+
+        const result = await scoreWriting(highQuality, 'A Cricket Match');
+
+        expect(result.score).toBeGreaterThanOrEqual(80);
+        expect(['A', 'A+']).toContain(result.grade);
+        expect(result.grammarScore).toBeGreaterThanOrEqual(20);
+        expect(result.structureScore).toBeGreaterThanOrEqual(20);
+        expect(result.contentScore).toBeGreaterThanOrEqual(20);
+        expect(result.toneScore).toBeGreaterThanOrEqual(20);
+        expect(result.suggestions.length).toBeGreaterThan(0);
     });
 });
