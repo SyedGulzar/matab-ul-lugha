@@ -37,12 +37,13 @@ import { ARTICLES } from './questions/articles';
 import { CONDITIONALS } from './questions/conditionals';
 import { MODAL_VERBS, CAUSATIVE_VERBS } from './questions/modals';
 import { PUNCTUATION, PROVERBS, PAIR_OF_WORDS } from './questions/misc';
-import { COMPREHENSION_QUESTIONS, COMPREHENSION_PASSAGES, ESSAY_TOPICS, APPLICATION_TEMPLATES } from './questions/writing';
+import { COMPREHENSION_QUESTIONS, COMPREHENSION_PASSAGES, ESSAY_TOPICS, APPLICATION_TEMPLATES, LETTER_TEMPLATES } from './questions/writing';
 
 export interface OfflineQuestion {
     type: QuestionType;
     questionText: string;
     options?: string[];
+    scrambledWords?: string[];
     correctAnswer: string;
     explanation: string;
 }
@@ -181,6 +182,23 @@ export function getQuestionsForTopic(topicName: string): OfflineQuestion[] | nul
 }
 
 /**
+ * Get questions for multiple topics combined and shuffled
+ */
+export function getQuestionsForMultipleTopics(topicNames: string[]): OfflineQuestion[] {
+    const allQuestions: OfflineQuestion[] = [];
+
+    topicNames.forEach(topicName => {
+        const questions = getQuestionsForTopic(topicName);
+        if (questions) {
+            allQuestions.push(...questions);
+        }
+    });
+
+    // Shuffle the combined questions randomly
+    return allQuestions.sort(() => 0.5 - Math.random());
+}
+
+/**
  * Get all questions across all topics
  */
 export function getAllQuestions(): OfflineQuestion[] {
@@ -256,4 +274,5 @@ export {
     COMPREHENSION_PASSAGES,
     ESSAY_TOPICS,
     APPLICATION_TEMPLATES,
+    LETTER_TEMPLATES,
 };

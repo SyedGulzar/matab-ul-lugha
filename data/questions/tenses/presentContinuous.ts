@@ -47,4 +47,26 @@ export const PRESENT_CONTINUOUS: OfflineQuestion[] = [
     { type: QuestionType.FILL_IN_BLANK, questionText: 'The teacher ___ (explain) the lesson.', correctAnswer: 'is explaining', explanation: 'Teacher + is + explaining.' },
     { type: QuestionType.MULTIPLE_CHOICE, questionText: 'It ___ outside. Take an umbrella!', options: ['rains', 'is raining', 'rain', 'rained'], correctAnswer: 'is raining', explanation: 'Current weather.' },
     { type: QuestionType.MULTIPLE_CHOICE, questionText: 'The boys ___ in the street.', options: ['play', 'are playing', 'plays', 'played'], correctAnswer: 'are playing', explanation: 'Boys + are + playing.' },
+    // Sentence Builder Practice
+    {
+        type: QuestionType.SENTENCE,
+        questionText: 'Form the sentence: "She is reading a book."',
+        scrambledWords: ['She', 'is', 'reading', 'a', 'book', 'reads', 'are', 'doing'],
+        correctAnswer: 'She is reading a book.',
+        explanation: 'Subject + is + verb-ing + object.'
+    },
+    {
+        type: QuestionType.SENTENCE,
+        questionText: 'Make this negative: "They are playing cricket."',
+        scrambledWords: ['They', 'are', 'not', 'playing', 'cricket', 'is', 'do', 'play'],
+        correctAnswer: 'They are not playing cricket.',
+        explanation: 'Negative: are + not + playing.'
+    },
+    {
+        type: QuestionType.SENTENCE,
+        questionText: 'Order the question: "Are you coming?"',
+        scrambledWords: ['Are', 'you', 'coming', 'Is', 'come', 'do', '?'],
+        correctAnswer: 'Are you coming?',
+        explanation: 'Question: Are + subject + verb-ing?'
+    }
 ];

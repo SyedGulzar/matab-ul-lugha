@@ -46,4 +46,27 @@ export const FUTURE_SIMPLE: OfflineQuestion[] = [
     { type: QuestionType.FILL_IN_BLANK, questionText: 'The exam ___ (start) at 9 AM.', correctAnswer: 'will start', explanation: 'Will + start.' },
     { type: QuestionType.MULTIPLE_CHOICE, questionText: 'InshaAllah, he ___ recover soon.', options: ['is', 'will', 'was', 'has'], correctAnswer: 'will', explanation: 'Future hope.' },
     { type: QuestionType.MULTIPLE_CHOICE, questionText: 'I promise I ___ be there on time.', options: ['am', 'will', 'was', 'have'], correctAnswer: 'will', explanation: 'Promises use will.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: 'I promise I ___ be there on time.', options: ['am', 'will', 'was', 'have'], correctAnswer: 'will', explanation: 'Promises use will.' },
+    // Sentence Builder Practice
+    {
+        type: QuestionType.SENTENCE,
+        questionText: 'Form the sentence: "I will help you."',
+        scrambledWords: ['I', 'will', 'help', 'you', 'am', 'helping', 'do', 'going'],
+        correctAnswer: 'I will help you.',
+        explanation: 'Subject + will + base verb + object.'
+    },
+    {
+        type: QuestionType.SENTENCE,
+        questionText: 'Make this negative: "She will not come."',
+        scrambledWords: ['She', 'will', 'not', 'come', 'coming', 'comes', 'is', 'won\'t'],
+        correctAnswer: 'She will not come.',
+        explanation: 'Negative: will + not + base verb.'
+    },
+    {
+        type: QuestionType.SENTENCE,
+        questionText: 'Order the question: "Will they arrive soon?"',
+        scrambledWords: ['Will', 'they', 'arrive', 'soon', 'Are', 'arriving', 'do', '?'],
+        correctAnswer: 'Will they arrive soon?',
+        explanation: 'Question: Will + subject + base verb?'
+    }
 ];

@@ -1,21 +1,28 @@
 import { QuizSession, QuestionType, Question } from '../types';
-import { getQuestionsForTopic, OfflineQuestion } from '../data/offlineQuestionBank';
+import { getQuestionsForTopic, getQuestionsForMultipleTopics, OfflineQuestion } from '../data/offlineQuestionBank';
 
-export async function generateGrammarPractice(topic: string, difficulty: string, numberOfQuestions: number = 5): Promise<QuizSession> {
+export async function generateGrammarPractice(topics: string[], difficulty: string, numberOfQuestions: number = 5, allowedTypes: QuestionType[] = []): Promise<QuizSession> {
     // Always use the offline question bank
-    return generateMockQuiz(topic, difficulty, numberOfQuestions);
+    return generateMockQuiz(topics, difficulty, numberOfQuestions, allowedTypes);
 }
 
-function generateMockQuiz(topic: string, difficulty: string, numberOfQuestions: number = 5): QuizSession {
-    // Try to get topic-specific questions from the centralized question bank
-    const topicQuestions = getQuestionsForTopic(topic);
-
+function generateMockQuiz(topics: string[], difficulty: string, numberOfQuestions: number = 5, allowedTypes: QuestionType[] = []): QuizSession {
     let baseQuestions: OfflineQuestion[] = [];
 
-    if (topicQuestions && topicQuestions.length > 0) {
-        baseQuestions = topicQuestions;
-    } else {
-        // Generic fallback questions for topics not yet in the bank
+    // Check if multiple topics or single topic
+    if (topics.length === 1) {
+        // Single topic - use existing logic
+        const topicQuestions = getQuestionsForTopic(topics[0]);
+        if (topicQuestions && topicQuestions.length > 0) {
+            baseQuestions = topicQuestions;
+        }
+    } else if (topics.length > 1) {
+        // Multiple topics - merge and shuffle
+        baseQuestions = getQuestionsForMultipleTopics(topics);
+    }
+
+    // Fallback to generic questions if no topic questions found
+    if (baseQuestions.length === 0) {
         baseQuestions = [
             {
                 type: QuestionType.MULTIPLE_CHOICE,
@@ -65,7 +72,96 @@ function generateMockQuiz(topic: string, difficulty: string, numberOfQuestions: 
                 correctAnswer: 'I went to Paris last year.',
                 explanation: 'Specific past time (last year) requires simple past tense.',
             },
+            {
+                type: QuestionType.SENTENCE,
+                questionText: 'Correct the sentence: "She don\'t knows him."',
+                correctAnswer: 'She doesn\'t know him.',
+                explanation: 'Third person singular takes "doesn\'t" and base verb "know".',
+            }
         ];
+    }
+
+
+    // Filter by allowed types if specified
+    if (allowedTypes && allowedTypes.length > 0) {
+        baseQuestions = baseQuestions.filter(q => allowedTypes.includes(q.type));
+    }
+
+    // If filtering removed all questions (e.g. topic doesn't have that type), fall back to showing all
+    // Or we could return an error, but fallback is safer for now. 
+    // Ideally we should inform user but for now we'll just guard against empty.
+    if (baseQuestions.length === 0) {
+        // Fallback: If strict filtering yields nothing, we might want to relax or show a specific message.
+        // For now, let's just not filter if result is empty so user gets *something* (or keep it empty and handle in UI).
+        // Let's keep it empty and the loop below key off it.
+        // Actually, if we have 0 questions, we can't generate a quiz. 
+        // Let's populate with a generic "No questions found for this type" placeholder if really needed?
+        // Better: let's re-fetch from fallback generic list if topic yielded nothing for that type.
+        const genericFallbacks = [
+            // We can just rely on the loop not running and returning empty, but the UI expects questions.
+        ];
+        // If we really have nothing, let's relax the filter? 
+        // User explicitly asked for types. If none exist, we should probably output 0 questions or handle gracefully.
+    }
+
+    // If filtered list is empty (e.g. user selected ONLY Sentences but topic has none),
+    // we can try to "Smart Convert" existing questions to Sentence Builders.
+    if (allowedTypes && allowedTypes.length === 1 && allowedTypes[0] === QuestionType.SENTENCE && baseQuestions.length === 0) {
+        // Fetch ALL questions for this topic again (ignoring type filter) to find candidates
+        let candidates: OfflineQuestion[] = [];
+        if (topics.length === 1) {
+            candidates = getQuestionsForTopic(topics[0]) || [];
+        } else {
+            candidates = getQuestionsForMultipleTopics(topics);
+        }
+
+        // Smart Convert eligible candidates
+        const converted = candidates
+            .filter(q => q.questionText.includes('___')) // Only those with blanks
+            .map(q => {
+                // 1. Create the full sentence
+                // Replace ___ (or multiple underscores) with the correct answer
+                const cleanAnswer = q.correctAnswer;
+                const fullSentence = q.questionText.replace(/_+/g, cleanAnswer).replace(/\s*\(.*?\)/g, ''); // Remove hints like (verb)
+
+                // 2. Create Scrambled Words
+                // Start with the words from the full sentence
+                const words = fullSentence.split(' ').map(w => w.replace(/[.,?!]/g, '')); // Simple tokenization
+
+                // Add distractors from the wrong options if available
+                if (q.options) {
+                    q.options.forEach(opt => {
+                        if (opt !== q.correctAnswer) {
+                            words.push(opt);
+                        }
+                    });
+                }
+
+                return {
+                    ...q,
+                    type: QuestionType.SENTENCE,
+                    questionText: `Form the sentence: "${fullSentence}"`,
+                    scrambledWords: words,
+                    // We keep the original correct Answer/Exp but the UI will use scrambledWords logic
+                    correctAnswer: fullSentence,
+                } as OfflineQuestion;
+            });
+
+        if (converted.length > 0) {
+            baseQuestions = converted;
+        }
+    }
+
+    // Safety check
+    if (baseQuestions.length === 0) {
+        // Fallback or Error
+        // If strict filtering yields nothing, return empty (UI handles) or throw.
+        // For now, let's allow empty return to show "No questions found" in UI instead of crashing
+        return {
+            title: topics.length === 1 ? `${topics[0]} Practice` : 'Mixed Practice',
+            difficulty,
+            questions: []
+        };
     }
 
     // Shuffle base questions
@@ -80,13 +176,19 @@ function generateMockQuiz(topic: string, difficulty: string, numberOfQuestions: 
             type: baseQ.type || QuestionType.MULTIPLE_CHOICE,
             questionText: baseQ.questionText + (i >= shuffledBase.length ? ` (${Math.floor(i / shuffledBase.length) + 1})` : ''),
             options: baseQ.options,
+            scrambledWords: baseQ.scrambledWords,
             correctAnswer: baseQ.correctAnswer,
             explanation: baseQ.explanation,
         } as Question);
     }
 
+    // Generate title based on number of topics
+    const title = topics.length === 1
+        ? `${topics[0]} Practice (Offline Mock)`
+        : `Mixed Topics Practice (${topics.length} topics)`;
+
     return {
-        title: `${topic} Practice (Offline Mock)`,
+        title,
         difficulty: difficulty,
         questions,
     };

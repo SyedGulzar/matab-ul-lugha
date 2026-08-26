@@ -46,4 +46,27 @@ export const PAST_SIMPLE: OfflineQuestion[] = [
     { type: QuestionType.MULTIPLE_CHOICE, questionText: 'She ___ her bag in the taxi.', options: ['leave', 'left', 'leaves', 'leaving'], correctAnswer: 'left', explanation: 'Leave → left.' },
     { type: QuestionType.MULTIPLE_CHOICE, questionText: 'We ___ to Islamabad last month.', options: ['fly', 'flew', 'flies', 'flying'], correctAnswer: 'flew', explanation: 'Fly → flew.' },
     { type: QuestionType.FILL_IN_BLANK, questionText: 'The teacher ___ (give) us homework.', correctAnswer: 'gave', explanation: 'Give → gave.' },
+    { type: QuestionType.MULTIPLE_CHOICE, questionText: 'The teacher ___ (give) us homework.', options: ['give', 'gives', 'gave', 'given'], correctAnswer: 'gave', explanation: 'Give → gave.' },
+    // Sentence Builder Practice
+    {
+        type: QuestionType.SENTENCE,
+        questionText: 'Form the sentence: "We played football yesterday."',
+        scrambledWords: ['We', 'played', 'football', 'yesterday', 'play', 'playing', 'was'],
+        correctAnswer: 'We played football yesterday.',
+        explanation: 'Subject + V2 (past form) + object + time.'
+    },
+    {
+        type: QuestionType.SENTENCE,
+        questionText: 'Make this negative: "She did not go."',
+        scrambledWords: ['She', 'did', 'not', 'go', 'went', 'gone', 'does', 'is'],
+        correctAnswer: 'She did not go.',
+        explanation: 'Negative: did + not + base verb.'
+    },
+    {
+        type: QuestionType.SENTENCE,
+        questionText: 'Structure the question: "Did you see it?"',
+        scrambledWords: ['Did', 'you', 'see', 'it', 'saw', 'seen', 'do', '?'],
+        correctAnswer: 'Did you see it?',
+        explanation: 'Question: Did + subject + base verb?'
+    }
 ];

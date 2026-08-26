@@ -1,12 +1,13 @@
 /**
- * Application/Letter Writing - Karachi Board SSC
+ * Application Writing - Karachi Board SSC
+ * Formal applications to authorities (Principal, Commissioner, etc.)
  * Based on official BSEK syllabus and past papers 2023-2024
  */
 
 export interface ApplicationTemplate {
     id: string;
     title: string;
-    type: 'leave' | 'complaint' | 'request' | 'personal' | 'official';
+    type: 'leave' | 'complaint' | 'request' | 'official';
     recipient: string;
     scenario: string;
     format: string[];
@@ -14,7 +15,7 @@ export interface ApplicationTemplate {
 }
 
 export const APPLICATION_TEMPLATES: ApplicationTemplate[] = [
-    // Leave Applications
+    // ============ LEAVE APPLICATIONS ============
     {
         id: 'app-1',
         title: 'Application for Sick Leave',
@@ -42,6 +43,58 @@ Date: __/__/____`
     },
     {
         id: 'app-2',
+        title: 'Application for Urgent Leave',
+        type: 'leave',
+        recipient: 'Principal',
+        scenario: 'You have to attend a family wedding in another city.',
+        format: ['To', 'Subject', 'Respected Sir/Madam', 'Body', 'Yours obediently', 'Name, Class, Roll No.'],
+        sampleContent: `To,
+The Principal,
+[School Name],
+Karachi.
+
+Subject: Application for Urgent Leave
+
+Respected Sir/Madam,
+
+With due respect, I beg to state that I am a student of Class 10, Section [A/B]. My elder sister's wedding is scheduled on [date] in Lahore. My presence is very important at the function.
+
+Kindly grant me leave for five days from [date] to [date]. I assure you that I will complete all the missed work after returning. I shall be very thankful to you.
+
+Yours obediently,
+[Your Name]
+Class: 10, Roll No: __
+Date: __/__/____`
+    },
+    {
+        id: 'app-3',
+        title: 'Application for Casual Leave',
+        type: 'leave',
+        recipient: 'Principal',
+        scenario: 'You have a family emergency and need one day off.',
+        format: ['To', 'Subject', 'Respected Sir/Madam', 'Body', 'Yours obediently', 'Name, Class, Roll No.'],
+        sampleContent: `To,
+The Principal,
+[School Name],
+Karachi.
+
+Subject: Application for Casual Leave
+
+Respected Sir/Madam,
+
+With due respect, I beg to state that I am a student of Class 10, Section [A/B]. Due to an urgent family matter, I need to accompany my parents to the hospital today.
+
+Kindly grant me leave for one day on [date]. I shall cover all the missed lessons from my classmates. I shall be very thankful to you.
+
+Yours obediently,
+[Your Name]
+Class: 10, Roll No: __
+Date: __/__/____`
+    },
+
+    // ============ REQUEST APPLICATIONS (CERTIFICATES) ============
+    {
+        id: 'app-4',
         title: 'Application for Character Certificate',
         type: 'request',
         recipient: 'Principal',
@@ -66,7 +119,34 @@ Ex-student, Class: 10
 Date: __/__/____`
     },
     {
-        id: 'app-3',
+        id: 'app-5',
+        title: 'Application for Transfer Certificate',
+        type: 'request',
+        recipient: 'Principal',
+        scenario: 'Your family is moving to another city and you need a transfer certificate.',
+        format: ['To', 'Subject', 'Respected Sir/Madam', 'Body', 'Yours obediently', 'Name, Class, Roll No.'],
+        sampleContent: `To,
+The Principal,
+[School Name],
+Karachi.
+
+Subject: Request for Transfer Certificate
+
+Respected Sir/Madam,
+
+With due respect, I beg to state that I am a student of Class 10, Section [A/B]. Due to my father's job transfer, our family is moving to Islamabad.
+
+I humbly request you to kindly issue me a Transfer Certificate at your earliest convenience so that I may continue my studies in another school. I shall be very grateful to you.
+
+Yours obediently,
+[Your Name]
+Class: 10, Roll No: __
+Date: __/__/____`
+    },
+
+    // ============ REQUEST APPLICATIONS (FEE/ADMISSION) ============
+    {
+        id: 'app-6',
         title: 'Application for Fee Concession',
         type: 'request',
         recipient: 'Principal',
@@ -91,7 +171,32 @@ Class: 10, Roll No: __
 Date: __/__/____`
     },
     {
-        id: 'app-4',
+        id: 'app-7',
+        title: 'Application for Scholarship',
+        type: 'request',
+        recipient: 'Principal',
+        scenario: 'You are a merit student and want to apply for a scholarship.',
+        format: ['To', 'Subject', 'Respected Sir/Madam', 'Body', 'Yours obediently', 'Name, Class, Roll No.'],
+        sampleContent: `To,
+The Principal,
+[School Name],
+Karachi.
+
+Subject: Application for Merit Scholarship
+
+Respected Sir/Madam,
+
+With due respect, I beg to state that I am a student of Class 10, Section [A/B]. I have consistently secured first position in my class for the past three years. I come from a middle-class family and would like to continue my studies without burdening my parents financially.
+
+I humbly request you to kindly consider me for a merit scholarship. I promise to maintain my academic performance and bring honor to the school.
+
+Yours obediently,
+[Your Name]
+Class: 10, Roll No: __
+Date: __/__/____`
+    },
+    {
+        id: 'app-8',
         title: 'Application for Re-admission',
         type: 'request',
         recipient: 'Principal',
@@ -116,38 +221,39 @@ Ex-student, Class: 9
 Date: __/__/____`
     },
     {
-        id: 'app-5',
-        title: 'Application for Urgent Leave',
-        type: 'leave',
+        id: 'app-9',
+        title: 'Application for Late Admission',
+        type: 'request',
         recipient: 'Principal',
-        scenario: 'You have to attend a family wedding in another city.',
-        format: ['To', 'Subject', 'Respected Sir/Madam', 'Body', 'Yours obediently', 'Name, Class, Roll No.'],
+        scenario: 'You missed the admission deadline due to unavoidable circumstances.',
+        format: ['To', 'Subject', 'Respected Sir/Madam', 'Body', 'Yours obediently', 'Name, Father\'s Name'],
         sampleContent: `To,
 The Principal,
 [School Name],
 Karachi.
 
-Subject: Application for Urgent Leave
+Subject: Request for Late Admission
 
 Respected Sir/Madam,
 
-With due respect, I beg to state that I am a student of Class 10, Section [A/B]. My elder sister's wedding is scheduled on [date] in Lahore. My presence is very important at the function.
+With due respect, I beg to state that I was unable to apply for admission in Class 9 during the regular admission period. My father was hospitalized, and I had to take care of him.
 
-Kindly grant me leave for five days from [date] to [date]. I assure you that I will complete all the missed work after returning. I shall be very thankful to you.
+Now that my father has recovered, I earnestly request you to kindly consider my late admission. I have good academic record and will work hard to catch up with my classmates.
 
 Yours obediently,
 [Your Name]
-Class: 10, Roll No: __
+S/o Muhammad Ali
 Date: __/__/____`
     },
-    // School Improvement Requests
+
+    // ============ REQUEST APPLICATIONS (SCHOOL FACILITIES) ============
     {
-        id: 'app-6',
+        id: 'app-10',
         title: 'Application for Arranging a Study Trip',
         type: 'request',
         recipient: 'Principal',
         scenario: 'You want the school to arrange an educational trip to a museum.',
-        format: ['To', 'Subject', 'Respected Sir/Madam', 'Body', 'Yours obediently', 'Name, Class, Roll No.'],
+        format: ['To', 'Subject', 'Respected Sir/Madam', 'Body', 'Yours obediently', 'Name, Class Monitor'],
         sampleContent: `To,
 The Principal,
 [School Name],
@@ -167,7 +273,7 @@ Class Monitor, Class 10-A
 Date: __/__/____`
     },
     {
-        id: 'app-7',
+        id: 'app-11',
         title: 'Application for Improving School Facilities',
         type: 'request',
         recipient: 'Principal',
@@ -191,77 +297,185 @@ Yours obediently,
 Class: 10, Roll No: __
 Date: __/__/____`
     },
-    // Personal Letters
     {
-        id: 'app-8',
-        title: 'Letter to Father Requesting Money',
-        type: 'personal',
-        recipient: 'Father',
-        scenario: 'You need money to buy books for your exams.',
-        format: ['Address', 'Date', 'Dear Father', 'Body', 'Your loving son/daughter', 'Name'],
-        sampleContent: `Hostel ABC,
-Government College,
+        id: 'app-12',
+        title: 'Application for Library Card Issuance',
+        type: 'request',
+        recipient: 'Principal',
+        scenario: 'You want a library card to borrow books from the school library.',
+        format: ['To', 'Subject', 'Respected Sir/Madam', 'Body', 'Yours obediently', 'Name, Class, Roll No.'],
+        sampleContent: `To,
+The Principal,
+[School Name],
 Karachi.
-Date: __/__/____
 
-Dear Father,
+Subject: Request for Issuance of Library Card
 
-Assalam-o-Alaikum! I hope this letter finds you in good health. I am fine here and focusing on my studies.
+Respected Sir/Madam,
 
-I am writing to request some money. The annual examinations are approaching and I need to buy some reference books for better preparation. I need approximately Rs. 3,000 for the books.
+With due respect, I beg to state that I am a student of Class 10, Section [A/B]. I am very keen to improve my reading habits and prepare better for my examinations.
 
-Please send the money at your earliest convenience. Give my salam to Ammi and love to younger siblings.
+I humbly request you to kindly issue me a library card so that I may borrow books from the school library. I assure you that I will take good care of the books and return them on time.
 
-Your loving son/daughter,
-[Your Name]`
+Yours obediently,
+[Your Name]
+Class: 10, Roll No: __
+Date: __/__/____`
     },
     {
-        id: 'app-9',
-        title: 'Letter Congratulating a Friend on Success',
-        type: 'personal',
-        recipient: 'Friend',
-        scenario: 'Your friend has topped in the board examination.',
-        format: ['Address', 'Date', 'Dear Friend', 'Body', 'Your friend', 'Name'],
-        sampleContent: `[Your Address],
+        id: 'app-13',
+        title: 'Application for Sports Equipment',
+        type: 'request',
+        recipient: 'Principal',
+        scenario: 'The school sports equipment is old and needs replacement.',
+        format: ['To', 'Subject', 'Respected Sir/Madam', 'Body', 'Yours obediently', 'Name, Sports Captain'],
+        sampleContent: `To,
+The Principal,
+[School Name],
 Karachi.
-Date: __/__/____
 
-Dear Ahmed,
+Subject: Request for New Sports Equipment
 
-Assalam-o-Alaikum! I am very happy to learn that you have topped in the SSC examination. Congratulations! MashaAllah, you truly deserve this success.
+Respected Sir/Madam,
 
-Your hard work and dedication have paid off. I am proud to be your friend. May Allah bless you with more success in life. I hope you will continue to excel in your studies.
+With due respect, on behalf of the school sports team, I wish to bring to your kind attention that our sports equipment has become old and worn out. The cricket bats are cracked, and the footballs are deflated.
 
-Please convey my regards to your parents.
+With the inter-school sports competition approaching, I humbly request you to kindly provide us with new sports equipment. This will help us practice better and bring laurels to our school.
 
-Your friend,
-[Your Name]`
+Yours obediently,
+[Your Name]
+Sports Captain, Class 10
+Date: __/__/____`
     },
     {
-        id: 'app-10',
-        title: 'Letter to Brother About Exam Preparation',
-        type: 'personal',
-        recipient: 'Brother',
-        scenario: 'Write to your younger brother advising him about exam preparation.',
-        format: ['Address', 'Date', 'Dear Brother', 'Body', 'Your loving brother/sister', 'Name'],
-        sampleContent: `[Your Address],
+        id: 'app-14',
+        title: 'Application for Lab Access Permission',
+        type: 'request',
+        recipient: 'Principal',
+        scenario: 'You want extra lab time to prepare for science practical exams.',
+        format: ['To', 'Subject', 'Respected Sir/Madam', 'Body', 'Yours obediently', 'Name, Class, Roll No.'],
+        sampleContent: `To,
+The Principal,
+[School Name],
 Karachi.
-Date: __/__/____
 
-Dear Ali,
+Subject: Request for Extra Lab Access
 
-Assalam-o-Alaikum! I hope you are doing well. I am writing to advise you about your upcoming examinations.
+Respected Sir/Madam,
 
-Please focus on your studies and avoid wasting time on games and mobile phone. Make a proper timetable and follow it strictly. Revise all subjects regularly and practice past papers. Seek help from your teachers if you have any difficulties.
+With due respect, I beg to state that I am a student of Class 10, Section [A/B]. The annual practical examinations are approaching, and I need more practice time in the science laboratory.
 
-Remember, hard work is the key to success. I am confident you will make us proud.
+I humbly request you to kindly allow me to use the laboratory for an extra hour after school on weekdays. I promise to follow all safety rules and handle the equipment carefully.
 
-Your loving brother,
-[Your Name]`
+Yours obediently,
+[Your Name]
+Class: 10, Roll No: __
+Date: __/__/____`
     },
-    // Official Complaints
     {
-        id: 'app-11',
+        id: 'app-15',
+        title: 'Application for School Bus Service',
+        type: 'request',
+        recipient: 'Principal',
+        scenario: 'You live far from school and need school bus facility.',
+        format: ['To', 'Subject', 'Respected Sir/Madam', 'Body', 'Yours obediently', 'Name, Class, Address'],
+        sampleContent: `To,
+The Principal,
+[School Name],
+Karachi.
+
+Subject: Request for School Bus Service
+
+Respected Sir/Madam,
+
+With due respect, I beg to state that I am a student of Class 10, Section [A/B]. I live in North Nazimabad, Block L, which is quite far from the school. Public transport is unreliable and I often reach late.
+
+I humbly request you to kindly provide me with school bus service. I am ready to pay the required fare. This will help me attend school on time every day.
+
+Yours obediently,
+[Your Name]
+Class: 10, Address: Block L, North Nazimabad
+Date: __/__/____`
+    },
+    {
+        id: 'app-16',
+        title: 'Application for Extra Classes',
+        type: 'request',
+        recipient: 'Principal',
+        scenario: 'You are weak in Mathematics and request extra coaching classes.',
+        format: ['To', 'Subject', 'Respected Sir/Madam', 'Body', 'Yours obediently', 'Name, Class, Roll No.'],
+        sampleContent: `To,
+The Principal,
+[School Name],
+Karachi.
+
+Subject: Request for Extra Coaching in Mathematics
+
+Respected Sir/Madam,
+
+With due respect, I beg to state that I am a student of Class 10, Section [A/B]. I am facing difficulty in understanding certain topics in Mathematics, especially Algebra and Geometry.
+
+I humbly request you to kindly arrange extra coaching classes for weak students like me. This will help us improve our grades in the upcoming board examinations.
+
+Yours obediently,
+[Your Name]
+Class: 10, Roll No: __
+Date: __/__/____`
+    },
+    {
+        id: 'app-17',
+        title: 'Application to Change Subject',
+        type: 'request',
+        recipient: 'Principal',
+        scenario: 'You want to change from Computer Science to Biology.',
+        format: ['To', 'Subject', 'Respected Sir/Madam', 'Body', 'Yours obediently', 'Name, Class, Roll No.'],
+        sampleContent: `To,
+The Principal,
+[School Name],
+Karachi.
+
+Subject: Request for Change of Subject
+
+Respected Sir/Madam,
+
+With due respect, I beg to state that I am a student of Class 9, Section [A/B]. I am currently studying Computer Science as my elective subject. However, I have developed a keen interest in medical science and wish to pursue a career in medicine.
+
+I humbly request you to kindly allow me to change my subject from Computer Science to Biology. I am prepared to work hard to make up for the missed lessons.
+
+Yours obediently,
+[Your Name]
+Class: 9, Roll No: __
+Date: __/__/____`
+    },
+    {
+        id: 'app-18',
+        title: 'Application for Replacement of Lost ID Card',
+        type: 'request',
+        recipient: 'Principal',
+        scenario: 'You have lost your school ID card and need a replacement.',
+        format: ['To', 'Subject', 'Respected Sir/Madam', 'Body', 'Yours obediently', 'Name, Class, Roll No.'],
+        sampleContent: `To,
+The Principal,
+[School Name],
+Karachi.
+
+Subject: Request for Replacement of Lost ID Card
+
+Respected Sir/Madam,
+
+With due respect, I beg to state that I am a student of Class 10, Section [A/B]. Unfortunately, I have lost my school identity card while traveling on public transport yesterday.
+
+I humbly request you to kindly issue me a duplicate ID card. I am ready to pay the required fee for the replacement. I will be more careful in the future.
+
+Yours obediently,
+[Your Name]
+Class: 10, Roll No: __
+Date: __/__/____`
+    },
+
+    // ============ COMPLAINT APPLICATIONS ============
+    {
+        id: 'app-19',
         title: 'Complaint About Street Problems',
         type: 'complaint',
         recipient: 'Commissioner',
@@ -287,7 +501,7 @@ Yours faithfully,
 Resident, Gulshan-e-Iqbal, Block 13`
     },
     {
-        id: 'app-12',
+        id: 'app-20',
         title: 'Complaint About Load Shedding',
         type: 'complaint',
         recipient: 'K-Electric',
@@ -312,6 +526,60 @@ Yours faithfully,
 [Your Name]
 Consumer ID: ____
 North Nazimabad, Block H`
+    },
+    {
+        id: 'app-21',
+        title: 'Complaint About Water Supply Issues',
+        type: 'complaint',
+        recipient: 'Water Board',
+        scenario: 'Your area is not receiving water supply for several days.',
+        format: ['To', 'Subject', 'Respected Sir', 'Body', 'Yours faithfully', 'Name, Address'],
+        sampleContent: `To,
+The Managing Director,
+Karachi Water & Sewerage Board,
+Karachi.
+
+Subject: Complaint About Irregular Water Supply
+
+Respected Sir,
+
+I am writing on behalf of the residents of Liaquatabad, Block 4 to complain about the severe water shortage in our area. For the past two weeks, we have not received regular water supply from the main lines.
+
+Residents are forced to buy expensive tanker water for their daily needs. This is causing great hardship, especially to low-income families. Our repeated complaints to the local office have not been addressed.
+
+I request you to kindly look into this matter and restore regular water supply immediately.
+
+Yours faithfully,
+[Your Name]
+Representative, Block 4 Welfare Association
+Liaquatabad, Karachi`
+    },
+    {
+        id: 'app-22',
+        title: 'Complaint About Exam Center Change',
+        type: 'complaint',
+        recipient: 'Board Chairman',
+        scenario: 'The examination center assigned to you is too far from your home.',
+        format: ['To', 'Subject', 'Respected Sir', 'Body', 'Yours faithfully', 'Roll No., School Name'],
+        sampleContent: `To,
+The Chairman,
+Board of Secondary Education Karachi,
+Karachi.
+
+Subject: Request for Change of Examination Center
+
+Respected Sir,
+
+I am a student of Class 10, Roll No. [number], from [School Name]. I have been assigned examination center at [Center Name] in Malir which is about 40 km from my home in North Nazimabad.
+
+Due to lack of direct transport and poor road conditions, reaching this center on time every day will be extremely difficult. My parents are also concerned about my safety.
+
+I humbly request you to kindly assign me an examination center near my residence. I shall be very grateful for your kind consideration.
+
+Yours faithfully,
+[Your Name]
+Roll No: _______
+School: [School Name]`
     },
 ];
 

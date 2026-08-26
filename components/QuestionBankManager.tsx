@@ -32,6 +32,7 @@ import {
     COMPREHENSION_QUESTIONS,
     ESSAY_TOPICS,
     APPLICATION_TEMPLATES,
+    LETTER_TEMPLATES,
     getAllQuestions,
     OfflineQuestion,
 } from '../data/offlineQuestionBank';
@@ -105,7 +106,7 @@ const QUESTION_CATEGORIES: QuestionCategory[] = [
     },
 ];
 
-type ViewTab = 'grammar' | 'essays' | 'applications' | 'comprehension';
+type ViewTab = 'grammar' | 'essays' | 'applications' | 'letters' | 'comprehension';
 
 export const QuestionBankManager: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     const [activeTab, setActiveTab] = useState<ViewTab>('grammar');
@@ -116,6 +117,7 @@ export const QuestionBankManager: React.FC<{ onClose: () => void }> = ({ onClose
     const [filterType, setFilterType] = useState<'all' | 'mcq' | 'fill'>('all');
     const [selectedEssayIndex, setSelectedEssayIndex] = useState(0);
     const [selectedAppIndex, setSelectedAppIndex] = useState(0);
+    const [selectedLetterIndex, setSelectedLetterIndex] = useState(0);
     const [selectedPassageIndex, setSelectedPassageIndex] = useState(0);
 
     const allQuestions = useMemo(() => getAllQuestions(), []);
@@ -167,6 +169,7 @@ export const QuestionBankManager: React.FC<{ onClose: () => void }> = ({ onClose
         { id: 'grammar' as ViewTab, label: 'Grammar', icon: FileText, count: totalCount },
         { id: 'essays' as ViewTab, label: 'Essays', icon: BookOpen, count: ESSAY_TOPICS.length },
         { id: 'applications' as ViewTab, label: 'Applications', icon: PenTool, count: APPLICATION_TEMPLATES.length },
+        { id: 'letters' as ViewTab, label: 'Letters', icon: PenTool, count: LETTER_TEMPLATES.length },
         { id: 'comprehension' as ViewTab, label: 'Comprehension', icon: FileQuestion, count: COMPREHENSION_PASSAGES.length },
     ];
 
@@ -177,8 +180,8 @@ export const QuestionBankManager: React.FC<{ onClose: () => void }> = ({ onClose
                 <button
                     onClick={() => setSelectedTopic(null)}
                     className={`w-full text-left px-3 py-2 rounded-lg mb-4 font-messiri font-bold transition-all ${selectedTopic === null
-                            ? 'bg-[#4A3728] dark:bg-amber-600 text-white'
-                            : 'bg-[#F0EAD6] dark:bg-slate-700 text-[#4A3728] dark:text-amber-500 hover:bg-[#5D4037]/10'
+                        ? 'bg-[#4A3728] dark:bg-amber-600 text-white'
+                        : 'bg-[#F0EAD6] dark:bg-slate-700 text-[#4A3728] dark:text-amber-500 hover:bg-[#5D4037]/10'
                         }`}
                 >
                     📚 All Questions ({totalCount})
@@ -210,8 +213,8 @@ export const QuestionBankManager: React.FC<{ onClose: () => void }> = ({ onClose
                                             key={topic.name}
                                             onClick={() => setSelectedTopic(topic.name)}
                                             className={`w-full text-left px-3 py-1.5 rounded-md text-sm transition-all ${selectedTopic === topic.name
-                                                    ? 'bg-[#4A3728] dark:bg-amber-600 text-white font-bold'
-                                                    : 'text-[#5D4037] dark:text-slate-400 hover:bg-[#5D4037]/10 dark:hover:bg-slate-600'
+                                                ? 'bg-[#4A3728] dark:bg-amber-600 text-white font-bold'
+                                                : 'text-[#5D4037] dark:text-slate-400 hover:bg-[#5D4037]/10 dark:hover:bg-slate-600'
                                                 }`}
                                         >
                                             {topic.name} ({topic.questions.length})
@@ -245,8 +248,8 @@ export const QuestionBankManager: React.FC<{ onClose: () => void }> = ({ onClose
                                 key={type}
                                 onClick={() => setFilterType(type)}
                                 className={`px-3 py-1.5 rounded-lg text-sm font-bold transition-all ${filterType === type
-                                        ? 'bg-[#4A3728] dark:bg-amber-600 text-white'
-                                        : 'bg-[#F0EAD6] dark:bg-slate-700 text-[#5D4037] dark:text-slate-400 hover:bg-[#5D4037]/10'
+                                    ? 'bg-[#4A3728] dark:bg-amber-600 text-white'
+                                    : 'bg-[#F0EAD6] dark:bg-slate-700 text-[#5D4037] dark:text-slate-400 hover:bg-[#5D4037]/10'
                                     }`}
                             >
                                 {type === 'all' ? 'All' : type === 'mcq' ? 'MCQ' : 'Fill-in'}
@@ -409,6 +412,57 @@ export const QuestionBankManager: React.FC<{ onClose: () => void }> = ({ onClose
         );
     };
 
+    const renderLettersTab = () => {
+        const letter = LETTER_TEMPLATES[selectedLetterIndex];
+        return (
+            <div className="flex-1 overflow-y-auto p-6">
+                <div className="max-w-3xl mx-auto">
+                    {/* Letter Selector */}
+                    <div className="mb-6 flex flex-wrap gap-2">
+                        {LETTER_TEMPLATES.map((l, i) => (
+                            <button
+                                key={l.id}
+                                onClick={() => setSelectedLetterIndex(i)}
+                                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${selectedLetterIndex === i ? 'bg-[#4A3728] dark:bg-amber-600 text-white' : 'bg-[#F0EAD6] dark:bg-slate-700 text-[#5D4037] dark:text-slate-400 hover:bg-[#5D4037]/10'}`}
+                            >
+                                {i + 1}. {l.title.substring(0, 15)}...
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Letter Content */}
+                    <div className="bg-white dark:bg-slate-800 border-2 border-[#5D4037]/20 dark:border-amber-500/30 rounded-2xl p-6 shadow-lg">
+                        <div className="flex items-center gap-2 mb-4">
+                            <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase ${letter.type === 'informal' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' : 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400'}`}>
+                                {letter.type}
+                            </span>
+                            <span className="text-sm text-[#8D6E63] dark:text-slate-400">To: {letter.recipient}</span>
+                        </div>
+                        <h3 className="text-2xl font-messiri font-bold text-[#2C1810] dark:text-amber-500 mb-4">{letter.title}</h3>
+
+                        <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                            <p className="text-blue-800 dark:text-blue-300"><strong>Scenario:</strong> {letter.scenario}</p>
+                        </div>
+
+                        <div className="mb-4">
+                            <h4 className="font-bold text-[#4A3728] dark:text-amber-400 mb-2">Format:</h4>
+                            <ol className="list-decimal list-inside space-y-1 text-[#5D4037] dark:text-slate-300">
+                                {letter.format.map((point, i) => <li key={i}>{point}</li>)}
+                            </ol>
+                        </div>
+
+                        <div>
+                            <h4 className="font-bold text-[#4A3728] dark:text-amber-400 mb-2">Sample:</h4>
+                            <pre className="bg-gray-50 dark:bg-slate-900 p-4 rounded-lg text-sm font-mono text-[#2C1810] dark:text-slate-300 whitespace-pre-wrap overflow-x-auto border border-gray-200 dark:border-slate-700">
+                                {letter.sampleContent}
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    };
+
     const renderComprehensionTab = () => {
         const passage = COMPREHENSION_PASSAGES[selectedPassageIndex];
         return (
@@ -483,7 +537,7 @@ export const QuestionBankManager: React.FC<{ onClose: () => void }> = ({ onClose
                         <div>
                             <h2 className="text-2xl font-messiri font-bold text-[#2C1810] dark:text-amber-500">Question Bank Manager</h2>
                             <p className="text-sm text-[#5D4037] dark:text-slate-400">
-                                Total: <span className="font-bold text-[#4A3728] dark:text-amber-400">{totalCount}</span> grammar + <span className="font-bold">{ESSAY_TOPICS.length}</span> essays + <span className="font-bold">{APPLICATION_TEMPLATES.length}</span> applications + <span className="font-bold">{COMPREHENSION_PASSAGES.length}</span> passages
+                                Total: <span className="font-bold text-[#4A3728] dark:text-amber-400">{totalCount}</span> grammar + <span className="font-bold">{ESSAY_TOPICS.length}</span> essays + <span className="font-bold">{APPLICATION_TEMPLATES.length}</span> applications + <span className="font-bold">{LETTER_TEMPLATES.length}</span> letters + <span className="font-bold">{COMPREHENSION_PASSAGES.length}</span> passages
                             </p>
                         </div>
                     </div>
@@ -510,6 +564,7 @@ export const QuestionBankManager: React.FC<{ onClose: () => void }> = ({ onClose
                 {activeTab === 'grammar' && renderGrammarTab()}
                 {activeTab === 'essays' && renderEssaysTab()}
                 {activeTab === 'applications' && renderApplicationsTab()}
+                {activeTab === 'letters' && renderLettersTab()}
                 {activeTab === 'comprehension' && renderComprehensionTab()}
             </div>
         </div>

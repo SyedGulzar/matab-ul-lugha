@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Question, QuestionType } from '../types';
-import { CheckCircle, XCircle, AlertCircle, HelpCircle, PenTool } from 'lucide-react';
+import { CheckCircle, XCircle, AlertCircle, HelpCircle, PenTool, RotateCcw } from 'lucide-react';
 
 interface QuestionCardProps {
   question: Question;
@@ -8,15 +8,54 @@ interface QuestionCardProps {
   savedAnswer?: { answer: string; isCorrect: boolean };
 }
 
-export const QuestionCard: React.FC<QuestionCardProps> = ({ 
-  question, 
-  onAnswer, 
-  savedAnswer 
+export const QuestionCard: React.FC<QuestionCardProps> = ({
+  question,
+  onAnswer,
+  savedAnswer
 }) => {
   const [inputText, setInputText] = useState('');
   const [showExplanation, setShowExplanation] = useState(false);
 
   const isAnswered = !!savedAnswer;
+
+  // Sentence Builder State
+  const [selectedWords, setSelectedWords] = useState<string[]>([]);
+  const [availableWords, setAvailableWords] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (question.type === QuestionType.SENTENCE && question.scrambledWords) {
+      setAvailableWords([...question.scrambledWords].sort(() => 0.5 - Math.random()));
+      setSelectedWords([]);
+      setInputText('');
+    }
+  }, [question]);
+
+  const handleWordClick = (word: string, index: number, isSelected: boolean) => {
+    if (isAnswered) return;
+
+    if (isSelected) {
+      // Remove from selected, add back to available
+      const newSelected = [...selectedWords];
+      newSelected.splice(index, 1);
+      setSelectedWords(newSelected);
+      setAvailableWords([...availableWords, word]);
+      setInputText(newSelected.join(' '));
+    } else {
+      // Add to selected, remove from available
+      const newAvailable = [...availableWords];
+      newAvailable.splice(index, 1);
+      setAvailableWords(newAvailable);
+      setSelectedWords([...selectedWords, word]);
+      setInputText([...selectedWords, word].join(' ')); // Implicitly updates input text for submission
+    }
+  };
+
+  const handleResetBuilder = () => {
+    if (isAnswered || !question.scrambledWords) return;
+    setAvailableWords([...question.scrambledWords].sort(() => 0.5 - Math.random()));
+    setSelectedWords([]);
+    setInputText('');
+  };
 
   const handleMCSelection = (option: string) => {
     if (isAnswered) return;
@@ -27,16 +66,33 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   const handleTextSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (isAnswered || !inputText.trim()) return;
-    
-    const isCorrect = inputText.trim().toLowerCase() === question.correctAnswer.toLowerCase();
-    onAnswer(question.id, inputText.trim(), isCorrect);
+
+    // Normalize text for comparison:
+    // 1. Lowercase
+    // 2. Remove text between parentheses (hints)
+    // 3. Remove ALL punctuation (.,?!) to handle token mismatches
+    // 4. Trim whitespace
+    const normalize = (text: string) => {
+      return text
+        .toLowerCase()
+        .replace(/\(.*?\)/g, '') // remove (hints)
+        .replace(/[.,?!"]/g, '') // remove punctuation
+        .replace(/\s+/g, ' ')    // collapse spaces
+        .trim();
+    };
+
+    const submission = normalize(inputText);
+    const correct = normalize(question.correctAnswer);
+
+    const isCorrect = submission === correct;
+    onAnswer(question.id, inputText, isCorrect);
   };
 
   return (
     // Updated Card Styles: Map Legend Aesthetic
     // Dark Mode: slate-900 bg, amber-500 borders (stronger opacity)
     <div className="bg-[#F0EAD6] dark:bg-slate-900 relative rounded-lg shadow-lg border-4 border-double border-[#5D4037]/40 dark:border-amber-500/60 mb-10 overflow-hidden transition-all duration-500 hover:shadow-[0_0_25px_rgba(74,55,40,0.2)] dark:hover:shadow-[0_0_35px_rgba(245,158,11,0.25)] group paper-torn">
-      
+
       {/* Decorative Arch Header - Ink Style */}
       <div className="h-2 bg-[#4A3728] dark:bg-amber-500 w-full transition-colors duration-500 group-hover:shadow-[0_0_15px_rgba(74,55,40,0.4)] dark:group-hover:shadow-[0_0_15px_rgba(245,158,11,0.6)]"></div>
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-8 bg-[#4A3728] dark:bg-amber-500 rounded-b-full flex items-center justify-center opacity-10 dark:opacity-20 transition-all duration-500 group-hover:opacity-20 dark:group-hover:opacity-30"></div>
@@ -47,14 +103,14 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
       {/* Corner Ornaments (Map Markings) */}
       <div className="absolute top-4 left-4 text-[#8D6E63]/40 dark:text-amber-500/40 pointer-events-none transition-colors duration-500 group-hover:text-[#5D4037]/60 dark:group-hover:text-amber-500/60">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-           <path d="M0 0 L10 0 L0 10 Z" />
-           <path d="M4 4 L14 4 L4 14 Z" opacity="0.5"/>
+          <path d="M0 0 L10 0 L0 10 Z" />
+          <path d="M4 4 L14 4 L4 14 Z" opacity="0.5" />
         </svg>
       </div>
       <div className="absolute top-4 right-4 text-[#8D6E63]/40 dark:text-amber-500/40 pointer-events-none transform rotate-90 transition-colors duration-500 group-hover:text-[#5D4037]/60 dark:group-hover:text-amber-500/60">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-           <path d="M0 0 L10 0 L0 10 Z" />
-           <path d="M4 4 L14 4 L4 14 Z" opacity="0.5"/>
+          <path d="M0 0 L10 0 L0 10 Z" />
+          <path d="M4 4 L14 4 L4 14 Z" opacity="0.5" />
         </svg>
       </div>
 
@@ -68,11 +124,10 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
             Question
           </h3>
           {isAnswered && (
-            <div className={`flex items-center px-4 py-1.5 rounded-full border text-sm font-bold shadow-sm ${
-              savedAnswer.isCorrect 
-                ? 'bg-[#F0FDF4] dark:bg-teal-900/50 text-[#15803D] dark:text-teal-300 border-[#15803D]/20 dark:border-teal-500/50' 
-                : 'bg-[#FEF2F2] dark:bg-red-900/50 text-[#B91C1C] dark:text-red-300 border-[#B91C1C]/20 dark:border-red-500/50'
-            }`}>
+            <div className={`flex items-center px-4 py-1.5 rounded-full border text-sm font-bold shadow-sm ${savedAnswer.isCorrect
+              ? 'bg-[#F0FDF4] dark:bg-teal-900/50 text-[#15803D] dark:text-teal-300 border-[#15803D]/20 dark:border-teal-500/50'
+              : 'bg-[#FEF2F2] dark:bg-red-900/50 text-[#B91C1C] dark:text-red-300 border-[#B91C1C]/20 dark:border-red-500/50'
+              }`}>
               {savedAnswer.isCorrect ? (
                 <><CheckCircle size={16} className="mr-2" /> Correct</>
               ) : (
@@ -92,7 +147,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {question.options?.map((option, idx) => {
               let btnClass = "border p-4 rounded-md text-left transition-all duration-300 font-markazi text-lg relative ";
-              
+
               if (isAnswered) {
                 if (option === question.correctAnswer) {
                   btnClass += "bg-[#F0FDF4] dark:bg-teal-900/60 border-[#15803D] dark:border-teal-500 text-[#15803D] dark:text-teal-300 shadow-sm";
@@ -121,6 +176,75 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
               );
             })}
           </div>
+        ) : question.type === QuestionType.SENTENCE && question.scrambledWords ? (
+          // Interactive Sentence Builder UI
+          <div className="max-w-2xl">
+            {/* Constructed Sentence Display (The "Answer Line") */}
+            <div className={`min-h-[60px] p-4 rounded-lg border-2 mb-6 flex flex-wrap gap-2 items-center transition-all
+                    ${isAnswered
+                ? (savedAnswer?.isCorrect
+                  ? 'bg-[#F0FDF4] dark:bg-teal-900/30 border-[#15803D] dark:border-teal-500'
+                  : 'bg-[#FEF2F2] dark:bg-red-900/30 border-[#B91C1C] dark:border-red-500')
+                : 'bg-white/50 dark:bg-slate-800/50 border-dashed border-[#8D6E63] dark:border-slate-600'
+              }`}>
+              {selectedWords.length === 0 && !isAnswered && (
+                <span className="text-gray-400 dark:text-gray-500 italic font-markazi text-xl select-none">Click words to build the sentence...</span>
+              )}
+              {selectedWords.map((word, idx) => (
+                <button
+                  key={`sel-${idx}`}
+                  onClick={() => handleWordClick(word, idx, true)}
+                  disabled={isAnswered}
+                  className="bg-[#4A3728] dark:bg-amber-600 text-[#F0EAD6] dark:text-white px-3 py-1 rounded-md shadow-sm font-markazi text-lg hover:bg-[#3E2723] dark:hover:bg-amber-500 transition-colors animate-in zoom-in-50 duration-200"
+                >
+                  {word}
+                </button>
+              ))}
+            </div>
+
+            {/* Available Words Pool */}
+            {!isAnswered && (
+              <div className="flex flex-wrap gap-3 mb-6 p-4 bg-[#E6DEC8]/30 dark:bg-slate-800/30 rounded-lg">
+                {availableWords.map((word, idx) => (
+                  <button
+                    key={`av-${idx}`}
+                    onClick={() => handleWordClick(word, idx, false)}
+                    className="bg-[#FDFBF7] dark:bg-slate-700 border border-[#D7Cea7] dark:border-slate-600 text-[#4A3728] dark:text-slate-200 px-3 py-1.5 rounded-md shadow-sm font-markazi text-lg hover:border-[#4A3728] dark:hover:border-amber-500 hover:shadow-md hover:-translate-y-0.5 transition-all"
+                  >
+                    {word}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {/* Submit Actions */}
+            <div className="flex gap-4">
+              {!isAnswered && (
+                <>
+                  <button
+                    onClick={handleTextSubmit} // Reuse submission logic
+                    disabled={selectedWords.length === 0}
+                    className="bg-[#4A3728] dark:bg-amber-500 text-[#F0EAD6] dark:text-slate-900 px-8 py-2.5 rounded-md font-messiri font-bold hover:bg-[#3E2723] dark:hover:bg-amber-400 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md hover:shadow-lg"
+                  >
+                    Submit Answer
+                  </button>
+                  <button
+                    onClick={handleResetBuilder}
+                    className="p-2 text-[#8D6E63] dark:text-slate-400 hover:text-[#5D4037] dark:hover:text-amber-500 transition-colors"
+                    title="Reset"
+                  >
+                    <RotateCcw size={20} />
+                  </button>
+                </>
+              )}
+            </div>
+
+            {isAnswered && !savedAnswer?.isCorrect && (
+              <p className="mt-4 text-base text-[#B91C1C] dark:text-red-300 font-markazi flex items-center bg-[#FEF2F2] dark:bg-red-900/30 p-3 rounded-md border border-[#B91C1C]/10 inline-block">
+                <XCircle size={16} className="mr-2" /> Correct Answer: <span className="ml-2 font-bold font-messiri text-lg text-[#111827] dark:text-gray-100">{question.correctAnswer}</span>
+              </p>
+            )}
+          </div>
         ) : (
           <form onSubmit={handleTextSubmit} className="max-w-xl">
             <div className="flex gap-4 items-end">
@@ -137,14 +261,14 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
                   autoCapitalize="off"
                   spellCheck="false"
                   className={`w-full pl-8 pr-3 py-3 bg-transparent border-b-2 outline-none transition-all duration-300 font-markazi text-xl
-                    ${isAnswered 
-                      ? (savedAnswer.isCorrect ? 'border-[#15803D] dark:border-teal-500 text-[#15803D] dark:text-teal-400' : 'border-[#B91C1C] dark:border-red-500 text-[#B91C1C] dark:text-red-400') 
+                    ${isAnswered
+                      ? (savedAnswer.isCorrect ? 'border-[#15803D] dark:border-teal-500 text-[#15803D] dark:text-teal-400' : 'border-[#B91C1C] dark:border-red-500 text-[#B91C1C] dark:text-red-400')
                       : 'border-[#D7Cea7] dark:border-slate-600 text-[#2C1810] dark:text-amber-400 focus:border-[#5D4037] dark:focus:border-amber-500 placeholder-gray-400 dark:placeholder-slate-500 focus:shadow-[0_4px_10px_-4px_rgba(74,55,40,0.3)] dark:focus:shadow-[0_4px_10px_-4px_rgba(245,158,11,0.3)]'}`}
                 />
               </div>
               {!isAnswered && (
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   disabled={!inputText.trim()}
                   className="bg-[#4A3728] dark:bg-amber-500 text-[#E6DEC8] dark:text-slate-900 px-8 py-2.5 rounded-md font-messiri font-bold hover:bg-[#3E2723] dark:hover:bg-amber-400 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md hover:shadow-[0_0_15px_rgba(74,55,40,0.4)] dark:hover:shadow-[0_0_15px_rgba(245,158,11,0.6)]"
                 >
@@ -154,7 +278,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
             </div>
             {isAnswered && !savedAnswer.isCorrect && (
               <p className="mt-4 text-base text-[#B91C1C] dark:text-red-300 font-markazi flex items-center bg-[#FEF2F2] dark:bg-red-900/30 p-3 rounded-md border border-[#B91C1C]/10 inline-block">
-                 <XCircle size={16} className="mr-2" /> Correct Answer: <span className="ml-2 font-bold font-messiri text-lg text-[#111827] dark:text-gray-100">{question.correctAnswer}</span>
+                <XCircle size={16} className="mr-2" /> Correct Answer: <span className="ml-2 font-bold font-messiri text-lg text-[#111827] dark:text-gray-100">{question.correctAnswer}</span>
               </p>
             )}
           </form>
@@ -163,14 +287,14 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         {/* Explanation Toggle */}
         {isAnswered && (
           <div className="mt-8 pt-6 border-t border-dashed border-[#5D4037]/20 dark:border-amber-500/30">
-            <button 
+            <button
               onClick={() => setShowExplanation(!showExplanation)}
               className="flex items-center text-sm text-[#8D6E63] dark:text-amber-400 hover:text-[#5D4037] dark:hover:text-amber-300 font-bold font-messiri focus:outline-none transition-all group uppercase tracking-wider shadow-none hover:drop-shadow-[0_0_8px_rgba(141,110,99,0.5)] dark:hover:drop-shadow-[0_0_5px_rgba(245,158,11,0.5)]"
             >
               <HelpCircle size={18} className="mr-2 transition-transform group-hover:rotate-12" />
               {showExplanation ? 'Hide Explanation' : 'Read Explanation'}
             </button>
-            
+
             {showExplanation && (
               <div className="mt-4 p-6 bg-[#E6DEC8]/50 dark:bg-slate-800 rounded-r-md border-l-4 border-[#8D6E63] dark:border-amber-500 text-[#4A3728] dark:text-slate-200 text-lg font-markazi leading-relaxed flex items-start animate-in fade-in slide-in-from-top-2 duration-300 shadow-sm dark:shadow-[0_0_20px_rgba(245,158,11,0.1)]">
                 <AlertCircle size={24} className="mr-4 flex-shrink-0 mt-1 text-[#8D6E63] dark:text-amber-500" />

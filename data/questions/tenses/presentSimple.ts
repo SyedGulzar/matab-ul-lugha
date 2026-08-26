@@ -48,4 +48,19 @@ export const PRESENT_SIMPLE: OfflineQuestion[] = [
     { type: QuestionType.FILL_IN_BLANK, questionText: 'Doctors ___ (help) sick people.', correctAnswer: 'help', explanation: 'Doctors is plural.' },
     { type: QuestionType.MULTIPLE_CHOICE, questionText: 'My sister ___ in Islamabad.', options: ['live', 'lives', 'living', 'lived'], correctAnswer: 'lives', explanation: 'Sister is third person singular.' },
     { type: QuestionType.MULTIPLE_CHOICE, questionText: 'The children ___ to school by bus.', options: ['goes', 'go', 'going', 'went'], correctAnswer: 'go', explanation: 'Children is plural.' },
+    // Sentence Construction/Practice
+    {
+        type: QuestionType.SENTENCE,
+        questionText: 'Make this negative: "She plays tennis."',
+        scrambledWords: ['She', 'does', 'not', 'play', 'tennis', 'do', 'plays', 'is'],
+        correctAnswer: 'She does not play tennis.',
+        explanation: 'Use "does not" + base verb (play).'
+    },
+    {
+        type: QuestionType.SENTENCE,
+        questionText: 'Correct the sentence: "He go to school."',
+        scrambledWords: ['He', 'goes', 'to', 'school', 'go', 'going', 'is'],
+        correctAnswer: 'He goes to school.',
+        explanation: 'He is 3rd person singular, so we add "es" to "go".'
+    },
 ];

@@ -28,6 +28,7 @@ export const VALID_USERNAMES = [
   'AR_Learning',
   'MS_Looking',
   'AH_Coding',
+  'MH_Reading',
   'Admin_141225'
 ];
 
@@ -44,6 +45,7 @@ export const USERS: UserInfo[] = [
   { username: 'AR_Learning', displayName: 'Adil Rashid', role: 'user' },
   { username: 'MS_Looking', displayName: 'Muhammad Shah', role: 'user' },
   { username: 'AH_Coding', displayName: 'Abdul Ahad', role: 'user' },
+  { username: 'MH_Reading', displayName: 'Muhammad Hassan', role: 'user' },
   { username: 'Admin_141225', displayName: 'Administrator', role: 'admin' },
 ];
 
@@ -117,6 +119,7 @@ export const TOPIC_CATEGORIES: Record<string, TopicItem[]> = {
   ],
   "Writing & Mechanics": [
     { name: "Application Writing", time: "16 mins", type: "writing", videoUrl: "https://www.youtube.com/watch?v=W5lecG3TDrw&list=PLl0gj7VYsUWeeIEofDADaAYpAmbN3MIqT&index=40" },
+    { name: "Letter Writing", time: "18 mins", type: "writing", videoUrl: "https://www.youtube.com/watch?v=W5lecG3TDrw&list=PLl0gj7VYsUWeeIEofDADaAYpAmbN3MIqT&index=40" },
     { name: "Comprehension Techniques", time: "17 mins", videoUrl: "https://www.youtube.com/watch?v=zYoOviCoO64&list=PLl0gj7VYsUWeeIEofDADaAYpAmbN3MIqT&index=41" },
     { name: "Précis Writing", time: "17 mins", type: "writing", videoUrl: "https://www.youtube.com/watch?v=J9rslkNLUwk&list=PLl0gj7VYsUWeeIEofDADaAYpAmbN3MIqT&index=42" },
     { name: "Punctuation Rules", time: "13 mins", videoUrl: "https://www.youtube.com/watch?v=EB8xp9blmuQ&list=PLl0gj7VYsUWeeIEofDADaAYpAmbN3MIqT&index=44" },
